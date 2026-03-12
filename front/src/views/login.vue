@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="container loginIn" style="backgroundImage: url(http://codegen.caihongy.cn/20210128/ac0684f4d39c4b5ebf6694a20d747cd6.jpg)">
+    <div class="container loginIn">
 
-      <div :class="2 == 1 ? 'left' : 2 == 2 ? 'left center' : 'left right'" style="backgroundColor: rgba(206, 221, 207, 0.4)">
+      <div :class="2 == 1 ? 'left' : 2 == 2 ? 'left center' : 'left right'" style="backgroundColor: rgba(255, 255, 255, 0.92)">
         <el-form class="login-form" label-position="left" :label-width="2 == 3 ? '56px' : '0px'">
           <div class="title-container"><h3 class="title" style="color: rgba(31, 147, 255, 0.73)">房屋租赁系统登录</h3></div>
           <el-form-item :label="2 == 3 ? '用户名' : ''" :class="'style'+2">
@@ -81,34 +81,9 @@ export default {
     this.menus = menus;
   },
   created() {
-    this.setInputColor()
     this.getRandCode()
   },
   methods: {
-    setInputColor(){
-      this.$nextTick(()=>{
-        document.querySelectorAll('.loginIn .el-input__inner').forEach(el=>{
-          el.style.backgroundColor = "rgba(255, 255, 255, 1)"
-          el.style.color = "rgba(20, 21, 21, 0.91)"
-          el.style.height = "44px"
-          el.style.lineHeight = "44px"
-          el.style.borderRadius = "22px"
-        })
-        document.querySelectorAll('.loginIn .style3 .el-form-item__label').forEach(el=>{
-          el.style.height = "44px"
-          el.style.lineHeight = "44px"
-        })
-        document.querySelectorAll('.loginIn .el-form-item__label').forEach(el=>{
-          el.style.color = "rgba(16, 17, 17, 1)"
-        })
-        setTimeout(()=>{
-          document.querySelectorAll('.loginIn .role .el-radio__label').forEach(el=>{
-            el.style.color = "#fff"
-          })
-        },350)
-      })
-
-    },
     register(tableName){
       this.$storage.set("loginTable", tableName);
       this.$router.push({path:'/register'})
@@ -205,22 +180,29 @@ export default {
 .loginIn {
   min-height: 100vh;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-image: linear-gradient(180deg, rgba(246, 248, 250, 0.92), rgba(246, 248, 250, 0.92)), url("~@/assets/img/bg.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 
   .left {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 360px;
-    height: 100%;
+    position: relative;
+    width: 420px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
 
     .login-form {
       background-color: transparent;
       width: 100%;
       right: inherit;
-      padding: 0 12px;
+      padding: 28px;
       box-sizing: border-box;
       display: flex;
       justify-content: center;
@@ -256,16 +238,17 @@ export default {
 
       .el-input {
         display: inline-block;
-        height: 40px;
+        height: 44px;
         width: 100%;
 
         & /deep/ input {
-          background: transparent;
-          border: 0px;
+          background: #ffffff;
+          border: 1px solid rgba(31, 35, 40, 0.14);
           -webkit-appearance: none;
           padding: 0 15px 0 30px;
-          color: #fff;
-          height: 40px;
+          color: #1f2328;
+          height: 44px;
+          border-radius: 12px;
         }
       }
 
@@ -275,22 +258,22 @@ export default {
   }
 
   .center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 360px;
-    transform: translate3d(-50%,-50%,0);
-    height: 446px;
-    border-radius: 8px;
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    transform: none;
+    height: auto;
+    border-radius: 16px;
   }
 
   .right {
-    position: absolute;
-    left: inherit;
-    right: 0;
-    top: 0;
-    width: 360px;
-    height: 100%;
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    width: auto;
+    height: auto;
   }
 
   .code {

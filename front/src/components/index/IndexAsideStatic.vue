@@ -1,11 +1,11 @@
 <template>
   <el-aside class="index-aside" height="100vh" width="210px">
     <div class="index-aside-inner menulist" style="height:100%">
-      <div v-for="item in menuList" :key="item.roleName" v-if="role==item.roleName" class="menulist-item" style="height:100%;broder:0;background-color:#988181">
-        <div class="menulistImg" style="backgroundColor:#ff0000;padding:25px 0" v-if="false && menulistStyle == 'vertical'">
+      <div v-for="item in menuList" :key="item.roleName" v-if="role==item.roleName" class="menulist-item" style="height:100%;border:0;background-color:#ffffff">
+        <div class="menulistImg" style="backgroundColor:#ffffff;padding:25px 0" v-if="false && menulistStyle == 'vertical'">
           <el-image v-if="'http://codegen.caihongy.cn/20201021/cc7d45d9c8164b58b18351764eba9be1.jpg'" src="http://codegen.caihongy.cn/20201021/cc7d45d9c8164b58b18351764eba9be1.jpg" fit="cover" />
         </div>
-        <el-menu mode="vertical" :unique-opened="true" class="el-menu-demo" style="height:100%;" background-color="#988181" text-color="#111010" active-text-color="#99EFED" default-active="0">
+        <el-menu mode="vertical" :unique-opened="true" class="el-menu-demo" style="height:100%;" background-color="#ffffff" text-color="#303133" active-text-color="#1677ff" default-active="0">
           <el-menu-item index="0" :style="menulistBorderBottom" @click="menuHandler('')"><i v-if="true" class="el-icon-s-home" />首页</el-menu-item>
           <el-submenu :index="1+''" :style="menulistBorderBottom">
             <template slot="title">
@@ -100,7 +100,7 @@ export default {
 		let style = 'vertical'
 		let w = '1px'
 		let s = 'solid'
-		let c = '#ccc'
+		let c = '#f0f0f0'
 		if(style == 'vertical') {
 			this.menulistBorderBottom = {
 				borderBottomWidth: w,
@@ -127,25 +127,25 @@ export default {
         document.querySelectorAll('.menulist .el-menu-item').forEach(el=>{
           el.addEventListener("mouseenter", e => {
             e.stopPropagation()
-            el.style.backgroundColor = "rgba(238, 221, 129, 1)"
+            el.style.backgroundColor = "rgba(22, 119, 255, 0.06)"
           })
           el.addEventListener("mouseleave", e => {
             e.stopPropagation()
-            el.style.backgroundColor = "#988181"
+            el.style.backgroundColor = "transparent"
           })
           el.addEventListener("focus", e => {
             e.stopPropagation()
-            el.style.backgroundColor = "rgba(238, 221, 129, 1)"
+            el.style.backgroundColor = "rgba(22, 119, 255, 0.06)"
           })
         })
         document.querySelectorAll('.menulist .el-submenu__title').forEach(el=>{
           el.addEventListener("mouseenter", e => {
             e.stopPropagation()
-            el.style.backgroundColor = "rgba(238, 221, 129, 1)"
+            el.style.backgroundColor = "rgba(22, 119, 255, 0.06)"
           })
           el.addEventListener("mouseleave", e => {
             e.stopPropagation()
-            el.style.backgroundColor = "#988181"
+            el.style.backgroundColor = "transparent"
           })
         })
       })

@@ -352,7 +352,7 @@ export default {
 	}
 	
 	.container {
-		background-image: url("http://codegen.caihongy.cn/20210128/ac0684f4d39c4b5ebf6694a20d747cd6.jpg");
+		background-image: linear-gradient(180deg, rgba(246, 248, 250, 0.92), rgba(246, 248, 250, 0.92)), url("~@/assets/img/bg.jpg");
 		height: 100vh;
 		background-position: center center;
 		background-size: cover;
@@ -363,8 +363,9 @@ export default {
 			top: 50%;
 			height: auto;
 			transform: translate3d(50%, -50%, 0);
-			border-radius: 10px;
-			background-color: rgba(255,255,255,.5);
+			border-radius: 16px;
+			background-color: rgba(255,255,255,.92);
+			box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
 			width: 420px;
 			padding: 30px 30px 40px 30px;
 			font-size: 14px;
