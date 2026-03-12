@@ -60,7 +60,7 @@ var indexNav = [
 }
 ]
 
-var adminurl =  "http://localhost:8080/springboot08hr3/admin/dist/index.html";
+var adminurl =  "http://localhost:8080/zhihuifangwuzulin/admin/dist/index.html";
 
 var cartFlag = false
 

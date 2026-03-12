@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.jlwl</groupId>
 	<!-- 导入项目的名称 -->
-	<artifactId>t020</artifactId>
+	<artifactId>zhihuifangwuzulin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-schema</name>
+	<name>zhihuifangwuzulin</name>
 	<description>房屋租赁系统</description>
 
 	<properties>
