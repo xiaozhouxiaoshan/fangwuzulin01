@@ -331,7 +331,7 @@ export default {
         height: 46px;
         width: 100%;
 
-        & /deep/ input {
+        ::v-deep input {
           background: rgba(255, 255, 255, 0.95);
           border: 1px solid rgba(148, 163, 184, 0.42);
           -webkit-appearance: none;
@@ -342,7 +342,7 @@ export default {
           transition: all 0.25s ease;
         }
 
-        & /deep/ input:focus {
+        ::v-deep input:focus {
           border-color: #409eff;
           box-shadow: 0 0 0 3px rgba(64, 158, 255, 0.16);
         }
@@ -374,14 +374,14 @@ export default {
       margin-bottom: 18px;
     }
 
-    .role /deep/ .el-form-item__content {
+    .role ::v-deep .el-form-item__content {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       align-items: center;
     }
 
-    .role /deep/ .el-radio {
+    .role ::v-deep .el-radio {
       margin-right: 0;
       padding: 0 12px 0 8px;
       border-radius: 16px;
@@ -392,22 +392,22 @@ export default {
       transition: all 0.2s ease;
     }
 
-    .role /deep/ .el-radio:hover {
+    .role ::v-deep .el-radio:hover {
       border-color: rgba(64, 158, 255, 0.45);
       color: #2a5aa3;
     }
 
-    .role /deep/ .el-radio__label {
+    .role ::v-deep .el-radio__label {
       padding-left: 6px;
       color: #334155;
     }
 
-    .role /deep/ .el-radio__input.is-checked + .el-radio__label {
+    .role ::v-deep .el-radio__input.is-checked + .el-radio__label {
       color: #2f6fd3;
       font-weight: 600;
     }
 
-    .role /deep/ .el-radio__input.is-checked .el-radio__inner {
+    .role ::v-deep .el-radio__input.is-checked .el-radio__inner {
       border-color: #3f8dff;
       background-color: #3f8dff;
     }
@@ -458,7 +458,7 @@ export default {
       }
 
       .el-input {
-        & /deep/ input {
+        ::v-deep input {
           padding: 0 130px 0 42px;
         }
       }
@@ -468,7 +468,7 @@ export default {
   .setting {
     margin-top: 8px;
 
-    & /deep/ .el-form-item__content {
+    ::v-deep .el-form-item__content {
       padding: 0 4px;
       box-sizing: border-box;
       line-height: 24px;
@@ -505,7 +505,7 @@ export default {
     }
 
     .el-input {
-      & /deep/ input {
+      ::v-deep input {
         padding: 0 16px 0 42px !important;
       }
     }
@@ -514,30 +514,30 @@ export default {
   .code.style2,
   .code.style3 {
     .el-input {
-      & /deep/ input {
+      ::v-deep input {
         padding: 0 115px 0 42px;
       }
     }
   }
 
   .style3 {
-    & /deep/ .el-form-item__label {
+    ::v-deep .el-form-item__label {
       padding-right: 6px;
     }
 
     .el-input {
-      & /deep/ input {
+      ::v-deep input {
         padding: 0 16px !important;
       }
     }
   }
 
   .role {
-    & /deep/ .el-form-item__label {
+    ::v-deep .el-form-item__label {
       width: 56px !important;
     }
 
-    & /deep/ .el-radio {
+    ::v-deep .el-radio {
       margin-right: 0;
     }
   }
