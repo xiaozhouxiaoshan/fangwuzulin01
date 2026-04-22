@@ -524,13 +524,14 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     					
 					// 提交数据
 					http.requestJson('yuyuekanfang' + '/add', 'post', data, function(res) {
-					 	layer.msg('提交成功', {
-					 		time: 2000,
-					 		icon: 6
-					 	}, function() {
-					 		back();
+						layer.alert('\u9884\u7ea6\u6210\u529f', {
+							icon: 6,
+							title: '\u63d0\u793a'
+						}, function(index) {
+							layer.close(index);
+							back();
 						});
-					 });
+					});
 
 					return false
 				});

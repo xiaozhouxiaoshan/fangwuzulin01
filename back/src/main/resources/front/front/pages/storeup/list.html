@@ -96,6 +96,7 @@
 					 class="data-item layui-col-md3">
 						<img class="cover" :src="item.picture">
 						<h3 class="title">{{item.name}}</h3>
+						<button type="button" class="layui-btn layui-btn-danger layui-btn-sm" @click.stop="cancelStoreup(item)">取消收藏</button>
 					</div>
 				</div>
 				<div class="pager" id="pager" :style="{textAlign:1==1?'left':1==2?'center':'right'}"></div>
@@ -139,6 +140,33 @@
 				methods: {
 					jump(url) {
 						jump(url)
+					},
+					cancelStoreup(item) {
+						layui.http.request('storeup/list', 'get', {
+							page: 1,
+							limit: 100,
+							refid: item.refid,
+							tablename: item.tablename
+						}, function(res) {
+							var ids = [];
+							if (res.data.list && res.data.list.length > 0) {
+								for (var i = 0; i < res.data.list.length; i++) {
+									ids.push(res.data.list[i].id);
+								}
+							}
+							if (!ids.length) {
+								window.location.reload();
+								return;
+							}
+							layui.http.requestJson('storeup/delete', 'post', ids, function() {
+								layer.msg('\u53d6\u6d88\u6536\u85cf\u6210\u529f', {
+									time: 2000,
+									icon: 6
+								}, function() {
+									window.location.reload();
+								});
+							});
+						});
 					}
 				}
 			})
@@ -204,7 +232,7 @@
 					}
 					// 获取列表数据
 					http.request('storeup/list', 'get', param, function(res) {
-						vue.dataList = res.data.list
+						vue.dataList = Array.from(new Map((res.data.list || []).map(function(item){ return [item.tablename + '-' + item.refid, item]; })).values())
 						// 分页
 						laypage.render({
 							elem: 'pager',
@@ -217,7 +245,7 @@
 								//首次不执行
 								if (!first) {
 									http.request('storeup/list', 'get', param, function(res) {
-										vue.dataList = res.data.list
+										vue.dataList = Array.from(new Map((res.data.list || []).map(function(item){ return [item.tablename + '-' + item.refid, item]; })).values())
 									})
 								}
 							}

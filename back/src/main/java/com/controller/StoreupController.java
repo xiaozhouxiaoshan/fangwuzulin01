@@ -126,7 +126,15 @@ public class StoreupController {
     public R save(@RequestBody StoreupEntity storeup, HttpServletRequest request){
     	storeup.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
     	//ValidatorUtils.validateEntity(storeup);
-    	storeup.setUserid((Long)request.getSession().getAttribute("userId"));
+    	Long userId = (Long)request.getSession().getAttribute("userId");
+    	storeup.setUserid(userId);
+    	StoreupEntity exist = storeupService.selectOne(new EntityWrapper<StoreupEntity>()
+    			.eq("userid", userId)
+    			.eq("refid", storeup.getRefid())
+    			.eq("tablename", storeup.getTablename()));
+    	if(exist != null) {
+    		return R.error("宸叉敹钘忥紝璇峰嬁閲嶅鎿嶄綔");
+    	}
         storeupService.insert(storeup);
         return R.ok();
     }
@@ -138,7 +146,15 @@ public class StoreupController {
     public R add(@RequestBody StoreupEntity storeup, HttpServletRequest request){
     	storeup.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
     	//ValidatorUtils.validateEntity(storeup);
-    	storeup.setUserid((Long)request.getSession().getAttribute("userId"));
+    	Long userId = (Long)request.getSession().getAttribute("userId");
+    	storeup.setUserid(userId);
+    	StoreupEntity exist = storeupService.selectOne(new EntityWrapper<StoreupEntity>()
+    			.eq("userid", userId)
+    			.eq("refid", storeup.getRefid())
+    			.eq("tablename", storeup.getTablename()));
+    	if(exist != null) {
+    		return R.error("宸叉敹钘忥紝璇峰嬁閲嶅鎿嶄綔");
+    	}
         storeupService.insert(storeup);
         return R.ok();
     }
