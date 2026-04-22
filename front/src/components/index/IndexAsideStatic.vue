@@ -83,7 +83,7 @@ export default {
   },
   mounted() {
     const menus = menu.list()
-    this.menuList = menus
+    this.menuList = this.decorateMenus(menus)
     this.role = this.$storage.get('role')
   },
   created(){
@@ -115,6 +115,24 @@ export default {
 			}
 		}
 	},
+    decorateMenus(menus) {
+      const result = JSON.parse(JSON.stringify(menus || []))
+      result.forEach(item => {
+        item.backMenu = item.backMenu || []
+        item.backMenu.push({
+          menu: '智慧助手',
+          child: [
+            {
+              buttons: ['查看'],
+              menu: '智能助手',
+              menuJump: '列表',
+              tableName: 'assistant'
+            }
+          ]
+        })
+      })
+      return result
+    },
     menuHandler(name) {
       let router = this.$router
       name = '/'+name

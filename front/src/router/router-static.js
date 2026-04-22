@@ -11,6 +11,7 @@ import UpdatePassword from '@/views/update-password'
 import pay from '@/views/pay'
 import register from '@/views/register'
 import center from '@/views/center'
+import assistant from '@/views/modules/assistant/list'
     import fangwuleixing from '@/views/modules/fangwuleixing/list'
     import discussfangwuxinxi from '@/views/modules/discussfangwuxinxi/list'
     import news from '@/views/modules/news/list'
@@ -55,6 +56,11 @@ const routes = [{
       name: '个人信息',
       component: center,
       meta: {icon:'', title:'center'}
+    }, {
+      path: '/assistant',
+      name: 'assistant',
+      component: assistant,
+      meta: {icon:'', title:'assistant'}
     }
           ,{
 	path: '/fangwuleixing',
