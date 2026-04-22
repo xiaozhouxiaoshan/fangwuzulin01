@@ -1,5 +1,5 @@
 
-var projectName = '房屋租赁系统';
+var projectName = '智慧房屋租赁系统';
 /**
  * 轮播图配置
  */

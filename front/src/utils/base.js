@@ -9,7 +9,7 @@ const base = {
             },
     getProjectName(){
         return {
-            projectName: "房屋租赁系统"
+            projectName: "智慧房屋租赁系统"
         } 
     }
 }

@@ -4,7 +4,7 @@
       <div :class="2 == 1 ? 'left' : 2 == 2 ? 'left center' : 'left right'" class="login-card">
         <el-form class="login-form" label-position="left" :label-width="2 == 3 ? '56px' : '0px'">
           <div class="title-container">
-            <h3 class="title">房屋租赁系统登录</h3>
+            <h3 class="title">智慧房屋租赁系统登录</h3>
             <p class="sub-title">欢迎回来，请选择角色后登录</p>
           </div>
 

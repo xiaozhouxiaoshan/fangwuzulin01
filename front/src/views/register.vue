@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="container">
-      <div class="login-form" style="backgroundColor:rgba(183, 174, 174, 0.5);borderRadius:22px">
-        <h1 class="h1" style="color:#000;fontSize:28px;">房屋租赁系统注册</h1>
+      <div class="login-form register-card">
+        <h1 class="h1">智慧房屋租赁系统注册</h1>
 		<el-form ref="rgsForm" class="rgs-form" :model="rgsForm" label-width="120px">
 															<!-- <div v-if="tableName=='yonghu'" class="input-group">
 			   <div class="label">用户名</div>
@@ -103,7 +103,10 @@
 			<el-form-item label="身份证" class="input" v-if="tableName=='fangzhu'">
 			  <el-input v-model="ruleForm.shenfenzheng" autocomplete="off" placeholder="身份证" type="text" />
 			</el-form-item>
-																																																																																													<el-button class="btn" type="primary" @click="login()">注册</el-button>
+																																																																																													<div class="action-group">
+																																																																																													  <el-button class="btn btn-back" @click="goLogin()">返回登录</el-button>
+																																																																																													  <el-button class="btn" type="primary" @click="login()">注册</el-button>
+																																																																																													</div>
 		</el-form>
       </div>
       <!-- <div class="nk-navigation">
@@ -189,6 +192,9 @@ export default {
           this.$message.error(data.msg);
         }
       });
+    },
+    goLogin() {
+      this.$router.replace({ path: "/login" });
     }
   }
 };
@@ -352,70 +358,143 @@ export default {
 	}
 	
 	.container {
-		background-image: linear-gradient(180deg, rgba(246, 248, 250, 0.92), rgba(246, 248, 250, 0.92)), url("~@/assets/img/bg.jpg");
-		height: 100vh;
+		min-height: 100vh;
+		padding: 24px 16px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-image: linear-gradient(135deg, rgba(246, 249, 253, 0.92), rgba(236, 243, 252, 0.88)), url("~@/assets/img/bg.jpg");
 		background-position: center center;
 		background-size: cover;
 		background-repeat: no-repeat;
 	
 		.login-form {
-			right: 50%;
-			top: 50%;
-			height: auto;
-			transform: translate3d(50%, -50%, 0);
-			border-radius: 16px;
-			background-color: rgba(255,255,255,.92);
-			box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
-			width: 420px;
-			padding: 30px 30px 40px 30px;
+			width: 520px;
+			max-width: 100%;
+			max-height: calc(100vh - 48px);
+			padding: 32px 28px 28px;
+			overflow-y: auto;
 			font-size: 14px;
 			font-weight: 500;
+			box-sizing: border-box;
+			
+			&.register-card {
+				border-radius: 20px;
+				background-color: rgba(255,255,255,.94);
+				border: 1px solid rgba(148, 163, 184, 0.25);
+				box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+				backdrop-filter: blur(4px);
+			}
 			
 			.h1 {
-				margin: 0;
+				margin: 0 0 18px;
 				text-align: center;
-				line-height: 54px;
-			    font-size: 24px;
-			    color: #000;
+				line-height: 1.4;
+			    font-size: 28px;
+			    color: #1d4d8f;
+				font-weight: 700;
 			}
 				
 			.rgs-form {
 				display: flex;
 				flex-direction: column;
-				justify-content: center;
-				align-items: center;
+				align-items: stretch;
 				
 				.input {
 					width: 100%;
+					margin-bottom: 18px;
 					
 					::v-deep .el-form-item__label {
 						line-height: 40px;
-						color: rgba(17, 16, 16, 1);
-						font-size: #606266;
+						color: #334155;
+						font-size: 14px;
+						font-weight: 500;
+					}
+					
+					::v-deep .el-form-item__content {
+						width: auto;
+					}
+					
+					::v-deep .el-input,
+					::v-deep .el-input__inner {
+						width: 100%;
 					}
 					
 					::v-deep .el-input__inner {
-						height: 40px;
-						color: rgba(23, 24, 26, 1);
+						height: 42px;
+						color: #1f2937;
 						font-size: 14px;
 						border-width: 1px;
 						border-style: solid;
-						border-color: #606266;
-						border-radius: 22px;
+						border-color: rgba(148, 163, 184, 0.5);
+						border-radius: 21px;
 						background-color: #fff;
+						transition: all .2s ease;
+					}
+					
+					::v-deep .el-input__inner:focus {
+						border-color: #409EFF;
+						box-shadow: 0 0 0 3px rgba(64, 158, 255, 0.16);
 					}
 				}
 				
 				.btn {
-					width: 88px;
+					min-width: 120px;
 					height: 44px;
+					padding: 0 28px;
 					color: #fff;
-					font-size: 14px;
+					font-size: 15px;
+					font-weight: 600;
 					border-width: 1px;
 					border-style: solid;
 					border-color: #409EFF;
 					border-radius: 22px;
 					background-color: #409EFF;
+					box-shadow: 0 10px 20px rgba(64, 158, 255, 0.24);
+				}
+
+				.action-group {
+					margin-top: 10px;
+					display: flex;
+					justify-content: center;
+					gap: 12px;
+					flex-wrap: wrap;
+				}
+
+				.btn-back {
+					color: #409EFF;
+					border-color: rgba(64, 158, 255, 0.5);
+					background-color: rgba(255, 255, 255, 0.96);
+					box-shadow: none;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		.container {
+			padding: 16px;
+
+			.login-form {
+				max-height: calc(100vh - 32px);
+				padding: 24px 18px 22px;
+
+				.h1 {
+					font-size: 24px;
+				}
+
+				.rgs-form {
+					.action-group {
+						gap: 10px;
+					}
+
+					.btn {
+						flex: 1 1 140px;
+					}
+
+					::v-deep .el-form-item__label {
+						width: 88px !important;
+					}
 				}
 			}
 		}
