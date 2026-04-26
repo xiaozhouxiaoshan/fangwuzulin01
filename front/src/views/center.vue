@@ -8,32 +8,32 @@
     >  
      <el-row>
                               <el-col :span="12">
-        <el-form-item   v-if="flag=='yonghu'"  label="用户名" prop="yonghuming">
-          <el-input v-model="ruleForm.yonghuming" readonly              placeholder="用户名" clearable></el-input>
+        <el-form-item   v-if="flag=='tenant'"  label="用户名" prop="tenantming">
+          <el-input v-model="ruleForm.tenantming" readonly              placeholder="用户名" clearable></el-input>
         </el-form-item>
       </el-col>
                                           <el-col :span="12">
-        <el-form-item   v-if="flag=='yonghu'"  label="姓名" prop="xingming">
+        <el-form-item   v-if="flag=='tenant'"  label="姓名" prop="xingming">
           <el-input v-model="ruleForm.xingming"               placeholder="姓名" clearable></el-input>
         </el-form-item>
       </el-col>
                         <el-col :span="24">  
-        <el-form-item v-if="flag=='yonghu'" label="头像" prop="touxiang">
+        <el-form-item v-if="flag=='tenant'" label="头像" prop="touxiang">
           <file-upload
           tip="点击上传头像"
           action="file/upload"
           :limit="3"
           :multiple="true"
           :fileUrls="ruleForm.touxiang?ruleForm.touxiang:''"
-          @change="yonghutouxiangUploadChange"
+          @change="tenanttouxiangUploadChange"
           ></file-upload>
         </el-form-item>
       </el-col>
                         <el-col :span="12">
-        <el-form-item v-if="flag=='yonghu'"  label="性别" prop="xingbie">
+        <el-form-item v-if="flag=='tenant'"  label="性别" prop="xingbie">
           <el-select v-model="ruleForm.xingbie" placeholder="请选择性别">
             <el-option
-                v-for="(item,index) in yonghuxingbieOptions"
+                v-for="(item,index) in tenantxingbieOptions"
                 v-bind:key="index"
                 :label="item"
                 :value="item">
@@ -42,35 +42,35 @@
         </el-form-item>
       </el-col>
                         <el-col :span="12">
-        <el-form-item   v-if="flag=='yonghu'"  label="职业" prop="zhiye">
+        <el-form-item   v-if="flag=='tenant'"  label="职业" prop="zhiye">
           <el-input v-model="ruleForm.zhiye"               placeholder="职业" clearable></el-input>
         </el-form-item>
       </el-col>
                         <el-col :span="12">
-        <el-form-item   v-if="flag=='yonghu'"  label="联系电话" prop="lianxidianhua">
+        <el-form-item   v-if="flag=='tenant'"  label="联系电话" prop="lianxidianhua">
           <el-input v-model="ruleForm.lianxidianhua"               placeholder="联系电话" clearable></el-input>
         </el-form-item>
       </el-col>
                         <el-col :span="12">
-        <el-form-item   v-if="flag=='yonghu'"  label="身份证" prop="shenfenzheng">
+        <el-form-item   v-if="flag=='tenant'"  label="身份证" prop="shenfenzheng">
           <el-input v-model="ruleForm.shenfenzheng"               placeholder="身份证" clearable></el-input>
         </el-form-item>
       </el-col>
                                                 <el-col :span="12">
-        <el-form-item   v-if="flag=='fangzhu'"  label="房主账号" prop="fangzhuzhanghao">
-          <el-input v-model="ruleForm.fangzhuzhanghao" readonly              placeholder="房主账号" clearable></el-input>
+        <el-form-item   v-if="flag=='landlord'"  label="房主账号" prop="landlordzhanghao">
+          <el-input v-model="ruleForm.landlordzhanghao" readonly              placeholder="房主账号" clearable></el-input>
         </el-form-item>
       </el-col>
                                           <el-col :span="12">
-        <el-form-item   v-if="flag=='fangzhu'"  label="房主姓名" prop="fangzhuxingming">
-          <el-input v-model="ruleForm.fangzhuxingming"               placeholder="房主姓名" clearable></el-input>
+        <el-form-item   v-if="flag=='landlord'"  label="房主姓名" prop="landlordxingming">
+          <el-input v-model="ruleForm.landlordxingming"               placeholder="房主姓名" clearable></el-input>
         </el-form-item>
       </el-col>
                         <el-col :span="12">
-        <el-form-item v-if="flag=='fangzhu'"  label="性别" prop="xingbie">
+        <el-form-item v-if="flag=='landlord'"  label="性别" prop="xingbie">
           <el-select v-model="ruleForm.xingbie" placeholder="请选择性别">
             <el-option
-                v-for="(item,index) in fangzhuxingbieOptions"
+                v-for="(item,index) in landlordxingbieOptions"
                 v-bind:key="index"
                 :label="item"
                 :value="item">
@@ -79,28 +79,28 @@
         </el-form-item>
       </el-col>
                         <el-col :span="24">  
-        <el-form-item v-if="flag=='fangzhu'" label="头像" prop="touxiang">
+        <el-form-item v-if="flag=='landlord'" label="头像" prop="touxiang">
           <file-upload
           tip="点击上传头像"
           action="file/upload"
           :limit="3"
           :multiple="true"
           :fileUrls="ruleForm.touxiang?ruleForm.touxiang:''"
-          @change="fangzhutouxiangUploadChange"
+          @change="landlordtouxiangUploadChange"
           ></file-upload>
         </el-form-item>
       </el-col>
                         <el-col :span="12">
-        <el-form-item   v-if="flag=='fangzhu'"  label="手机" prop="shouji">
+        <el-form-item   v-if="flag=='landlord'"  label="手机" prop="shouji">
           <el-input v-model="ruleForm.shouji"               placeholder="手机" clearable></el-input>
         </el-form-item>
       </el-col>
                         <el-col :span="12">
-        <el-form-item   v-if="flag=='fangzhu'"  label="身份证" prop="shenfenzheng">
+        <el-form-item   v-if="flag=='landlord'"  label="身份证" prop="shenfenzheng">
           <el-input v-model="ruleForm.shenfenzheng"               placeholder="身份证" clearable></el-input>
         </el-form-item>
       </el-col>
-                                                                                                                                                                                          <el-form-item v-if="flag=='users'" label="用户名" prop="username">
+                                                                                                                                                                                          <el-form-item v-if="flag=='adminUser'" label="用户名" prop="username">
         <el-input v-model="ruleForm.username" 
         placeholder="用户名"></el-input>
       </el-form-item>
@@ -123,8 +123,8 @@ export default {
       ruleForm: {},
       flag: '',
       usersFlag: false,
-                                                                              yonghuxingbieOptions: [],
-                                                                                                                        fangzhuxingbieOptions: [],
+                                                                              tenantxingbieOptions: [],
+                                                                                                                        landlordxingbieOptions: [],
                                                                                                                                                                                                                             };
   },
   mounted() {
@@ -140,50 +140,50 @@ export default {
         this.$message.error(data.msg);
       }
     });
-                                                    this.yonghuxingbieOptions = "男,女".split(',')
-                                                                                this.fangzhuxingbieOptions = "男,女".split(',')
+                                                    this.tenantxingbieOptions = "男,女".split(',')
+                                                                                this.landlordxingbieOptions = "男,女".split(',')
                                                                                                                                                   },
   methods: {
-                                                                                                                                                                                                                                                                                                                yonghutouxiangUploadChange(fileUrls) {
+                                                                                                                                                                                                                                                                                                                tenanttouxiangUploadChange(fileUrls) {
         this.ruleForm.touxiang = fileUrls;
     },
-                                                                                                fangzhutouxiangUploadChange(fileUrls) {
+                                                                                                landlordtouxiangUploadChange(fileUrls) {
         this.ruleForm.touxiang = fileUrls;
     },
                                                                                                                                             onUpdateHandler() {
-                              if((!this.ruleForm.yonghuming)&& 'yonghu'==this.flag){
+                              if((!this.ruleForm.tenantming)&& 'tenant'==this.flag){
         this.$message.error('用户名不能为空');
         return
       }
-                                                                  if((!this.ruleForm.mima)&& 'yonghu'==this.flag){
+                                                                  if((!this.ruleForm.mima)&& 'tenant'==this.flag){
         this.$message.error('密码不能为空');
         return
       }
-                                                                                                                                                                                                                                                                                                                  if( 'yonghu' ==this.flag && this.ruleForm.lianxidianhua&&(!isMobile(this.ruleForm.lianxidianhua))){
+                                                                                                                                                                                                                                                                                                                  if( 'tenant' ==this.flag && this.ruleForm.lianxidianhua&&(!isMobile(this.ruleForm.lianxidianhua))){
         this.$message.error(`联系电话应输入手机格式`);
         return
       }
-                                                                              if( 'yonghu' ==this.flag && this.ruleForm.shenfenzheng&&(!checkIdCard(this.ruleForm.shenfenzheng))){
+                                                                              if( 'tenant' ==this.flag && this.ruleForm.shenfenzheng&&(!checkIdCard(this.ruleForm.shenfenzheng))){
         this.$message.error(`身份证应输入身份证格式`);
         return
       }
-                                                      if((!this.ruleForm.fangzhuzhanghao)&& 'fangzhu'==this.flag){
+                                                      if((!this.ruleForm.landlordzhanghao)&& 'landlord'==this.flag){
         this.$message.error('房主账号不能为空');
         return
       }
-                                                                  if((!this.ruleForm.mima)&& 'fangzhu'==this.flag){
+                                                                  if((!this.ruleForm.mima)&& 'landlord'==this.flag){
         this.$message.error('密码不能为空');
         return
       }
-                                                                  if((!this.ruleForm.fangzhuxingming)&& 'fangzhu'==this.flag){
+                                                                  if((!this.ruleForm.landlordxingming)&& 'landlord'==this.flag){
         this.$message.error('房主姓名不能为空');
         return
       }
-                                                                                                                                                                                                      if( 'fangzhu' ==this.flag && this.ruleForm.shouji&&(!isMobile(this.ruleForm.shouji))){
+                                                                                                                                                                                                      if( 'landlord' ==this.flag && this.ruleForm.shouji&&(!isMobile(this.ruleForm.shouji))){
         this.$message.error(`手机应输入手机格式`);
         return
       }
-                                                                              if( 'fangzhu' ==this.flag && this.ruleForm.shenfenzheng&&(!checkIdCard(this.ruleForm.shenfenzheng))){
+                                                                              if( 'landlord' ==this.flag && this.ruleForm.shenfenzheng&&(!checkIdCard(this.ruleForm.shenfenzheng))){
         this.$message.error(`身份证应输入身份证格式`);
         return
       }

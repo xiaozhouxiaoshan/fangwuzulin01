@@ -11,7 +11,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.dao.ConfigDao;
 import com.entity.ConfigEntity;
-import com.entity.UserEntity;
+import com.entity.AdminUserEntity;
 import com.service.ConfigService;
 import com.utils.PageUtils;
 import com.utils.Query;

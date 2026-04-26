@@ -43,7 +43,7 @@
           <el-button type="primary" @click="login()" class="loginInBt">登录</el-button>
 
           <el-form-item class="setting">
-            <div class="register" @click="register('fangzhu')">注册房主</div>
+            <div class="register" @click="register('landlord')">注册房主</div>
           </el-form-item>
         </el-form>
       </div>

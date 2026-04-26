@@ -30649,13 +30649,13 @@
         ], _a[attachedToDom()] = [
           'scroll-lock',
           'reflecting',
-          'messages',
+          'messageBoard',
           'dialog-events',
           'alloy.base.behaviour'
         ], _a[detachedFromDom()] = [
           'alloy.base.behaviour',
           'dialog-events',
-          'messages',
+          'messageBoard',
           'reflecting',
           'scroll-lock'
         ], _a)
@@ -30938,7 +30938,7 @@
       var iframeDomain = iframeUri.protocol + '://' + iframeUri.host + (iframeUri.port ? ':' + iframeUri.port : '');
       var messageHandlerUnbinder = Cell(Option.none());
       var extraBehaviours = [
-        config('messages', [
+        config('messageBoard', [
           runOnAttached(function () {
             var unbind = bind$3(Element.fromDom(domGlobals.window), 'message', function (e) {
               if (iframeUri.isSameOrigin(new global$g(e.raw().origin))) {

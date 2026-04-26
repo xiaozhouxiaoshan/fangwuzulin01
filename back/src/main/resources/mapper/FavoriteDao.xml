@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.FavoriteDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.FavoriteEntity" id="favoriteMap">
+        <result property="userid" column="userid"/>
+        <result property="refid" column="refid"/>
+        <result property="tablename" column="tablename"/>
+        <result property="name" column="name"/>
+        <result property="picture" column="picture"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.FavoriteVO" >
+		SELECT * FROM favorite  favorite         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.FavoriteVO" >
+		SELECT  favorite.* FROM favorite  favorite 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.FavoriteView" >
+
+		SELECT  favorite.* FROM favorite  favorite 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.FavoriteView" >
+		SELECT * FROM favorite  favorite <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>

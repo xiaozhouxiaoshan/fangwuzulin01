@@ -1,20 +1,20 @@
 package com.controller;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.entity.FangwubaoxiuEntity;
-import com.entity.FangwuxinxiEntity;
-import com.entity.HetongxinxiEntity;
-import com.entity.WeixiuchuliEntity;
-import com.entity.YonghuEntity;
-import com.entity.YuyuekanfangEntity;
-import com.entity.FangzhuEntity;
-import com.service.FangwubaoxiuService;
-import com.service.FangwuxinxiService;
-import com.service.HetongxinxiService;
-import com.service.WeixiuchuliService;
-import com.service.YonghuService;
-import com.service.YuyuekanfangService;
-import com.service.FangzhuService;
+import com.entity.HouseRepairEntity;
+import com.entity.HouseListingEntity;
+import com.entity.RentalContractEntity;
+import com.entity.RepairHandlingEntity;
+import com.entity.TenantEntity;
+import com.entity.ViewingAppointmentEntity;
+import com.entity.LandlordEntity;
+import com.service.HouseRepairService;
+import com.service.HouseListingService;
+import com.service.RentalContractService;
+import com.service.RepairHandlingService;
+import com.service.TenantService;
+import com.service.ViewingAppointmentService;
+import com.service.LandlordService;
 import com.utils.R;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,25 +43,25 @@ import java.util.regex.Pattern;
 public class AssistantController {
 
     @Autowired
-    private FangwuxinxiService fangwuxinxiService;
+    private HouseListingService houseListingService;
 
     @Autowired
-    private YuyuekanfangService yuyuekanfangService;
+    private ViewingAppointmentService viewingAppointmentService;
 
     @Autowired
-    private HetongxinxiService hetongxinxiService;
+    private RentalContractService rentalContractService;
 
     @Autowired
-    private FangwubaoxiuService fangwubaoxiuService;
+    private HouseRepairService houseRepairService;
 
     @Autowired
-    private WeixiuchuliService weixiuchuliService;
+    private RepairHandlingService repairHandlingService;
 
     @Autowired
-    private YonghuService yonghuService;
+    private TenantService tenantService;
 
     @Autowired
-    private FangzhuService fangzhuService;
+    private LandlordService landlordService;
 
     @RequestMapping("/chat")
     public R chat(@RequestBody Map<String, String> payload, HttpServletRequest request) {
@@ -78,9 +78,9 @@ public class AssistantController {
         String message = payload == null ? "" : StringUtils.defaultString(payload.get("message")).trim();
 
         Map<String, Object> data;
-        if ("yonghu".equals(tableName)) {
+        if ("tenant".equals(tableName)) {
             data = tenantReply(message, username, role);
-        } else if ("fangzhu".equals(tableName)) {
+        } else if ("landlord".equals(tableName)) {
             data = landlordReply(message, username, role);
         } else {
             data = adminReply(message, role);
@@ -168,18 +168,18 @@ public class AssistantController {
     }
 
     private Map<String, Object> buildTenantHouseReply(String message, String username, String role) {
-        List<FangwuxinxiEntity> houses = fangwuxinxiService.selectList(
-                new EntityWrapper<FangwuxinxiEntity>().eq("fangwuzhuangtai", "可租")
+        List<HouseListingEntity> houses = houseListingService.selectList(
+                new EntityWrapper<HouseListingEntity>().eq("fangwuzhuangtai", "可租")
         );
 
         String houseType = detectHouseType(message);
         String xiaoqu = detectXiaoqu(message, houses);
         Integer budget = detectBudget(message);
 
-        List<FangwuxinxiEntity> filtered = new ArrayList<FangwuxinxiEntity>();
-        for (FangwuxinxiEntity house : houses) {
+        List<HouseListingEntity> filtered = new ArrayList<HouseListingEntity>();
+        for (HouseListingEntity house : houses) {
             boolean matched = true;
-            if (StringUtils.isNotBlank(houseType) && !houseType.equals(house.getFangwuleixing())) {
+            if (StringUtils.isNotBlank(houseType) && !houseType.equals(house.getHouseType())) {
                 matched = false;
             }
             if (StringUtils.isNotBlank(xiaoqu) && !xiaoqu.equals(house.getXiaoqu())) {
@@ -199,9 +199,9 @@ public class AssistantController {
         }
 
         final Integer finalBudget = budget;
-        Collections.sort(filtered, new Comparator<FangwuxinxiEntity>() {
+        Collections.sort(filtered, new Comparator<HouseListingEntity>() {
             @Override
-            public int compare(FangwuxinxiEntity o1, FangwuxinxiEntity o2) {
+            public int compare(HouseListingEntity o1, HouseListingEntity o2) {
                 int p1 = o1.getYuezujiage() == null ? Integer.MAX_VALUE : o1.getYuezujiage();
                 int p2 = o2.getYuezujiage() == null ? Integer.MAX_VALUE : o2.getYuezujiage();
                 if (finalBudget == null) {
@@ -214,19 +214,19 @@ public class AssistantController {
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(filtered.size(), 3);
         for (int i = 0; i < size; i++) {
-            FangwuxinxiEntity house = filtered.get(i);
+            HouseListingEntity house = filtered.get(i);
             cards.add(buildCard(
                     house.getFangwumingcheng(),
-                    house.getXiaoqu() + " | " + house.getFangwuleixing() + " | " + safePrice(house.getYuezujiage()) + "元/月",
+                    house.getXiaoqu() + " | " + house.getHouseType() + " | " + safePrice(house.getYuezujiage()) + "元/月",
                     StringUtils.defaultIfBlank(house.getFangwusheshi(), "配套待补充")
             ));
         }
 
-        long appointmentCount = yuyuekanfangService.selectCount(
-                new EntityWrapper<YuyuekanfangEntity>().eq("yonghuming", username)
+        long appointmentCount = viewingAppointmentService.selectCount(
+                new EntityWrapper<ViewingAppointmentEntity>().eq("tenantming", username)
         );
-        long contractCount = hetongxinxiService.selectCount(
-                new EntityWrapper<HetongxinxiEntity>().eq("yonghuming", username)
+        long contractCount = rentalContractService.selectCount(
+                new EntityWrapper<RentalContractEntity>().eq("tenantming", username)
         );
 
         StringBuilder reply = new StringBuilder("我先按你的租房场景做了一轮筛选。");
@@ -246,13 +246,13 @@ public class AssistantController {
     }
 
     private Map<String, Object> buildTenantAppointmentReply(String username, String role) {
-        List<YuyuekanfangEntity> appointments = yuyuekanfangService.selectList(
-                new EntityWrapper<YuyuekanfangEntity>().eq("yonghuming", username)
+        List<ViewingAppointmentEntity> appointments = viewingAppointmentService.selectList(
+                new EntityWrapper<ViewingAppointmentEntity>().eq("tenantming", username)
         );
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(appointments.size(), 3);
         for (int i = 0; i < size; i++) {
-            YuyuekanfangEntity item = appointments.get(i);
+            ViewingAppointmentEntity item = appointments.get(i);
             cards.add(buildCard(
                     item.getFangwumingcheng(),
                     "预约时间：" + formatDateTime(item.getYuyueshijian()),
@@ -263,13 +263,13 @@ public class AssistantController {
     }
 
     private Map<String, Object> buildTenantContractReply(String username, String role) {
-        List<HetongxinxiEntity> contracts = hetongxinxiService.selectList(
-                new EntityWrapper<HetongxinxiEntity>().eq("yonghuming", username)
+        List<RentalContractEntity> contracts = rentalContractService.selectList(
+                new EntityWrapper<RentalContractEntity>().eq("tenantming", username)
         );
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(contracts.size(), 3);
         for (int i = 0; i < size; i++) {
-            HetongxinxiEntity item = contracts.get(i);
+            RentalContractEntity item = contracts.get(i);
             cards.add(buildCard(
                     defaultValue(item.getHetongbianhao()),
                     item.getFangwumingcheng() + " | 合同金额：" + defaultValue(item.getHetongjine()),
@@ -280,13 +280,13 @@ public class AssistantController {
     }
 
     private Map<String, Object> buildTenantRepairReply(String username, String role) {
-        List<FangwubaoxiuEntity> repairs = fangwubaoxiuService.selectList(
-                new EntityWrapper<FangwubaoxiuEntity>().eq("yonghuming", username)
+        List<HouseRepairEntity> repairs = houseRepairService.selectList(
+                new EntityWrapper<HouseRepairEntity>().eq("tenantming", username)
         );
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(repairs.size(), 3);
         for (int i = 0; i < size; i++) {
-            FangwubaoxiuEntity item = repairs.get(i);
+            HouseRepairEntity item = repairs.get(i);
             cards.add(buildCard(
                     defaultValue(item.getBaoxiumingcheng()),
                     item.getFangwumingcheng() + " | 报修日期：" + formatDate(item.getBaoxiuriqi()),
@@ -297,20 +297,20 @@ public class AssistantController {
     }
 
     private Map<String, Object> buildLandlordTodoReply(String username, String role) {
-        long houseCount = fangwuxinxiService.selectCount(
-                new EntityWrapper<FangwuxinxiEntity>().eq("fangzhuzhanghao", username)
+        long houseCount = houseListingService.selectCount(
+                new EntityWrapper<HouseListingEntity>().eq("landlordzhanghao", username)
         );
-        long pendingAppointments = yuyuekanfangService.selectCount(
-                new EntityWrapper<YuyuekanfangEntity>().eq("fangzhuzhanghao", username).eq("sfsh", "否")
+        long pendingAppointments = viewingAppointmentService.selectCount(
+                new EntityWrapper<ViewingAppointmentEntity>().eq("landlordzhanghao", username).eq("sfsh", "否")
         );
-        long pendingContracts = hetongxinxiService.selectCount(
-                new EntityWrapper<HetongxinxiEntity>().eq("fangzhuzhanghao", username).eq("sfsh", "否")
+        long pendingContracts = rentalContractService.selectCount(
+                new EntityWrapper<RentalContractEntity>().eq("landlordzhanghao", username).eq("sfsh", "否")
         );
-        long unpaidContracts = hetongxinxiService.selectCount(
-                new EntityWrapper<HetongxinxiEntity>().eq("fangzhuzhanghao", username).eq("ispay", "未支付")
+        long unpaidContracts = rentalContractService.selectCount(
+                new EntityWrapper<RentalContractEntity>().eq("landlordzhanghao", username).eq("ispay", "未支付")
         );
-        long unfinishedRepairs = weixiuchuliService.selectCount(
-                new EntityWrapper<WeixiuchuliEntity>().eq("fangzhuzhanghao", username).ne("weixiujindu", "已完成")
+        long unfinishedRepairs = repairHandlingService.selectCount(
+                new EntityWrapper<RepairHandlingEntity>().eq("landlordzhanghao", username).ne("weixiujindu", "已完成")
         );
 
         List<Map<String, String>> cards = buildQuickCards(new String[][]{
@@ -326,16 +326,16 @@ public class AssistantController {
     }
 
     private Map<String, Object> buildLandlordHouseReply(String username, String role) {
-        List<FangwuxinxiEntity> houses = fangwuxinxiService.selectList(
-                new EntityWrapper<FangwuxinxiEntity>().eq("fangzhuzhanghao", username)
+        List<HouseListingEntity> houses = houseListingService.selectList(
+                new EntityWrapper<HouseListingEntity>().eq("landlordzhanghao", username)
         );
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(houses.size(), 3);
         for (int i = 0; i < size; i++) {
-            FangwuxinxiEntity item = houses.get(i);
+            HouseListingEntity item = houses.get(i);
             cards.add(buildCard(
                     item.getFangwumingcheng(),
-                    item.getXiaoqu() + " | " + item.getFangwuleixing(),
+                    item.getXiaoqu() + " | " + item.getHouseType(),
                     "状态：" + defaultValue(item.getFangwuzhuangtai()) + " | 月租：" + safePrice(item.getYuezujiage()) + "元"
             ));
         }
@@ -343,13 +343,13 @@ public class AssistantController {
     }
 
     private Map<String, Object> buildLandlordAppointmentReply(String username, String role) {
-        List<YuyuekanfangEntity> appointments = yuyuekanfangService.selectList(
-                new EntityWrapper<YuyuekanfangEntity>().eq("fangzhuzhanghao", username)
+        List<ViewingAppointmentEntity> appointments = viewingAppointmentService.selectList(
+                new EntityWrapper<ViewingAppointmentEntity>().eq("landlordzhanghao", username)
         );
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(appointments.size(), 3);
         for (int i = 0; i < size; i++) {
-            YuyuekanfangEntity item = appointments.get(i);
+            ViewingAppointmentEntity item = appointments.get(i);
             cards.add(buildCard(
                     item.getFangwumingcheng(),
                     "租客：" + defaultValue(item.getXingming()) + " | 预约时间：" + formatDateTime(item.getYuyueshijian()),
@@ -360,16 +360,16 @@ public class AssistantController {
     }
 
     private Map<String, Object> buildLandlordContractReply(String username, String role) {
-        List<HetongxinxiEntity> contracts = hetongxinxiService.selectList(
-                new EntityWrapper<HetongxinxiEntity>().eq("fangzhuzhanghao", username)
+        List<RentalContractEntity> contracts = rentalContractService.selectList(
+                new EntityWrapper<RentalContractEntity>().eq("landlordzhanghao", username)
         );
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(contracts.size(), 3);
         for (int i = 0; i < size; i++) {
-            HetongxinxiEntity item = contracts.get(i);
+            RentalContractEntity item = contracts.get(i);
             cards.add(buildCard(
                     defaultValue(item.getHetongbianhao()),
-                    item.getFangwumingcheng() + " | 租客：" + defaultValue(item.getYonghuming()),
+                    item.getFangwumingcheng() + " | 租客：" + defaultValue(item.getTenantming()),
                     "审核：" + defaultValue(item.getSfsh()) + " | 支付：" + defaultValue(item.getIspay())
             ));
         }
@@ -377,13 +377,13 @@ public class AssistantController {
     }
 
     private Map<String, Object> buildLandlordRepairReply(String username, String role) {
-        List<WeixiuchuliEntity> repairs = weixiuchuliService.selectList(
-                new EntityWrapper<WeixiuchuliEntity>().eq("fangzhuzhanghao", username)
+        List<RepairHandlingEntity> repairs = repairHandlingService.selectList(
+                new EntityWrapper<RepairHandlingEntity>().eq("landlordzhanghao", username)
         );
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(repairs.size(), 3);
         for (int i = 0; i < size; i++) {
-            WeixiuchuliEntity item = repairs.get(i);
+            RepairHandlingEntity item = repairs.get(i);
             cards.add(buildCard(
                     defaultValue(item.getBaoxiumingcheng()),
                     item.getFangwumingcheng() + " | 更新日期：" + formatDate(item.getGengxinriqi()),
@@ -394,12 +394,12 @@ public class AssistantController {
     }
 
     private Map<String, Object> buildAdminOverviewReply(String role) {
-        long userCount = yonghuService.selectCount(new EntityWrapper<YonghuEntity>());
-        long landlordCount = fangzhuService.selectCount(new EntityWrapper<FangzhuEntity>());
-        long houseCount = fangwuxinxiService.selectCount(new EntityWrapper<FangwuxinxiEntity>());
-        long appointmentCount = yuyuekanfangService.selectCount(new EntityWrapper<YuyuekanfangEntity>());
-        long contractCount = hetongxinxiService.selectCount(new EntityWrapper<HetongxinxiEntity>());
-        long repairCount = fangwubaoxiuService.selectCount(new EntityWrapper<FangwubaoxiuEntity>());
+        long userCount = tenantService.selectCount(new EntityWrapper<TenantEntity>());
+        long landlordCount = landlordService.selectCount(new EntityWrapper<LandlordEntity>());
+        long houseCount = houseListingService.selectCount(new EntityWrapper<HouseListingEntity>());
+        long appointmentCount = viewingAppointmentService.selectCount(new EntityWrapper<ViewingAppointmentEntity>());
+        long contractCount = rentalContractService.selectCount(new EntityWrapper<RentalContractEntity>());
+        long repairCount = houseRepairService.selectCount(new EntityWrapper<HouseRepairEntity>());
 
         List<Map<String, String>> cards = buildQuickCards(new String[][]{
                 {"租客总数", String.valueOf(userCount)},
@@ -413,14 +413,14 @@ public class AssistantController {
     }
 
     private Map<String, Object> buildAdminPendingReply(String role) {
-        long pendingAppointments = yuyuekanfangService.selectCount(
-                new EntityWrapper<YuyuekanfangEntity>().eq("sfsh", "否")
+        long pendingAppointments = viewingAppointmentService.selectCount(
+                new EntityWrapper<ViewingAppointmentEntity>().eq("sfsh", "否")
         );
-        long pendingContracts = hetongxinxiService.selectCount(
-                new EntityWrapper<HetongxinxiEntity>().eq("sfsh", "否")
+        long pendingContracts = rentalContractService.selectCount(
+                new EntityWrapper<RentalContractEntity>().eq("sfsh", "否")
         );
-        long unpaidContracts = hetongxinxiService.selectCount(
-                new EntityWrapper<HetongxinxiEntity>().eq("ispay", "未支付")
+        long unpaidContracts = rentalContractService.selectCount(
+                new EntityWrapper<RentalContractEntity>().eq("ispay", "未支付")
         );
         List<Map<String, String>> cards = buildQuickCards(new String[][]{
                 {"待审核预约", String.valueOf(pendingAppointments)},
@@ -431,12 +431,12 @@ public class AssistantController {
     }
 
     private Map<String, Object> buildAdminRepairReply(String role) {
-        long repairApplyCount = fangwubaoxiuService.selectCount(new EntityWrapper<FangwubaoxiuEntity>());
-        long unfinishedRepair = weixiuchuliService.selectCount(
-                new EntityWrapper<WeixiuchuliEntity>().ne("weixiujindu", "已完成")
+        long repairApplyCount = houseRepairService.selectCount(new EntityWrapper<HouseRepairEntity>());
+        long unfinishedRepair = repairHandlingService.selectCount(
+                new EntityWrapper<RepairHandlingEntity>().ne("weixiujindu", "已完成")
         );
-        long finishedRepair = weixiuchuliService.selectCount(
-                new EntityWrapper<WeixiuchuliEntity>().eq("weixiujindu", "已完成")
+        long finishedRepair = repairHandlingService.selectCount(
+                new EntityWrapper<RepairHandlingEntity>().eq("weixiujindu", "已完成")
         );
         List<Map<String, String>> cards = buildQuickCards(new String[][]{
                 {"报修申请", String.valueOf(repairApplyCount)},
@@ -509,8 +509,8 @@ public class AssistantController {
         return "";
     }
 
-    private String detectXiaoqu(String message, List<FangwuxinxiEntity> houses) {
-        for (FangwuxinxiEntity house : houses) {
+    private String detectXiaoqu(String message, List<HouseListingEntity> houses) {
+        for (HouseListingEntity house : houses) {
             if (StringUtils.isNotBlank(house.getXiaoqu()) && StringUtils.contains(message, house.getXiaoqu())) {
                 return house.getXiaoqu();
             }

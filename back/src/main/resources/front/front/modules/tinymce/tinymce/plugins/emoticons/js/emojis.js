@@ -5658,13 +5658,13 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     fitzpatrick_scale: false,
     category: "objects"
   },
-  newspaper_roll: {
+  announcementpaper_roll: {
     keywords: [ "press", "headline" ],
     "char": "\ud83d\uddde",
     fitzpatrick_scale: false,
     category: "objects"
   },
-  newspaper: {
+  announcementpaper: {
     keywords: [ "press", "headline" ],
     "char": "\ud83d\udcf0",
     fitzpatrick_scale: false,

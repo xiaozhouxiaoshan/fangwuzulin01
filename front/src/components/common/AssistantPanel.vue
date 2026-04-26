@@ -28,12 +28,12 @@
     </div>
 
     <div ref="chatPanel" class="chat-panel" v-loading="loading">
-      <div v-if="!messages.length && !loading" class="empty-tip">
+      <div v-if="!messageBoard.length && !loading" class="empty-tip">
         先问我一个和租房、预约、合同、报修有关的问题。
       </div>
 
       <div
-        v-for="(message, index) in messages"
+        v-for="(message, index) in messageBoard"
         :key="index"
         class="message-row"
         :class="message.type"
@@ -91,7 +91,7 @@ export default {
     return {
       loading: false,
       inputText: "",
-      messages: []
+      messageBoard: []
     };
   },
   computed: {
@@ -136,7 +136,7 @@ export default {
   },
   mounted() {
     this.restoreConversation();
-    if (!this.messages.length) {
+    if (!this.messageBoard.length) {
       this.fetchReply("帮助");
     } else {
       this.scrollToBottom();
@@ -146,18 +146,18 @@ export default {
     restoreConversation() {
       const history = this.$storage.getObj(this.historyKey);
       if (Array.isArray(history)) {
-        this.messages = history;
+        this.messageBoard = history;
       }
     },
     persistConversation() {
-      this.$storage.set(this.historyKey, this.messages.slice(-20));
+      this.$storage.set(this.historyKey, this.messageBoard.slice(-20));
     },
     useQuickAction(text) {
       this.inputText = text;
       this.sendMessage();
     },
     resetConversation() {
-      this.messages = [];
+      this.messageBoard = [];
       this.persistConversation();
       this.fetchReply("帮助");
     },
@@ -167,7 +167,7 @@ export default {
         this.$message.warning("请输入问题后再发送");
         return;
       }
-      this.messages.push({
+      this.messageBoard.push({
         type: "user",
         text: text
       });
@@ -186,7 +186,7 @@ export default {
       }).then(({ data }) => {
         if (data && data.code === 0) {
           const result = data.data || {};
-          this.messages.push({
+          this.messageBoard.push({
             type: "assistant",
             title: result.title || "智能助手",
             text: result.reply || "暂无回复",
@@ -228,25 +228,25 @@ export default {
       }
       const text = `${card.title || ""} ${card.subtitle || ""} ${card.tag || ""}`;
       if (text.indexOf("预约") !== -1) {
-        return "/yuyuekanfang";
+        return "/viewingAppointment";
       }
       if (text.indexOf("合同") !== -1 || text.indexOf("支付") !== -1) {
-        return "/hetongxinxi";
+        return "/rentalContract";
       }
       if (text.indexOf("维修") !== -1) {
-        return "/weixiuchuli";
+        return "/repairHandling";
       }
       if (text.indexOf("报修") !== -1) {
-        return "/fangwubaoxiu";
+        return "/houseRepair";
       }
       if (text.indexOf("租客总数") !== -1) {
-        return "/yonghu";
+        return "/tenant";
       }
       if (text.indexOf("房东总数") !== -1) {
-        return "/fangzhu";
+        return "/landlord";
       }
       if (text.indexOf("房源") !== -1 || text.indexOf("元/月") !== -1 || text.indexOf("可租") !== -1) {
-        return "/fangwuxinxi";
+        return "/houseListing";
       }
       return "";
     },

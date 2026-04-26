@@ -12,21 +12,21 @@ import pay from '@/views/pay'
 import register from '@/views/register'
 import center from '@/views/center'
 import assistant from '@/views/modules/assistant/list'
-    import fangwuleixing from '@/views/modules/fangwuleixing/list'
-    import discussfangwuxinxi from '@/views/modules/discussfangwuxinxi/list'
-    import news from '@/views/modules/news/list'
-    import weixiuchuli from '@/views/modules/weixiuchuli/list'
-    import storeup from '@/views/modules/storeup/list'
-    import fangwupingjia from '@/views/modules/fangwupingjia/list'
-    import fangwuxinxi from '@/views/modules/fangwuxinxi/list'
-    import yuyuekanfang from '@/views/modules/yuyuekanfang/list'
-    import woyaodangfangzhu from '@/views/modules/woyaodangfangzhu/list'
-    import fangzhu from '@/views/modules/fangzhu/list'
-    import yonghu from '@/views/modules/yonghu/list'
-    import discusswoyaodangfangzhu from '@/views/modules/discusswoyaodangfangzhu/list'
-    import fangwubaoxiu from '@/views/modules/fangwubaoxiu/list'
-    import hetongxinxi from '@/views/modules/hetongxinxi/list'
-    import messages from '@/views/modules/messages/list'
+    import houseType from '@/views/modules/houseType/list'
+    import houseListingComment from '@/views/modules/houseListingComment/list'
+    import announcement from '@/views/modules/announcement/list'
+    import repairHandling from '@/views/modules/repairHandling/list'
+    import favorite from '@/views/modules/favorite/list'
+    import houseReview from '@/views/modules/houseReview/list'
+    import houseListing from '@/views/modules/houseListing/list'
+    import viewingAppointment from '@/views/modules/viewingAppointment/list'
+    import landlordApplication from '@/views/modules/landlordApplication/list'
+    import landlord from '@/views/modules/landlord/list'
+    import tenant from '@/views/modules/tenant/list'
+    import landlordApplicationComment from '@/views/modules/landlordApplicationComment/list'
+    import houseRepair from '@/views/modules/houseRepair/list'
+    import rentalContract from '@/views/modules/rentalContract/list'
+    import messageBoard from '@/views/modules/messageBoard/list'
     import config from '@/views/modules/config/list'
 
 
@@ -63,79 +63,79 @@ const routes = [{
       meta: {icon:'', title:'assistant'}
     }
           ,{
-	path: '/fangwuleixing',
+	path: '/houseType',
         name: '房屋类型',
-        component: fangwuleixing
+        component: houseType
       }
           ,{
-	path: '/discussfangwuxinxi',
+	path: '/houseListingComment',
         name: '房屋信息评论',
-        component: discussfangwuxinxi
+        component: houseListingComment
       }
           ,{
-	path: '/news',
+	path: '/announcement',
         name: '公告信息',
-        component: news
+        component: announcement
       }
           ,{
-	path: '/weixiuchuli',
+	path: '/repairHandling',
         name: '维修处理',
-        component: weixiuchuli
+        component: repairHandling
       }
           ,{
-	path: '/storeup',
+	path: '/favorite',
         name: '我的收藏管理',
-        component: storeup
+        component: favorite
       }
           ,{
-	path: '/fangwupingjia',
+	path: '/houseReview',
         name: '房屋评价',
-        component: fangwupingjia
+        component: houseReview
       }
           ,{
-	path: '/fangwuxinxi',
+	path: '/houseListing',
         name: '房屋信息',
-        component: fangwuxinxi
+        component: houseListing
       }
           ,{
-	path: '/yuyuekanfang',
+	path: '/viewingAppointment',
         name: '预约看房',
-        component: yuyuekanfang
+        component: viewingAppointment
       }
           ,{
-	path: '/woyaodangfangzhu',
+	path: '/landlordApplication',
         name: '我要当房主',
-        component: woyaodangfangzhu
+        component: landlordApplication
       }
           ,{
-	path: '/fangzhu',
+	path: '/landlord',
         name: '房主',
-        component: fangzhu
+        component: landlord
       }
           ,{
-	path: '/yonghu',
+	path: '/tenant',
         name: '用户',
-        component: yonghu
+        component: tenant
       }
           ,{
-	path: '/discusswoyaodangfangzhu',
+	path: '/landlordApplicationComment',
         name: '我要当房主评论',
-        component: discusswoyaodangfangzhu
+        component: landlordApplicationComment
       }
           ,{
-	path: '/fangwubaoxiu',
+	path: '/houseRepair',
         name: '房屋报修',
-        component: fangwubaoxiu
+        component: houseRepair
       }
           ,{
-	path: '/hetongxinxi',
+	path: '/rentalContract',
         name: '合同信息',
-        component: hetongxinxi
+        component: rentalContract
       }
           ,{
-	path: '/messages',
+	path: '/messageBoard',
         name: '留言板管理',
-        component: messages
+        component: messageBoard
       }
           ,{
 	path: '/config',
