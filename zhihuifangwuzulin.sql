@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `houseRepair` (
   `repairTitle` varchar(200) DEFAULT NULL COMMENT '报修名称',
   `repairType` varchar(200) DEFAULT NULL COMMENT '类型',
   `repairContent` varchar(200) DEFAULT NULL COMMENT '报修内容',
-  `tupian` varchar(200) DEFAULT NULL COMMENT '图片',
+  `picture` varchar(200) DEFAULT NULL COMMENT '图片',
   `repairDate` date DEFAULT NULL COMMENT '报修日期',
   `landlordAccount` varchar(200) DEFAULT NULL COMMENT '房主账号',
   `landlordName` varchar(200) DEFAULT NULL COMMENT '房主姓名',
@@ -88,13 +88,13 @@ CREATE TABLE IF NOT EXISTS `houseRepair` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1614856006266 DEFAULT CHARSET=utf8mb3 COMMENT='房屋报修';
 
 DELETE FROM `houseRepair`;
-INSERT INTO `houseRepair` (`id`, `createdAt`, `contractNumber`, `houseName`, `houseType`, `community`, `repairTitle`, `repairType`, `repairContent`, `tupian`, `repairDate`, `landlordAccount`, `landlordName`, `tenantUsername`, `contactPhone`, `reviewStatus`, `reviewReply`) VALUES
-	(71, '2026-03-01 10:46:53', 'HT2026-0001', '湖景雅苑1栋1201', '一室一厅', '湖景雅苑', '卫生间漏水', '水工', '洗手台下方渗水，地面潮湿', 'http://localhost:8080/zhihuifangwuzulin/upload/houseRepair_tupian1.jpg', '2026-03-01', 'landlord_zhang', '张明', 'tenant_lin', '13900010001', '是', ''),
-	(72, '2026-03-02 10:46:53', 'HT2026-0002', '星河湾2期8栋502', '两室一厅', '星河湾二期', '厨房水龙头松动', '水工', '水龙头接口渗水，需更换密封圈', 'http://localhost:8080/zhihuifangwuzulin/upload/houseRepair_tupian2.jpg', '2026-03-02', 'landlord_li', '李娜', 'tenant_zhou', '13900010002', '是', ''),
-	(73, '2026-03-03 10:46:53', 'HT2026-0003', '金域蓝湾3栋1802', '两室两厅', '金域蓝湾', '卧室灯具不亮', '电工', '主卧吸顶灯无法开启', 'http://localhost:8080/zhihuifangwuzulin/upload/houseRepair_tupian3.jpg', '2026-03-03', 'landlord_wang', '王强', 'tenant_he', '13900010003', '是', ''),
-	(74, '2026-03-04 10:46:53', 'HT2026-0004', '华都花园B座1003', '三室一厅', '华都花园', '空调制冷不足', '电工', '客厅空调运行但不制冷', 'http://localhost:8080/zhihuifangwuzulin/upload/houseRepair_tupian4.jpg', '2026-03-04', 'landlord_zhao', '赵敏', 'tenant_wu', '13900010004', '是', ''),
-	(75, '2026-03-05 10:46:53', 'HT2026-0005', '城市春天5栋902', '三室两厅', '城市春天', '阳台门轨道卡顿', '木工', '推拉门滑动困难并有异响', 'http://localhost:8080/zhihuifangwuzulin/upload/houseRepair_tupian5.jpg', '2026-03-05', 'landlord_chen', '陈凯', 'tenant_ma', '13900010005', '是', ''),
-	(76, '2026-03-06 10:46:53', 'HT2026-0006', '云顶公馆6栋1501', '四室两厅', '云顶公馆', '热水器点火异常', '电工', '热水器偶发无法点火', 'http://localhost:8080/zhihuifangwuzulin/upload/houseRepair_tupian6.jpg', '2026-03-06', 'landlord_sun', '孙悦', 'tenant_qian', '13900010006', '是', ''),
+INSERT INTO `houseRepair` (`id`, `createdAt`, `contractNumber`, `houseName`, `houseType`, `community`, `repairTitle`, `repairType`, `repairContent`, `picture`, `repairDate`, `landlordAccount`, `landlordName`, `tenantUsername`, `contactPhone`, `reviewStatus`, `reviewReply`) VALUES
+	(71, '2026-03-01 10:46:53', 'HT2026-0001', '湖景雅苑1栋1201', '一室一厅', '湖景雅苑', '卫生间漏水', '水工', '洗手台下方渗水，地面潮湿', 'http://localhost:8080/zhihuifangwuzulin/upload/houseRepair_picture1.jpg', '2026-03-01', 'landlord_zhang', '张明', 'tenant_lin', '13900010001', '是', ''),
+	(72, '2026-03-02 10:46:53', 'HT2026-0002', '星河湾2期8栋502', '两室一厅', '星河湾二期', '厨房水龙头松动', '水工', '水龙头接口渗水，需更换密封圈', 'http://localhost:8080/zhihuifangwuzulin/upload/houseRepair_picture2.jpg', '2026-03-02', 'landlord_li', '李娜', 'tenant_zhou', '13900010002', '是', ''),
+	(73, '2026-03-03 10:46:53', 'HT2026-0003', '金域蓝湾3栋1802', '两室两厅', '金域蓝湾', '卧室灯具不亮', '电工', '主卧吸顶灯无法开启', 'http://localhost:8080/zhihuifangwuzulin/upload/houseRepair_picture3.jpg', '2026-03-03', 'landlord_wang', '王强', 'tenant_he', '13900010003', '是', ''),
+	(74, '2026-03-04 10:46:53', 'HT2026-0004', '华都花园B座1003', '三室一厅', '华都花园', '空调制冷不足', '电工', '客厅空调运行但不制冷', 'http://localhost:8080/zhihuifangwuzulin/upload/houseRepair_picture4.jpg', '2026-03-04', 'landlord_zhao', '赵敏', 'tenant_wu', '13900010004', '是', ''),
+	(75, '2026-03-05 10:46:53', 'HT2026-0005', '城市春天5栋902', '三室两厅', '城市春天', '阳台门轨道卡顿', '木工', '推拉门滑动困难并有异响', 'http://localhost:8080/zhihuifangwuzulin/upload/houseRepair_picture5.jpg', '2026-03-05', 'landlord_chen', '陈凯', 'tenant_ma', '13900010005', '是', ''),
+	(76, '2026-03-06 10:46:53', 'HT2026-0006', '云顶公馆6栋1501', '四室两厅', '云顶公馆', '热水器点火异常', '电工', '热水器偶发无法点火', 'http://localhost:8080/zhihuifangwuzulin/upload/houseRepair_picture6.jpg', '2026-03-06', 'landlord_sun', '孙悦', 'tenant_qian', '13900010006', '是', ''),
 	(1614856006265, '2026-03-07 11:06:46', 'HT2026-0007', '新记家园605房', '3房1厅', '新记家园', '下水管堵塞', '水工', '浴室下水管堵了', 'http://localhost:8080/zhihuifangwuzulin/upload/1614856003509.jpg', '2026-03-07', 'landlord_zhang_old', '张明', 'tenant_chenyi', '12312312312', '是', '已安排当晚18:30上门维修');
 
 DROP TABLE IF EXISTS `houseType`;
@@ -151,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `houseListing` (
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `houseName` varchar(200) NOT NULL COMMENT '房屋名称',
   `houseType` varchar(200) NOT NULL COMMENT '房屋类型',
-  `tupian` varchar(200) NOT NULL COMMENT '图片',
+  `picture` varchar(200) NOT NULL COMMENT '图片',
   `rentalMode` varchar(200) DEFAULT NULL COMMENT '租赁方式',
   `orientationFloor` varchar(200) DEFAULT NULL COMMENT '朝向楼层',
   `area` varchar(200) DEFAULT NULL COMMENT '面积',
@@ -169,12 +169,12 @@ CREATE TABLE IF NOT EXISTS `houseListing` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1614855484230 DEFAULT CHARSET=utf8mb3 COMMENT='房屋信息';
 
 DELETE FROM `houseListing`;
-INSERT INTO `houseListing` (`id`, `createdAt`, `houseName`, `houseType`, `tupian`, `rentalMode`, `orientationFloor`, `area`, `houseStatus`, `community`, `addressDetail`, `monthlyRent`, `deposit`, `facilities`, `houseDescription`, `publishDate`, `landlordAccount`, `landlordName`) VALUES
-	(41, '2026-03-05 10:46:53', '湖景雅苑1栋1201', '一室一厅', 'http://localhost:8080/zhihuifangwuzulin/upload/houseListing_tupian1.jpg', '整租', '朝南 高层', '45平', '可租', '湖景雅苑', '浦东新区梅花路88号', 3200, 3200, '空调、洗衣机、冰箱', '近地铁2号线，拎包入住', '2026-03-05', 'landlord_zhang', '张明'),
+INSERT INTO `houseListing` (`id`, `createdAt`, `houseName`, `houseType`, `picture`, `rentalMode`, `orientationFloor`, `area`, `houseStatus`, `community`, `addressDetail`, `monthlyRent`, `deposit`, `facilities`, `houseDescription`, `publishDate`, `landlordAccount`, `landlordName`) VALUES
+	(41, '2026-03-05 10:46:53', '湖景雅苑1栋1201', '一室一厅', 'http://localhost:8080/zhihuifangwuzulin/upload/houseListing_picture1.jpg', '整租', '朝南 高层', '45平', '可租', '湖景雅苑', '浦东新区梅花路88号', 3200, 3200, '空调、洗衣机、冰箱', '近地铁2号线，拎包入住', '2026-03-05', 'landlord_zhang', '张明'),
 	(42, '2026-03-05 10:46:53', '星河湾2期8栋502', '两室一厅', 'http://localhost:8080/zhihuifangwuzulin/upload/1614855060611.jpg', '整租', '东南 中层', '68平', '可租', '星河湾二期', '闵行区都会路266号', 4800, 4800, '空调、冰箱、燃气灶', '<p>小区安静，适合上班族</p>', '2026-03-05', 'landlord_li', '李娜'),
-	(43, '2026-03-05 10:46:53', '金域蓝湾3栋1802', '两室两厅', 'http://localhost:8080/zhihuifangwuzulin/upload/houseListing_tupian3.jpg', '整租', '南北 高层', '89平', '可租', '金域蓝湾', '徐汇区漕溪北路520号', 6200, 6200, '全屋家电、独立卫浴', '双阳台，采光通风优秀', '2026-03-05', 'landlord_wang', '王强'),
+	(43, '2026-03-05 10:46:53', '金域蓝湾3栋1802', '两室两厅', 'http://localhost:8080/zhihuifangwuzulin/upload/houseListing_picture3.jpg', '整租', '南北 高层', '89平', '可租', '金域蓝湾', '徐汇区漕溪北路520号', 6200, 6200, '全屋家电、独立卫浴', '双阳台，采光通风优秀', '2026-03-05', 'landlord_wang', '王强'),
 	(44, '2026-03-05 10:46:53', '华都花园B座1003', '三室一厅', 'http://localhost:8080/zhihuifangwuzulin/upload/1614855071690.jpg', '整租', '朝东 低层', '96平', '可租', '华都花园', '长宁区天山路188号', 7200, 7200, '全屋家电、阳台、地暖', '<p>学区房，生活配套完善</p>', '2026-03-05', 'landlord_zhao', '赵敏'),
-	(45, '2026-03-05 10:46:53', '城市春天5栋902', '三室两厅', 'http://localhost:8080/zhihuifangwuzulin/upload/houseListing_tupian5.jpg', '整租', '西南 中高层', '118平', '可租', '城市春天', '宝山区顾村公园路66号', 8800, 8800, '品牌家电、车位可租', '南北通透，带储物间', '2026-03-05', 'landlord_chen', '陈凯'),
+	(45, '2026-03-05 10:46:53', '城市春天5栋902', '三室两厅', 'http://localhost:8080/zhihuifangwuzulin/upload/houseListing_picture5.jpg', '整租', '西南 中高层', '118平', '可租', '城市春天', '宝山区顾村公园路66号', 8800, 8800, '品牌家电、车位可租', '南北通透，带储物间', '2026-03-05', 'landlord_chen', '陈凯'),
 	(46, '2026-03-05 10:46:53', '云顶公馆6栋1501', '四室两厅', 'http://localhost:8080/zhihuifangwuzulin/upload/1614855082369.jpg', '整租', '南北 顶层', '136平', '可租', '云顶公馆', '杨浦区国权路399号', 10800, 10800, '智能家居、中央空调', '<p>高层视野好，精装修</p>', '2026-03-05', 'landlord_sun', '孙悦'),
 	(1614855484229, '2026-03-05 10:58:03', '新记家园605房', '3房1厅', 'http://localhost:8080/zhihuifangwuzulin/upload/1614855416340.jpg', '整租', '南北 共8层', '90平', '可租', '新记家园', '朝阳区太阳宫中路16号', 2000, 2000, '设施齐全', '<p>设施齐全，采光极好</p><p><img src="http://localhost:8080/zhihuifangwuzulin/upload/1614855482288.jpg"></p>', '2026-03-05', 'landlord_zhang_old', '张明');
 
@@ -298,7 +298,7 @@ CREATE TABLE IF NOT EXISTS `favorite` (
 
 DELETE FROM `favorite`;
 INSERT INTO `favorite` (`id`, `createdAt`, `userId`, `referenceId`, `tableName`, `name`, `picture`) VALUES
-	(1703250272425, '2026-03-10 13:04:32', 11, 41, 'houseListing', '湖景雅苑1栋1201', 'http://localhost:8080/zhihuifangwuzulin/upload/houseListing_tupian1.jpg');
+	(1703250272425, '2026-03-10 13:04:32', 11, 41, 'houseListing', '湖景雅苑1栋1201', 'http://localhost:8080/zhihuifangwuzulin/upload/houseListing_picture1.jpg');
 
 DROP TABLE IF EXISTS `token`;
 CREATE TABLE IF NOT EXISTS `token` (
@@ -370,7 +370,7 @@ CREATE TABLE IF NOT EXISTS `landlordApplication` (
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `houseName` varchar(200) NOT NULL COMMENT '房屋名称',
   `houseType` varchar(200) NOT NULL COMMENT '房屋类型',
-  `tupian` varchar(200) NOT NULL COMMENT '图片',
+  `picture` varchar(200) NOT NULL COMMENT '图片',
   `rentalMode` varchar(200) NOT NULL COMMENT '租赁方式',
   `orientationFloor` varchar(200) DEFAULT NULL COMMENT '朝向楼层',
   `community` varchar(200) DEFAULT NULL COMMENT '小区',
@@ -386,12 +386,12 @@ CREATE TABLE IF NOT EXISTS `landlordApplication` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1614855750985 DEFAULT CHARSET=utf8mb3 COMMENT='我要当房主';
 
 DELETE FROM `landlordApplication`;
-INSERT INTO `landlordApplication` (`id`, `createdAt`, `houseName`, `houseType`, `tupian`, `rentalMode`, `orientationFloor`, `community`, `area`, `monthlyRent`, `houseDescription`, `publishDate`, `tenantUsername`, `contactPhone`, `reviewStatus`, `reviewReply`) VALUES
-	(101, '2026-03-02 10:46:53', '湖景雅苑1栋1201', '一室一厅', 'http://localhost:8080/zhihuifangwuzulin/upload/landlordApplication_tupian1.jpg', '整租', '朝南 高层', '湖景雅苑', '45平', 3200, '近地铁2号线，拎包入住', '2026-03-02', 'tenant_lin', '13900010001', '是', ''),
-	(102, '2026-03-02 10:46:53', '星河湾2期8栋502', '两室一厅', 'http://localhost:8080/zhihuifangwuzulin/upload/landlordApplication_tupian2.jpg', '整租', '东南 中层', '星河湾二期', '68平', 4800, '小区安静，适合上班族', '2026-03-02', 'tenant_zhou', '13900010002', '是', ''),
-	(103, '2026-03-02 10:46:53', '金域蓝湾3栋1802', '两室两厅', 'http://localhost:8080/zhihuifangwuzulin/upload/landlordApplication_tupian3.jpg', '整租', '南北 高层', '金域蓝湾', '89平', 6200, '双阳台，采光通风优秀', '2026-03-02', 'tenant_he', '13900010003', '是', ''),
-	(104, '2026-03-02 10:46:53', '华都花园B座1003', '三室一厅', 'http://localhost:8080/zhihuifangwuzulin/upload/landlordApplication_tupian4.jpg', '整租', '朝东 低层', '华都花园', '96平', 7200, '学区房，生活配套完善', '2026-03-02', 'tenant_wu', '13900010004', '是', ''),
-	(105, '2026-03-02 10:46:53', '城市春天5栋902', '三室两厅', 'http://localhost:8080/zhihuifangwuzulin/upload/landlordApplication_tupian5.jpg', '整租', '西南 中高层', '城市春天', '118平', 8800, '南北通透，带储物间', '2026-03-02', 'tenant_ma', '13900010005', '是', ''),
+INSERT INTO `landlordApplication` (`id`, `createdAt`, `houseName`, `houseType`, `picture`, `rentalMode`, `orientationFloor`, `community`, `area`, `monthlyRent`, `houseDescription`, `publishDate`, `tenantUsername`, `contactPhone`, `reviewStatus`, `reviewReply`) VALUES
+	(101, '2026-03-02 10:46:53', '湖景雅苑1栋1201', '一室一厅', 'http://localhost:8080/zhihuifangwuzulin/upload/landlordApplication_picture1.jpg', '整租', '朝南 高层', '湖景雅苑', '45平', 3200, '近地铁2号线，拎包入住', '2026-03-02', 'tenant_lin', '13900010001', '是', ''),
+	(102, '2026-03-02 10:46:53', '星河湾2期8栋502', '两室一厅', 'http://localhost:8080/zhihuifangwuzulin/upload/landlordApplication_picture2.jpg', '整租', '东南 中层', '星河湾二期', '68平', 4800, '小区安静，适合上班族', '2026-03-02', 'tenant_zhou', '13900010002', '是', ''),
+	(103, '2026-03-02 10:46:53', '金域蓝湾3栋1802', '两室两厅', 'http://localhost:8080/zhihuifangwuzulin/upload/landlordApplication_picture3.jpg', '整租', '南北 高层', '金域蓝湾', '89平', 6200, '双阳台，采光通风优秀', '2026-03-02', 'tenant_he', '13900010003', '是', ''),
+	(104, '2026-03-02 10:46:53', '华都花园B座1003', '三室一厅', 'http://localhost:8080/zhihuifangwuzulin/upload/landlordApplication_picture4.jpg', '整租', '朝东 低层', '华都花园', '96平', 7200, '学区房，生活配套完善', '2026-03-02', 'tenant_wu', '13900010004', '是', ''),
+	(105, '2026-03-02 10:46:53', '城市春天5栋902', '三室两厅', 'http://localhost:8080/zhihuifangwuzulin/upload/landlordApplication_picture5.jpg', '整租', '西南 中高层', '城市春天', '118平', 8800, '南北通透，带储物间', '2026-03-02', 'tenant_ma', '13900010005', '是', ''),
 	(106, '2026-03-02 10:46:53', '云顶公馆6栋1501', '四室两厅', 'http://localhost:8080/zhihuifangwuzulin/upload/1614855114406.jpg', '整租', '南北 顶层', '云顶公馆', '136平', 10800, '<p>高层视野好，精装修</p>', '2026-03-02', 'tenant_qian', '13900010006', '是', ''),
 	(1614855750984, '2026-03-03 11:02:30', '雨花石604', '3房1厅', 'http://localhost:8080/zhihuifangwuzulin/upload/1614855720959.jpg', '整租', '东南 中层', '雨花石', '60', 1000, '<p>采光好</p><p><img src="http://localhost:8080/zhihuifangwuzulin/upload/1614855748947.jpg"></p>', '2026-03-03', 'tenant_chenyi', '12312312312', '是', '信息完整，已通过审核。');
 

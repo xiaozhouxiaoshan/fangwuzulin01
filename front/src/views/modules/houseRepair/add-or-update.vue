@@ -100,19 +100,19 @@
         </div>
       </el-col>
                                     <el-col :span="24">  
-        <el-form-item class="upload" v-if="type!='info' && !ro.tupian" label="图片" prop="tupian">
+        <el-form-item class="upload" v-if="type!='info' && !ro.picture" label="图片" prop="picture">
           <file-upload
           tip="点击上传图片"
           action="file/upload"
           :limit="3"
           :multiple="true"
-          :fileUrls="ruleForm.tupian?ruleForm.tupian:''"
-          @change="tupianUploadChange"
+          :fileUrls="ruleForm.picture?ruleForm.picture:''"
+          @change="pictureUploadChange"
           ></file-upload>
         </el-form-item>
         <div v-else>
-          <el-form-item v-if="ruleForm.tupian" label="图片" prop="tupian">
-            <img style="margin-right:20px;" v-bind:key="index" v-for="(item,index) in ruleForm.tupian.split(',')" :src="item" width="100" height="100">
+          <el-form-item v-if="ruleForm.picture" label="图片" prop="picture">
+            <img style="margin-right:20px;" v-bind:key="index" v-for="(item,index) in ruleForm.picture.split(',')" :src="item" width="100" height="100">
           </el-form-item>
         </div>
       </el-col>
@@ -273,7 +273,7 @@ export default {
 	repairTitle : false,
 	repairType : false,
 	repairContent : false,
-	tupian : false,
+	picture : false,
 	repairDate : false,
 	landlordAccount : false,
 	landlordName : false,
@@ -290,7 +290,7 @@ export default {
 	                        	        repairTitle: '',
 	                        	        repairType: '',
 	                        	        repairContent: '',
-	                        	        tupian: '',
+	                        	        picture: '',
 	                        	        repairDate: '',
 	                        	        landlordAccount: '',
 	                        	        landlordName: '',
@@ -314,7 +314,7 @@ export default {
                                     	                                                              ],
                   repairContent: [
                                     	                                                              ],
-                  tupian: [
+                  picture: [
                                     	                                                              ],
                   repairDate: [
                                     	                                                              ],
@@ -391,9 +391,9 @@ export default {
 	    this.ro.repairContent = true;
             continue;
           }
-	            	            if(o=='tupian'){
-            this.ruleForm.tupian = obj[o];
-	    this.ro.tupian = true;
+	            	            if(o=='picture'){
+            this.ruleForm.picture = obj[o];
+	    this.ro.picture = true;
             continue;
           }
 	            	            if(o=='repairDate'){
@@ -504,8 +504,8 @@ export default {
       this.parent.houseRepairCrossAddOrUpdateFlag = false;
       this.parent.contentStyleChange();
     },
-                                                                                                            tupianUploadChange(fileUrls) {
-                this.ruleForm.tupian = fileUrls;
+                                                                                                            pictureUploadChange(fileUrls) {
+                this.ruleForm.picture = fileUrls;
 				this.addEditUploadStyleChange()
             },
                                                                                                 	addEditStyleChange() {

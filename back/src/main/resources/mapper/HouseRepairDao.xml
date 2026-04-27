@@ -12,7 +12,7 @@
         <result property="repairTitle" column="repairTitle"/>
         <result property="repairType" column="repairType"/>
         <result property="repairContent" column="repairContent"/>
-        <result property="tupian" column="tupian"/>
+        <result property="picture" column="picture"/>
         <result property="repairDate" column="repairDate"/>
         <result property="landlordAccount" column="landlordAccount"/>
         <result property="landlordName" column="landlordName"/>

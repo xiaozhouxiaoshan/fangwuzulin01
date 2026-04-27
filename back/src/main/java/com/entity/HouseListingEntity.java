@@ -67,7 +67,7 @@ public class HouseListingEntity<T> implements Serializable {
 	 * 图片
 	 */
 					
-	private String tupian;
+	private String picture;
 	
 	/**
 	 * 租赁方式
@@ -195,14 +195,14 @@ public class HouseListingEntity<T> implements Serializable {
 	/**
 	 * 设置：图片
 	 */
-	public void setTupian(String tupian) {
-		this.tupian = tupian;
+	public void setPicture(String picture) {
+		this.picture = picture;
 	}
 	/**
 	 * 获取：图片
 	 */
-	public String getTupian() {
-		return tupian;
+	public String getPicture() {
+		return picture;
 	}
 	/**
 	 * 设置：租赁方式

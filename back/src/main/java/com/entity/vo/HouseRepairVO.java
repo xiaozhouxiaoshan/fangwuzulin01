@@ -62,7 +62,7 @@ public class HouseRepairVO  implements Serializable {
 	 * 图片
 	 */
 	
-	private String tupian;
+	private String picture;
 		
 	/**
 	 * 报修日期
@@ -209,15 +209,15 @@ public class HouseRepairVO  implements Serializable {
 	 * 设置：图片
 	 */
 	 
-	public void setTupian(String tupian) {
-		this.tupian = tupian;
+	public void setPicture(String picture) {
+		this.picture = picture;
 	}
 	
 	/**
 	 * 获取：图片
 	 */
-	public String getTupian() {
-		return tupian;
+	public String getPicture() {
+		return picture;
 	}
 				
 	

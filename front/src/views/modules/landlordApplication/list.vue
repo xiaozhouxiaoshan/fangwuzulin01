@@ -98,13 +98,13 @@
                        {{scope.row.houseType}}
                      </template>
                 </el-table-column>
-                	                	                                      <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign" prop="tupian"
+                	                	                                      <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign" prop="picture"
                     header-align="center"
                     width="200"
                     label="图片">
                     <template slot-scope="scope">
-                      <div v-if="scope.row.tupian">
-                        <img :src="scope.row.tupian.split(',')[0]" width="100" height="100">
+                      <div v-if="scope.row.picture">
+                        <img :src="scope.row.picture.split(',')[0]" width="100" height="100">
                       </div>
                       <div v-else>无图片</div>
                     </template>
@@ -552,7 +552,7 @@ export default {
         this.shForm = {
                     houseName: row.houseName,
                     houseType: row.houseType,
-                    tupian: row.tupian,
+                    picture: row.picture,
                     rentalMode: row.rentalMode,
                     orientationFloor: row.orientationFloor,
                     community: row.community,

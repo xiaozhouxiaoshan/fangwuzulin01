@@ -7,7 +7,7 @@
     <resultMap type="com.entity.LandlordApplicationEntity" id="landlordApplicationMap">
         <result property="houseName" column="houseName"/>
         <result property="houseType" column="houseType"/>
-        <result property="tupian" column="tupian"/>
+        <result property="picture" column="picture"/>
         <result property="rentalMode" column="rentalMode"/>
         <result property="orientationFloor" column="orientationFloor"/>
         <result property="community" column="community"/>

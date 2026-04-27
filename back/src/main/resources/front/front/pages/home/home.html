@@ -466,7 +466,7 @@
 	    <div class="list">
 	      <div v-for="(item,index) in houseListingList" :key="index" @click="jump('../houseListing/detail.html?id='+item.id)" class="list-item" :class="4=='3'?'list-item3':4=='5'?'list-item5':''">
 	        <div class="list-item-body animation-box" :style='{"padding":"0px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"20px 0 0px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(69, 69, 69, 1)","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'>
-																												<img :style='{"boxShadow":"0 0 0px rgba(255,0,0,.8)","borderColor":"rgba(0,0,0,.3)","borderRadius":"0","borderWidth":"0","width":"100%","borderStyle":"solid","height":"260px"}' :src="item.tupian?item.tupian.split(',')[0]:''" alt="" />
+																												<img :style='{"boxShadow":"0 0 0px rgba(255,0,0,.8)","borderColor":"rgba(0,0,0,.3)","borderRadius":"0","borderWidth":"0","width":"100%","borderStyle":"solid","height":"260px"}' :src="item.picture?item.picture.split(',')[0]:''" alt="" />
 																																																																																																																												<div v-if='true' :style='{"isshow":true,"padding":"20px","margin":"5px 0","backgroundColor":"rgba(69, 69, 69, 1)","color":"rgba(255, 255, 255, 1)","borderRadius":"0 0 6px 6px","textAlign":"center","fontSize":"16px"}' class="name">{{item.houseName}}</div>
 																																																																																																																																	        </div>
 	      </div>
