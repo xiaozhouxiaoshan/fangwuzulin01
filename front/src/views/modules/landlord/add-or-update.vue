@@ -10,46 +10,46 @@
     >
       <el-row>
                         <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="房主账号" prop="landlordzhanghao">
-          <el-input v-model="ruleForm.landlordzhanghao" 
-              placeholder="房主账号" clearable  :readonly="ro.landlordzhanghao"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="房主账号" prop="landlordAccount">
+          <el-input v-model="ruleForm.landlordAccount" 
+              placeholder="房主账号" clearable  :readonly="ro.landlordAccount"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="房主账号" prop="landlordzhanghao">
-              <el-input v-model="ruleForm.landlordzhanghao" 
+          <el-form-item class="input" label="房主账号" prop="landlordAccount">
+              <el-input v-model="ruleForm.landlordAccount" 
                 placeholder="房主账号" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="密码" prop="mima">
-          <el-input v-model="ruleForm.mima" 
-              placeholder="密码" clearable  :readonly="ro.mima"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="密码" prop="password">
+          <el-input v-model="ruleForm.password" 
+              placeholder="密码" clearable  :readonly="ro.password"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="密码" prop="mima">
-              <el-input v-model="ruleForm.mima" 
+          <el-form-item class="input" label="密码" prop="password">
+              <el-input v-model="ruleForm.password" 
                 placeholder="密码" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="房主姓名" prop="landlordxingming">
-          <el-input v-model="ruleForm.landlordxingming" 
-              placeholder="房主姓名" clearable  :readonly="ro.landlordxingming"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="房主姓名" prop="landlordName">
+          <el-input v-model="ruleForm.landlordName" 
+              placeholder="房主姓名" clearable  :readonly="ro.landlordName"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="房主姓名" prop="landlordxingming">
-              <el-input v-model="ruleForm.landlordxingming" 
+          <el-form-item class="input" label="房主姓名" prop="landlordName">
+              <el-input v-model="ruleForm.landlordName" 
                 placeholder="房主姓名" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="select" v-if="type!='info'"  label="性别" prop="xingbie">
-          <el-select v-model="ruleForm.xingbie" placeholder="请选择性别">
+        <el-form-item class="select" v-if="type!='info'"  label="性别" prop="gender">
+          <el-select v-model="ruleForm.gender" placeholder="请选择性别">
             <el-option
-                v-for="(item,index) in xingbieOptions"
+                v-for="(item,index) in genderOptions"
                 v-bind:key="index"
                 :label="item"
                 :value="item">
@@ -57,49 +57,49 @@
           </el-select>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="性别" prop="xingbie">
-	      <el-input v-model="ruleForm.xingbie"
+          <el-form-item class="input" label="性别" prop="gender">
+	      <el-input v-model="ruleForm.gender"
                 placeholder="性别" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="24">  
-        <el-form-item class="upload" v-if="type!='info' && !ro.touxiang" label="头像" prop="touxiang">
+        <el-form-item class="upload" v-if="type!='info' && !ro.avatar" label="头像" prop="avatar">
           <file-upload
           tip="点击上传头像"
           action="file/upload"
           :limit="3"
           :multiple="true"
-          :fileUrls="ruleForm.touxiang?ruleForm.touxiang:''"
-          @change="touxiangUploadChange"
+          :fileUrls="ruleForm.avatar?ruleForm.avatar:''"
+          @change="avatarUploadChange"
           ></file-upload>
         </el-form-item>
         <div v-else>
-          <el-form-item v-if="ruleForm.touxiang" label="头像" prop="touxiang">
-            <img style="margin-right:20px;" v-bind:key="index" v-for="(item,index) in ruleForm.touxiang.split(',')" :src="item" width="100" height="100">
+          <el-form-item v-if="ruleForm.avatar" label="头像" prop="avatar">
+            <img style="margin-right:20px;" v-bind:key="index" v-for="(item,index) in ruleForm.avatar.split(',')" :src="item" width="100" height="100">
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="手机" prop="shouji">
-          <el-input v-model="ruleForm.shouji" 
-              placeholder="手机" clearable  :readonly="ro.shouji"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="手机" prop="phoneNumber">
+          <el-input v-model="ruleForm.phoneNumber" 
+              placeholder="手机" clearable  :readonly="ro.phoneNumber"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="手机" prop="shouji">
-              <el-input v-model="ruleForm.shouji" 
+          <el-form-item class="input" label="手机" prop="phoneNumber">
+              <el-input v-model="ruleForm.phoneNumber" 
                 placeholder="手机" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="身份证" prop="shenfenzheng">
-          <el-input v-model="ruleForm.shenfenzheng" 
-              placeholder="身份证" clearable  :readonly="ro.shenfenzheng"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="身份证" prop="idCardNumber">
+          <el-input v-model="ruleForm.idCardNumber" 
+              placeholder="身份证" clearable  :readonly="ro.idCardNumber"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="身份证" prop="shenfenzheng">
-              <el-input v-model="ruleForm.shenfenzheng" 
+          <el-form-item class="input" label="身份证" prop="idCardNumber">
+              <el-input v-model="ruleForm.idCardNumber" 
                 placeholder="身份证" readonly></el-input>
           </el-form-item>
         </div>
@@ -189,42 +189,42 @@ export default {
       id: '',
       type: '',
       ro:{
-	landlordzhanghao : false,
-	mima : false,
-	landlordxingming : false,
-	xingbie : false,
-	touxiang : false,
-	shouji : false,
-	shenfenzheng : false,
+	landlordAccount : false,
+	password : false,
+	landlordName : false,
+	gender : false,
+	avatar : false,
+	phoneNumber : false,
+	idCardNumber : false,
       },
             ruleForm: {
-                	        landlordzhanghao: '',
-	                        	        mima: '',
-	                        	        landlordxingming: '',
-	                        	        xingbie: '',
-	                        	        touxiang: '',
-	                        	        shouji: '',
-	                        	        shenfenzheng: '',
+                	        landlordAccount: '',
+	                        	        password: '',
+	                        	        landlordName: '',
+	                        	        gender: '',
+	                        	        avatar: '',
+	                        	        phoneNumber: '',
+	                        	        idCardNumber: '',
 	                      },
-                                                                  xingbieOptions: [],
+                                                                  genderOptions: [],
                                                               rules: {
-                  landlordzhanghao: [
+                  landlordAccount: [
                             { required: true, message: '房主账号不能为空', trigger: 'blur' },
                                     	                                                              ],
-                  mima: [
+                  password: [
                             { required: true, message: '密码不能为空', trigger: 'blur' },
                                     	                                                              ],
-                  landlordxingming: [
+                  landlordName: [
                             { required: true, message: '房主姓名不能为空', trigger: 'blur' },
                                     	                                                              ],
-                  xingbie: [
+                  gender: [
                                     	                                                              ],
-                  touxiang: [
+                  avatar: [
                                     	                                                              ],
-                  shouji: [
+                  phoneNumber: [
                                     	                    { validator: validateMobile, trigger: 'blur' },
                                                                       ],
-                  shenfenzheng: [
+                  idCardNumber: [
                                     	                                                        { validator: validateIdCard, trigger: 'blur' },
                                   ],
               }
@@ -253,39 +253,39 @@ export default {
       }else if(this.type=='cross'){
         var obj = this.$storage.getObj('crossObj');
         for (var o in obj){
-          	            if(o=='landlordzhanghao'){
-            this.ruleForm.landlordzhanghao = obj[o];
-	    this.ro.landlordzhanghao = true;
+          	            if(o=='landlordAccount'){
+            this.ruleForm.landlordAccount = obj[o];
+	    this.ro.landlordAccount = true;
             continue;
           }
-	            	            if(o=='mima'){
-            this.ruleForm.mima = obj[o];
-	    this.ro.mima = true;
+	            	            if(o=='password'){
+            this.ruleForm.password = obj[o];
+	    this.ro.password = true;
             continue;
           }
-	            	            if(o=='landlordxingming'){
-            this.ruleForm.landlordxingming = obj[o];
-	    this.ro.landlordxingming = true;
+	            	            if(o=='landlordName'){
+            this.ruleForm.landlordName = obj[o];
+	    this.ro.landlordName = true;
             continue;
           }
-	            	            if(o=='xingbie'){
-            this.ruleForm.xingbie = obj[o];
-	    this.ro.xingbie = true;
+	            	            if(o=='gender'){
+            this.ruleForm.gender = obj[o];
+	    this.ro.gender = true;
             continue;
           }
-	            	            if(o=='touxiang'){
-            this.ruleForm.touxiang = obj[o];
-	    this.ro.touxiang = true;
+	            	            if(o=='avatar'){
+            this.ruleForm.avatar = obj[o];
+	    this.ro.avatar = true;
             continue;
           }
-	            	            if(o=='shouji'){
-            this.ruleForm.shouji = obj[o];
-	    this.ro.shouji = true;
+	            	            if(o=='phoneNumber'){
+            this.ruleForm.phoneNumber = obj[o];
+	    this.ro.phoneNumber = true;
             continue;
           }
-	            	            if(o=='shenfenzheng'){
-            this.ruleForm.shenfenzheng = obj[o];
-	    this.ro.shenfenzheng = true;
+	            	            if(o=='idCardNumber'){
+            this.ruleForm.idCardNumber = obj[o];
+	    this.ro.idCardNumber = true;
             continue;
           }
 	                    }
@@ -301,7 +301,7 @@ export default {
           this.$message.error(data.msg);
         }
       });
-                                                                                                this.xingbieOptions = "男,女".split(',')
+                                                                                                this.genderOptions = "男,女".split(',')
                                                                                   },
                                                                 // 多级联动参数
                                                                                   info(id) {
@@ -363,8 +363,8 @@ export default {
       this.parent.landlordCrossAddOrUpdateFlag = false;
       this.parent.contentStyleChange();
     },
-                                                                        touxiangUploadChange(fileUrls) {
-                this.ruleForm.touxiang = fileUrls;
+                                                                        avatarUploadChange(fileUrls) {
+                this.ruleForm.avatar = fileUrls;
 				this.addEditUploadStyleChange()
             },
                                     	addEditStyleChange() {

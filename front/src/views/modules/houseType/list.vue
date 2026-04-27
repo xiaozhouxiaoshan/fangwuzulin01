@@ -143,7 +143,7 @@ export default {
       dataListLoading: false,
       dataListSelections: [],
       showFlag: true,
-      sfshVisiable: false,
+      reviewStatusVisiable: false,
       shForm: {},
       chartVisiable: false,
       addOrUpdateFlag:false,

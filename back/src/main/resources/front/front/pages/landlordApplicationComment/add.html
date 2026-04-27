@@ -158,14 +158,14 @@
 					}],
 					dataList: [],
       					ro:{
-				        refid : false,
-				        userid : false,
+				        referenceId : false,
+				        userId : false,
 				        content : false,
 				        reply : false,
               				},
                     detail: {
-                                                                        refid: '',
-                                                                                                userid: '',
+                                                                        referenceId: '',
+                                                                                                userId: '',
                                                                                                 content: '',
                                                                                                 reply: '',
                                                                     },
@@ -242,14 +242,14 @@
                 if(http.getParam('corss')){
 					var obj = JSON.parse(localStorage.getItem('crossObj'));
 					for (var o in obj){
-					if(o=='refid'){
+					if(o=='referenceId'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.refid = true;
+						vue.ro.referenceId = true;
 						continue;
                                         }
-					if(o=='userid'){
+					if(o=='userId'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.userid = true;
+						vue.ro.userId = true;
 						continue;
                                         }
 					if(o=='content'){
@@ -271,7 +271,7 @@
 					data = data.field;
 					
                     // 数据校验
-                    if(!data.refid){
+                    if(!data.referenceId){
                         layer.msg('关联表id不能为空', {
 							time: 2000,
 							icon: 5

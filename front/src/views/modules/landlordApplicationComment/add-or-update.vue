@@ -130,22 +130,22 @@ export default {
       id: '',
       type: '',
       ro:{
-	refid : false,
-	userid : false,
+	referenceId : false,
+	userId : false,
 	content : false,
 	reply : false,
       },
             ruleForm: {
-                	        refid: '',
-	                        	        userid: '',
+                	        referenceId: '',
+	                        	        userId: '',
 	                        	        content: '',
 	                        	        reply: '',
 	                      },
                                                                     rules: {
-                  refid: [
+                  referenceId: [
                             { required: true, message: '关联表id不能为空', trigger: 'blur' },
                                     	                                                              ],
-                  userid: [
+                  userId: [
                             { required: true, message: '用户id不能为空', trigger: 'blur' },
                                     	                                                              ],
                   content: [
@@ -179,14 +179,14 @@ export default {
       }else if(this.type=='cross'){
         var obj = this.$storage.getObj('crossObj');
         for (var o in obj){
-          	            if(o=='refid'){
-            this.ruleForm.refid = obj[o];
-	    this.ro.refid = true;
+          	            if(o=='referenceId'){
+            this.ruleForm.referenceId = obj[o];
+	    this.ro.referenceId = true;
             continue;
           }
-	            	            if(o=='userid'){
-            this.ruleForm.userid = obj[o];
-	    this.ro.userid = true;
+	            	            if(o=='userId'){
+            this.ruleForm.userId = obj[o];
+	    this.ro.userId = true;
             continue;
           }
 	            	            if(o=='content'){

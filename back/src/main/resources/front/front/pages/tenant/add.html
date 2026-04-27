@@ -121,29 +121,29 @@
                                                             <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">用户名：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.tenantming" type="text" :readonly="ro.tenantming" name="tenantming" id="tenantming" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.tenantUsername" type="text" :readonly="ro.tenantUsername" name="tenantUsername" id="tenantUsername" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">密码：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.mima" type="text" :readonly="ro.mima" name="mima" id="mima" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.password" type="text" :readonly="ro.password" name="password" id="password" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">姓名：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.xingming" type="text" :readonly="ro.xingming" name="xingming" id="xingming" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.fullName" type="text" :readonly="ro.fullName" name="fullName" id="fullName" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">头像：</label>
 						<div class="layui-input-block">
-							<div v-if="detail.touxiang" style="display:inline-block;margin-right:10px;">
-								<img id="touxiangImg" style="width: 100px;height: 100px;border-radius: 50%;border: 2px solid #EEEEEE;" :src="detail.touxiang">
-								<input type="hidden" :value="detail.touxiang" id="touxiang" name="touxiang" />
+							<div v-if="detail.avatar" style="display:inline-block;margin-right:10px;">
+								<img id="avatarImg" style="width: 100px;height: 100px;border-radius: 50%;border: 2px solid #EEEEEE;" :src="detail.avatar">
+								<input type="hidden" :value="detail.avatar" id="avatar" name="avatar" />
 							</div>
-							<button v-if="!ro.touxiang" :style='{"padding":"0 10px","boxShadow":"0 0 6px #7F4E16","margin":"0 10px 0 0","borderColor":"#ccc","backgroundColor":"rgba(127, 78, 22, 1)","color":"#fff","borderRadius":"8px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="button" class="layui-btn btn-theme" id="touxiangUpload">
+							<button v-if="!ro.avatar" :style='{"padding":"0 10px","boxShadow":"0 0 6px #7F4E16","margin":"0 10px 0 0","borderColor":"#ccc","backgroundColor":"rgba(127, 78, 22, 1)","color":"#fff","borderRadius":"8px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="button" class="layui-btn btn-theme" id="avatarUpload">
 								<i v-if="true" :style='{"color":"#fff","show":true,"fontSize":"14px"}' class="layui-icon">&#xe67c;</i>上传头像
 							</button>
 						</div>
@@ -151,28 +151,28 @@
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
                         <label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">性别：</label>
                         <div class="layui-input-block">
-                            <select name="xingbie" id="xingbie" lay-filter="xingbie">
+                            <select name="gender" id="gender" lay-filter="gender">
                                 <option value="">请选择</option>
-                                <option v-for="(item,index) in xingbie" v-bind:key="index" :value="item">{{item}}</option>
+                                <option v-for="(item,index) in gender" v-bind:key="index" :value="item">{{item}}</option>
                             </select>
                         </div>
                     </div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">职业：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.zhiye" type="text" :readonly="ro.zhiye" name="zhiye" id="zhiye" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.occupation" type="text" :readonly="ro.occupation" name="occupation" id="occupation" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">联系电话：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.lianxidianhua" type="text" :readonly="ro.lianxidianhua" name="lianxidianhua" id="lianxidianhua" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.contactPhone" type="text" :readonly="ro.contactPhone" name="contactPhone" id="contactPhone" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">身份证：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.shenfenzheng" type="text" :readonly="ro.shenfenzheng" name="shenfenzheng" id="shenfenzheng" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.idCardNumber" type="text" :readonly="ro.idCardNumber" name="idCardNumber" id="idCardNumber" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                             
@@ -215,26 +215,26 @@
 					}],
 					dataList: [],
       					ro:{
-				        tenantming : false,
-				        mima : false,
-				        xingming : false,
-				        touxiang : false,
-				        xingbie : false,
-				        zhiye : false,
-				        lianxidianhua : false,
-				        shenfenzheng : false,
+				        tenantUsername : false,
+				        password : false,
+				        fullName : false,
+				        avatar : false,
+				        gender : false,
+				        occupation : false,
+				        contactPhone : false,
+				        idCardNumber : false,
               				},
                     detail: {
-                                                                        tenantming: '',
-                                                                                                mima: '',
-                                                                                                xingming: '',
-                                                                                                touxiang: '',
-                                                                                                xingbie: '',
-                                                                                                zhiye: '',
-                                                                                                lianxidianhua: '',
-                                                                                                shenfenzheng: '',
+                                                                        tenantUsername: '',
+                                                                                                password: '',
+                                                                                                fullName: '',
+                                                                                                avatar: '',
+                                                                                                gender: '',
+                                                                                                occupation: '',
+                                                                                                contactPhone: '',
+                                                                                                idCardNumber: '',
                                                                     },
-                    																																																		xingbie: [],
+                    																																																		gender: [],
 																																													centerMenu: centerMenu
 				},
 				updated: function() {
@@ -303,9 +303,9 @@
 				});
 
                 																																// 上传图片
-				var touxiangUpload = upload.render({
+				var avatarUpload = upload.render({
 					//绑定元素
-					elem: '#touxiangUpload',
+					elem: '#avatarUpload',
 					//上传接口
 					url: http.baseurl + 'file/upload',
 					// 请求头
@@ -330,9 +330,9 @@
 								icon: 6
 							})
 							var url = http.baseurl + 'upload/' + res.file;
-							jquery('#touxiang').val(url);
-							jquery('#touxiangImg').attr('src', url)
-                            vue.detail.touxiang = url;
+							jquery('#avatar').val(url);
+							jquery('#avatarImg').attr('src', url)
+                            vue.detail.avatar = url;
 						} else {
 							layer.msg(res.msg, {
 								time: 2000,
@@ -349,7 +349,7 @@
 						})
 					}
 				});
-																vue.xingbie = '男,女'.split(',')
+																vue.gender = '男,女'.split(',')
 																																				
                 // session独取
 				let table = localStorage.getItem("userTable");
@@ -365,44 +365,44 @@
                 if(http.getParam('corss')){
 					var obj = JSON.parse(localStorage.getItem('crossObj'));
 					for (var o in obj){
-					if(o=='tenantming'){
+					if(o=='tenantUsername'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.tenantming = true;
+						vue.ro.tenantUsername = true;
 						continue;
                                         }
-					if(o=='mima'){
+					if(o=='password'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.mima = true;
+						vue.ro.password = true;
 						continue;
                                         }
-					if(o=='xingming'){
+					if(o=='fullName'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.xingming = true;
+						vue.ro.fullName = true;
 						continue;
                                         }
-					if(o=='touxiang'){
+					if(o=='avatar'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.touxiang = true;
+						vue.ro.avatar = true;
 						continue;
                                         }
-					if(o=='xingbie'){
+					if(o=='gender'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.xingbie = true;
+						vue.ro.gender = true;
 						continue;
                                         }
-					if(o=='zhiye'){
+					if(o=='occupation'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.zhiye = true;
+						vue.ro.occupation = true;
 						continue;
                                         }
-					if(o=='lianxidianhua'){
+					if(o=='contactPhone'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.lianxidianhua = true;
+						vue.ro.contactPhone = true;
 						continue;
                                         }
-					if(o=='shenfenzheng'){
+					if(o=='idCardNumber'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.shenfenzheng = true;
+						vue.ro.idCardNumber = true;
 						continue;
                                         }
                                         }
@@ -414,21 +414,21 @@
 					data = data.field;
 					
                     // 数据校验
-                    if(!data.tenantming){
+                    if(!data.tenantUsername){
                         layer.msg('用户名不能为空', {
 							time: 2000,
 							icon: 5
 						});
                         return false
                     }
-                                                                                                                                                                                    if(!data.mima){
+                                                                                                                                                                                    if(!data.password){
                         layer.msg('密码不能为空', {
 							time: 2000,
 							icon: 5
 						});
                         return false
                     }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    if(!isIdentity(data.shenfenzheng)){
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    if(!isIdentity(data.idCardNumber)){
                         layer.msg('身份证应输入身份证格式', {
 							time: 2000,
 							icon: 5

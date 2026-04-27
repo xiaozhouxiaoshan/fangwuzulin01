@@ -55,13 +55,13 @@ public class HouseReviewEntity<T> implements Serializable {
 	 * 合同编号
 	 */
 					
-	private String hetongbianhao;
+	private String contractNumber;
 	
 	/**
 	 * 房屋名称
 	 */
 					
-	private String fangwumingcheng;
+	private String houseName;
 	
 	/**
 	 * 房屋类型
@@ -73,19 +73,19 @@ public class HouseReviewEntity<T> implements Serializable {
 	 * 小区
 	 */
 					
-	private String xiaoqu;
+	private String community;
 	
 	/**
 	 * 评分
 	 */
 					
-	private String pingfen;
+	private String rating;
 	
 	/**
 	 * 评价内容
 	 */
 					
-	private String pingjianeirong;
+	private String reviewContent;
 	
 	/**
 	 * 评价日期
@@ -93,48 +93,48 @@ public class HouseReviewEntity<T> implements Serializable {
 				
 	@JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd")
 	@DateTimeFormat 		
-	private Date pingjiariqi;
+	private Date reviewDate;
 	
 	/**
 	 * 房主账号
 	 */
 					
-	private String landlordzhanghao;
+	private String landlordAccount;
 	
 	/**
 	 * 用户名
 	 */
 					
-	private String tenantming;
+	private String tenantUsername;
 	
 	/**
 	 * 联系电话
 	 */
 					
-	private String lianxidianhua;
+	private String contactPhone;
 	
 	/**
 	 * 是否审核
 	 */
 					
-	private String sfsh;
+	private String reviewStatus;
 	
 	/**
 	 * 审核回复
 	 */
 					
-	private String shhf;
+	private String reviewReply;
 	
 	
 	@JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
 	@DateTimeFormat
-	private Date addtime;
+	private Date createdAt;
 
 	public Date getAddtime() {
-		return addtime;
+		return createdAt;
 	}
-	public void setAddtime(Date addtime) {
-		this.addtime = addtime;
+	public void setAddtime(Date createdAt) {
+		this.createdAt = createdAt;
 	}
 
 	public Long getId() {
@@ -147,26 +147,26 @@ public class HouseReviewEntity<T> implements Serializable {
 	/**
 	 * 设置：合同编号
 	 */
-	public void setHetongbianhao(String hetongbianhao) {
-		this.hetongbianhao = hetongbianhao;
+	public void setHetongbianhao(String contractNumber) {
+		this.contractNumber = contractNumber;
 	}
 	/**
 	 * 获取：合同编号
 	 */
 	public String getHetongbianhao() {
-		return hetongbianhao;
+		return contractNumber;
 	}
 	/**
 	 * 设置：房屋名称
 	 */
-	public void setFangwumingcheng(String fangwumingcheng) {
-		this.fangwumingcheng = fangwumingcheng;
+	public void setFangwumingcheng(String houseName) {
+		this.houseName = houseName;
 	}
 	/**
 	 * 获取：房屋名称
 	 */
 	public String getFangwumingcheng() {
-		return fangwumingcheng;
+		return houseName;
 	}
 	/**
 	 * 设置：房屋类型
@@ -183,110 +183,110 @@ public class HouseReviewEntity<T> implements Serializable {
 	/**
 	 * 设置：小区
 	 */
-	public void setXiaoqu(String xiaoqu) {
-		this.xiaoqu = xiaoqu;
+	public void setXiaoqu(String community) {
+		this.community = community;
 	}
 	/**
 	 * 获取：小区
 	 */
 	public String getXiaoqu() {
-		return xiaoqu;
+		return community;
 	}
 	/**
 	 * 设置：评分
 	 */
-	public void setPingfen(String pingfen) {
-		this.pingfen = pingfen;
+	public void setPingfen(String rating) {
+		this.rating = rating;
 	}
 	/**
 	 * 获取：评分
 	 */
 	public String getPingfen() {
-		return pingfen;
+		return rating;
 	}
 	/**
 	 * 设置：评价内容
 	 */
-	public void setPingjianeirong(String pingjianeirong) {
-		this.pingjianeirong = pingjianeirong;
+	public void setPingjianeirong(String reviewContent) {
+		this.reviewContent = reviewContent;
 	}
 	/**
 	 * 获取：评价内容
 	 */
 	public String getPingjianeirong() {
-		return pingjianeirong;
+		return reviewContent;
 	}
 	/**
 	 * 设置：评价日期
 	 */
-	public void setPingjiariqi(Date pingjiariqi) {
-		this.pingjiariqi = pingjiariqi;
+	public void setPingjiariqi(Date reviewDate) {
+		this.reviewDate = reviewDate;
 	}
 	/**
 	 * 获取：评价日期
 	 */
 	public Date getPingjiariqi() {
-		return pingjiariqi;
+		return reviewDate;
 	}
 	/**
 	 * 设置：房主账号
 	 */
-	public void setLandlordzhanghao(String landlordzhanghao) {
-		this.landlordzhanghao = landlordzhanghao;
+	public void setLandlordzhanghao(String landlordAccount) {
+		this.landlordAccount = landlordAccount;
 	}
 	/**
 	 * 获取：房主账号
 	 */
 	public String getLandlordzhanghao() {
-		return landlordzhanghao;
+		return landlordAccount;
 	}
 	/**
 	 * 设置：用户名
 	 */
-	public void setTenantming(String tenantming) {
-		this.tenantming = tenantming;
+	public void setTenantming(String tenantUsername) {
+		this.tenantUsername = tenantUsername;
 	}
 	/**
 	 * 获取：用户名
 	 */
 	public String getTenantming() {
-		return tenantming;
+		return tenantUsername;
 	}
 	/**
 	 * 设置：联系电话
 	 */
-	public void setLianxidianhua(String lianxidianhua) {
-		this.lianxidianhua = lianxidianhua;
+	public void setLianxidianhua(String contactPhone) {
+		this.contactPhone = contactPhone;
 	}
 	/**
 	 * 获取：联系电话
 	 */
 	public String getLianxidianhua() {
-		return lianxidianhua;
+		return contactPhone;
 	}
 	/**
 	 * 设置：是否审核
 	 */
-	public void setSfsh(String sfsh) {
-		this.sfsh = sfsh;
+	public void setSfsh(String reviewStatus) {
+		this.reviewStatus = reviewStatus;
 	}
 	/**
 	 * 获取：是否审核
 	 */
 	public String getSfsh() {
-		return sfsh;
+		return reviewStatus;
 	}
 	/**
 	 * 设置：审核回复
 	 */
-	public void setShhf(String shhf) {
-		this.shhf = shhf;
+	public void setShhf(String reviewReply) {
+		this.reviewReply = reviewReply;
 	}
 	/**
 	 * 获取：审核回复
 	 */
 	public String getShhf() {
-		return shhf;
+		return reviewReply;
 	}
 
 }

@@ -10,13 +10,13 @@
     >
       <el-row>
                         <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="房屋名称" prop="fangwumingcheng">
-          <el-input v-model="ruleForm.fangwumingcheng" 
-              placeholder="房屋名称" clearable  :readonly="ro.fangwumingcheng"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="房屋名称" prop="houseName">
+          <el-input v-model="ruleForm.houseName" 
+              placeholder="房屋名称" clearable  :readonly="ro.houseName"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="房屋名称" prop="fangwumingcheng">
-              <el-input v-model="ruleForm.fangwumingcheng" 
+          <el-form-item class="input" label="房屋名称" prop="houseName">
+              <el-input v-model="ruleForm.houseName" 
                 placeholder="房屋名称" readonly></el-input>
           </el-form-item>
         </div>
@@ -57,10 +57,10 @@
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="select" v-if="type!='info'"  label="租赁方式" prop="zulinfangshi">
-          <el-select v-model="ruleForm.zulinfangshi" placeholder="请选择租赁方式">
+        <el-form-item class="select" v-if="type!='info'"  label="租赁方式" prop="rentalMode">
+          <el-select v-model="ruleForm.rentalMode" placeholder="请选择租赁方式">
             <el-option
-                v-for="(item,index) in zulinfangshiOptions"
+                v-for="(item,index) in rentalModeOptions"
                 v-bind:key="index"
                 :label="item"
                 :value="item">
@@ -68,41 +68,41 @@
           </el-select>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="租赁方式" prop="zulinfangshi">
-	      <el-input v-model="ruleForm.zulinfangshi"
+          <el-form-item class="input" label="租赁方式" prop="rentalMode">
+	      <el-input v-model="ruleForm.rentalMode"
                 placeholder="租赁方式" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="朝向楼层" prop="chaoxianglouceng">
-          <el-input v-model="ruleForm.chaoxianglouceng" 
-              placeholder="朝向楼层" clearable  :readonly="ro.chaoxianglouceng"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="朝向楼层" prop="orientationFloor">
+          <el-input v-model="ruleForm.orientationFloor" 
+              placeholder="朝向楼层" clearable  :readonly="ro.orientationFloor"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="朝向楼层" prop="chaoxianglouceng">
-              <el-input v-model="ruleForm.chaoxianglouceng" 
+          <el-form-item class="input" label="朝向楼层" prop="orientationFloor">
+              <el-input v-model="ruleForm.orientationFloor" 
                 placeholder="朝向楼层" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="面积" prop="mianji">
-          <el-input v-model="ruleForm.mianji" 
-              placeholder="面积" clearable  :readonly="ro.mianji"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="面积" prop="area">
+          <el-input v-model="ruleForm.area" 
+              placeholder="面积" clearable  :readonly="ro.area"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="面积" prop="mianji">
-              <el-input v-model="ruleForm.mianji" 
+          <el-form-item class="input" label="面积" prop="area">
+              <el-input v-model="ruleForm.area" 
                 placeholder="面积" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="select" v-if="type!='info'"  label="房屋状态" prop="fangwuzhuangtai">
-          <el-select v-model="ruleForm.fangwuzhuangtai" placeholder="请选择房屋状态">
+        <el-form-item class="select" v-if="type!='info'"  label="房屋状态" prop="houseStatus">
+          <el-select v-model="ruleForm.houseStatus" placeholder="请选择房屋状态">
             <el-option
-                v-for="(item,index) in fangwuzhuangtaiOptions"
+                v-for="(item,index) in houseStatusOptions"
                 v-bind:key="index"
                 :label="item"
                 :value="item">
@@ -110,94 +110,94 @@
           </el-select>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="房屋状态" prop="fangwuzhuangtai">
-	      <el-input v-model="ruleForm.fangwuzhuangtai"
+          <el-form-item class="input" label="房屋状态" prop="houseStatus">
+	      <el-input v-model="ruleForm.houseStatus"
                 placeholder="房屋状态" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="小区" prop="xiaoqu">
-          <el-input v-model="ruleForm.xiaoqu" 
-              placeholder="小区" clearable  :readonly="ro.xiaoqu"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="小区" prop="community">
+          <el-input v-model="ruleForm.community" 
+              placeholder="小区" clearable  :readonly="ro.community"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="小区" prop="xiaoqu">
-              <el-input v-model="ruleForm.xiaoqu" 
+          <el-form-item class="input" label="小区" prop="community">
+              <el-input v-model="ruleForm.community" 
                 placeholder="小区" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="详细地址" prop="xiangxidizhi">
-          <el-input v-model="ruleForm.xiangxidizhi" 
-              placeholder="详细地址" clearable  :readonly="ro.xiangxidizhi"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="详细地址" prop="addressDetail">
+          <el-input v-model="ruleForm.addressDetail" 
+              placeholder="详细地址" clearable  :readonly="ro.addressDetail"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="详细地址" prop="xiangxidizhi">
-              <el-input v-model="ruleForm.xiangxidizhi" 
+          <el-form-item class="input" label="详细地址" prop="addressDetail">
+              <el-input v-model="ruleForm.addressDetail" 
                 placeholder="详细地址" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="月租价格" prop="yuezujiage">
-          <el-input v-model="ruleForm.yuezujiage" 
-              placeholder="月租价格" clearable  :readonly="ro.yuezujiage"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="月租价格" prop="monthlyRent">
+          <el-input v-model="ruleForm.monthlyRent" 
+              placeholder="月租价格" clearable  :readonly="ro.monthlyRent"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="月租价格" prop="yuezujiage">
-              <el-input v-model="ruleForm.yuezujiage" 
+          <el-form-item class="input" label="月租价格" prop="monthlyRent">
+              <el-input v-model="ruleForm.monthlyRent" 
                 placeholder="月租价格" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="押金" prop="yajin">
-          <el-input v-model="ruleForm.yajin" 
-              placeholder="押金" clearable  :readonly="ro.yajin"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="押金" prop="deposit">
+          <el-input v-model="ruleForm.deposit" 
+              placeholder="押金" clearable  :readonly="ro.deposit"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="押金" prop="yajin">
-              <el-input v-model="ruleForm.yajin" 
+          <el-form-item class="input" label="押金" prop="deposit">
+              <el-input v-model="ruleForm.deposit" 
                 placeholder="押金" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="房屋设施" prop="fangwusheshi">
-          <el-input v-model="ruleForm.fangwusheshi" 
-              placeholder="房屋设施" clearable  :readonly="ro.fangwusheshi"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="房屋设施" prop="facilities">
+          <el-input v-model="ruleForm.facilities" 
+              placeholder="房屋设施" clearable  :readonly="ro.facilities"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="房屋设施" prop="fangwusheshi">
-              <el-input v-model="ruleForm.fangwusheshi" 
+          <el-form-item class="input" label="房屋设施" prop="facilities">
+              <el-input v-model="ruleForm.facilities" 
                 placeholder="房屋设施" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                                                   <el-col :span="12">
-        <el-form-item class="date" v-if="type!='info'" label="发布日期" prop="faburiqi">
+        <el-form-item class="date" v-if="type!='info'" label="发布日期" prop="publishDate">
             <el-date-picker
                 format="yyyy 年 MM 月 dd 日"
                 value-format="yyyy-MM-dd"
-                v-model="ruleForm.faburiqi" 
+                v-model="ruleForm.publishDate" 
                 type="date"
                 placeholder="发布日期">
             </el-date-picker> 
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" v-if="ruleForm.faburiqi" label="发布日期" prop="faburiqi">
-              <el-input v-model="ruleForm.faburiqi" 
+          <el-form-item class="input" v-if="ruleForm.publishDate" label="发布日期" prop="publishDate">
+              <el-input v-model="ruleForm.publishDate" 
                 placeholder="发布日期" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="select" v-if="type!='info'" label="房主账号" prop="landlordzhanghao">
-          <el-select  @change="landlordzhanghaoChange" v-model="ruleForm.landlordzhanghao" placeholder="请选择房主账号">
+        <el-form-item class="select" v-if="type!='info'" label="房主账号" prop="landlordAccount">
+          <el-select  @change="landlordAccountChange" v-model="ruleForm.landlordAccount" placeholder="请选择房主账号">
             <el-option
-                v-for="(item,index) in landlordzhanghaoOptions"
+                v-for="(item,index) in landlordAccountOptions"
                 v-bind:key="index"
                 :label="item"
                 :value="item">
@@ -205,20 +205,20 @@
           </el-select>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input"v-if="ruleForm.landlordzhanghao" label="房主账号" prop="landlordzhanghao">
-              <el-input v-model="ruleForm.landlordzhanghao" 
+          <el-form-item class="input"v-if="ruleForm.landlordAccount" label="房主账号" prop="landlordAccount">
+              <el-input v-model="ruleForm.landlordAccount" 
                 placeholder="房主账号" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="房主姓名" prop="landlordxingming">
-          <el-input v-model="ruleForm.landlordxingming" 
-              placeholder="房主姓名" clearable  :readonly="ro.landlordxingming"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="房主姓名" prop="landlordName">
+          <el-input v-model="ruleForm.landlordName" 
+              placeholder="房主姓名" clearable  :readonly="ro.landlordName"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="房主姓名" prop="landlordxingming">
-              <el-input v-model="ruleForm.landlordxingming" 
+          <el-form-item class="input" label="房主姓名" prop="landlordName">
+              <el-input v-model="ruleForm.landlordName" 
                 placeholder="房主姓名" readonly></el-input>
           </el-form-item>
         </div>
@@ -226,17 +226,17 @@
                               </el-row>
                                                                                                                                                                                                                                                                                                                                                                                                                                       <el-row>
             <el-col :span="24">
-              <el-form-item v-if="type!='info'"  label="房屋详情" prop="fangwuxiangqing">
+              <el-form-item v-if="type!='info'"  label="房屋详情" prop="houseDescription">
                 <editor 
                     style="min-width: 200px; max-width: 600px;"
-                    v-model="ruleForm.fangwuxiangqing" 
+                    v-model="ruleForm.houseDescription" 
                     class="editor" 
                     action="file/upload">
                 </editor>
               </el-form-item>
               <div v-else>
-                <el-form-item v-if="ruleForm.fangwuxiangqing" label="房屋详情" prop="fangwuxiangqing">
-                    <span v-html="ruleForm.fangwuxiangqing"></span>
+                <el-form-item v-if="ruleForm.houseDescription" label="房屋详情" prop="houseDescription">
+                    <span v-html="ruleForm.houseDescription"></span>
                 </el-form-item>
               </div>
             </el-col>
@@ -325,47 +325,47 @@ export default {
       id: '',
       type: '',
       ro:{
-	fangwumingcheng : false,
+	houseName : false,
 	houseType : false,
 	tupian : false,
-	zulinfangshi : false,
-	chaoxianglouceng : false,
-	mianji : false,
-	fangwuzhuangtai : false,
-	xiaoqu : false,
-	xiangxidizhi : false,
-	yuezujiage : false,
-	yajin : false,
-	fangwusheshi : false,
-	fangwuxiangqing : false,
-	faburiqi : false,
-	landlordzhanghao : false,
-	landlordxingming : false,
+	rentalMode : false,
+	orientationFloor : false,
+	area : false,
+	houseStatus : false,
+	community : false,
+	addressDetail : false,
+	monthlyRent : false,
+	deposit : false,
+	facilities : false,
+	houseDescription : false,
+	publishDate : false,
+	landlordAccount : false,
+	landlordName : false,
       },
             ruleForm: {
-                	        fangwumingcheng: '',
+                	        houseName: '',
 	                        	        houseType: '',
 	                        	        tupian: '',
-	                        	        zulinfangshi: '',
-	                        	        chaoxianglouceng: '',
-	                        	        mianji: '',
-	                        	        fangwuzhuangtai: '',
-	                        	        xiaoqu: '',
-	                        	        xiangxidizhi: '',
-	                        	        yuezujiage: '',
-	                        	        yajin: '',
-	                        	        fangwusheshi: '',
-	                        	        fangwuxiangqing: '',
-	                        	        faburiqi: '',
-	                        	        landlordzhanghao: '',
-	                        	        landlordxingming: '',
+	                        	        rentalMode: '',
+	                        	        orientationFloor: '',
+	                        	        area: '',
+	                        	        houseStatus: '',
+	                        	        community: '',
+	                        	        addressDetail: '',
+	                        	        monthlyRent: '',
+	                        	        deposit: '',
+	                        	        facilities: '',
+	                        	        houseDescription: '',
+	                        	        publishDate: '',
+	                        	        landlordAccount: '',
+	                        	        landlordName: '',
 	                      },
                                       houseTypeOptions: [],
-                                              zulinfangshiOptions: [],
-                                                            fangwuzhuangtaiOptions: [],
-                                                                                                                                  landlordzhanghaoOptions: [],
+                                              rentalModeOptions: [],
+                                                            houseStatusOptions: [],
+                                                                                                                                  landlordAccountOptions: [],
                                   rules: {
-                  fangwumingcheng: [
+                  houseName: [
                             { required: true, message: '房屋名称不能为空', trigger: 'blur' },
                                     	                                                              ],
                   houseType: [
@@ -374,33 +374,33 @@ export default {
                   tupian: [
                             { required: true, message: '图片不能为空', trigger: 'blur' },
                                     	                                                              ],
-                  zulinfangshi: [
+                  rentalMode: [
                                     	                                                              ],
-                  chaoxianglouceng: [
+                  orientationFloor: [
                                     	                                                              ],
-                  mianji: [
+                  area: [
                                     	                                                              ],
-                  fangwuzhuangtai: [
+                  houseStatus: [
                                     	                                                              ],
-                  xiaoqu: [
+                  community: [
                                     	                                                              ],
-                  xiangxidizhi: [
+                  addressDetail: [
                                     	                                                              ],
-                  yuezujiage: [
+                  monthlyRent: [
                                         { validator: validateIntNumber, trigger: 'blur' },
                         	                                                              ],
-                  yajin: [
+                  deposit: [
                                         { validator: validateIntNumber, trigger: 'blur' },
                         	                                                              ],
-                  fangwusheshi: [
+                  facilities: [
                                     	                                                              ],
-                  fangwuxiangqing: [
+                  houseDescription: [
                                     	                                                              ],
-                  faburiqi: [
+                  publishDate: [
                                     	                                                              ],
-                  landlordzhanghao: [
+                  landlordAccount: [
                                     	                                                              ],
-                  landlordxingming: [
+                  landlordName: [
                                     	                                                              ],
               }
     };
@@ -428,9 +428,9 @@ export default {
       }else if(this.type=='cross'){
         var obj = this.$storage.getObj('crossObj');
         for (var o in obj){
-          	            if(o=='fangwumingcheng'){
-            this.ruleForm.fangwumingcheng = obj[o];
-	    this.ro.fangwumingcheng = true;
+          	            if(o=='houseName'){
+            this.ruleForm.houseName = obj[o];
+	    this.ro.houseName = true;
             continue;
           }
 	            	            if(o=='houseType'){
@@ -443,69 +443,69 @@ export default {
 	    this.ro.tupian = true;
             continue;
           }
-	            	            if(o=='zulinfangshi'){
-            this.ruleForm.zulinfangshi = obj[o];
-	    this.ro.zulinfangshi = true;
+	            	            if(o=='rentalMode'){
+            this.ruleForm.rentalMode = obj[o];
+	    this.ro.rentalMode = true;
             continue;
           }
-	            	            if(o=='chaoxianglouceng'){
-            this.ruleForm.chaoxianglouceng = obj[o];
-	    this.ro.chaoxianglouceng = true;
+	            	            if(o=='orientationFloor'){
+            this.ruleForm.orientationFloor = obj[o];
+	    this.ro.orientationFloor = true;
             continue;
           }
-	            	            if(o=='mianji'){
-            this.ruleForm.mianji = obj[o];
-	    this.ro.mianji = true;
+	            	            if(o=='area'){
+            this.ruleForm.area = obj[o];
+	    this.ro.area = true;
             continue;
           }
-	            	            if(o=='fangwuzhuangtai'){
-            this.ruleForm.fangwuzhuangtai = obj[o];
-	    this.ro.fangwuzhuangtai = true;
+	            	            if(o=='houseStatus'){
+            this.ruleForm.houseStatus = obj[o];
+	    this.ro.houseStatus = true;
             continue;
           }
-	            	            if(o=='xiaoqu'){
-            this.ruleForm.xiaoqu = obj[o];
-	    this.ro.xiaoqu = true;
+	            	            if(o=='community'){
+            this.ruleForm.community = obj[o];
+	    this.ro.community = true;
             continue;
           }
-	            	            if(o=='xiangxidizhi'){
-            this.ruleForm.xiangxidizhi = obj[o];
-	    this.ro.xiangxidizhi = true;
+	            	            if(o=='addressDetail'){
+            this.ruleForm.addressDetail = obj[o];
+	    this.ro.addressDetail = true;
             continue;
           }
-	            	            if(o=='yuezujiage'){
-            this.ruleForm.yuezujiage = obj[o];
-	    this.ro.yuezujiage = true;
+	            	            if(o=='monthlyRent'){
+            this.ruleForm.monthlyRent = obj[o];
+	    this.ro.monthlyRent = true;
             continue;
           }
-	            	            if(o=='yajin'){
-            this.ruleForm.yajin = obj[o];
-	    this.ro.yajin = true;
+	            	            if(o=='deposit'){
+            this.ruleForm.deposit = obj[o];
+	    this.ro.deposit = true;
             continue;
           }
-	            	            if(o=='fangwusheshi'){
-            this.ruleForm.fangwusheshi = obj[o];
-	    this.ro.fangwusheshi = true;
+	            	            if(o=='facilities'){
+            this.ruleForm.facilities = obj[o];
+	    this.ro.facilities = true;
             continue;
           }
-	            	            if(o=='fangwuxiangqing'){
-            this.ruleForm.fangwuxiangqing = obj[o];
-	    this.ro.fangwuxiangqing = true;
+	            	            if(o=='houseDescription'){
+            this.ruleForm.houseDescription = obj[o];
+	    this.ro.houseDescription = true;
             continue;
           }
-	            	            if(o=='faburiqi'){
-            this.ruleForm.faburiqi = obj[o];
-	    this.ro.faburiqi = true;
+	            	            if(o=='publishDate'){
+            this.ruleForm.publishDate = obj[o];
+	    this.ro.publishDate = true;
             continue;
           }
-	            	            if(o=='landlordzhanghao'){
-            this.ruleForm.landlordzhanghao = obj[o];
-	    this.ro.landlordzhanghao = true;
+	            	            if(o=='landlordAccount'){
+            this.ruleForm.landlordAccount = obj[o];
+	    this.ro.landlordAccount = true;
             continue;
           }
-	            	            if(o=='landlordxingming'){
-            this.ruleForm.landlordxingming = obj[o];
-	    this.ro.landlordxingming = true;
+	            	            if(o=='landlordName'){
+            this.ruleForm.landlordName = obj[o];
+	    this.ro.landlordName = true;
             continue;
           }
 	                    }
@@ -532,28 +532,28 @@ export default {
               }
             });
          
-                                                          this.zulinfangshiOptions = "整租,合租".split(',')
-                                                                            this.fangwuzhuangtaiOptions = "可租,已租".split(',')
+                                                          this.rentalModeOptions = "整租,合租".split(',')
+                                                                            this.houseStatusOptions = "可租,已租".split(',')
                                                                                                                                                                       this.$http({
-              url: `option/landlord/landlordzhanghao`,
+              url: `option/landlord/landlordAccount`,
               method: "get"
             }).then(({ data }) => {
               if (data && data.code === 0) {
-                this.landlordzhanghaoOptions = data.data;
+                this.landlordAccountOptions = data.data;
               } else {
                 this.$message.error(data.msg);
               }
             });
                                               },
                                                                                                                             // 下二随
-    landlordzhanghaoChange () {
+    landlordAccountChange () {
       this.$http({
-        url: `follow/landlord/landlordzhanghao?columnValue=`+ this.ruleForm.landlordzhanghao,
+        url: `follow/landlord/landlordAccount?columnValue=`+ this.ruleForm.landlordAccount,
         method: "get"
       }).then(({ data }) => {
         if (data && data.code === 0) {
-                                                                                                                                                                                                                                                                                                                                                                              if(data.data.landlordxingming){
-                this.ruleForm.landlordxingming = data.data.landlordxingming
+                                                                                                                                                                                                                                                                                                                                                                              if(data.data.landlordName){
+                this.ruleForm.landlordName = data.data.landlordName
               }
                               } else {
           this.$message.error(data.msg);

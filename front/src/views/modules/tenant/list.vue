@@ -5,9 +5,9 @@
       <el-form :inline="true" :model="searchForm" class="form-content">
         <el-row :gutter="20" class="slt" :style="{justifyContent:contents.searchBoxPosition=='1'?'flex-start':contents.searchBoxPosition=='2'?'center':'flex-end'}">
                                                     <el-form-item :label="contents.inputTitle == 1 ? '用户名' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.tenantming" placeholder="用户名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.tenantming" placeholder="用户名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.tenantming" placeholder="用户名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.tenantUsername" placeholder="用户名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.tenantUsername" placeholder="用户名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.tenantUsername" placeholder="用户名" clearable></el-input>
                 </el-form-item>
                                                                                                                                                                                                         <el-form-item>
             <el-button v-if="contents.searchBtnIcon == 1 && contents.searchBtnIconPosition == 1" icon="el-icon-search" type="success" @click="search()">{{ contents.searchBtnFont == 1?'查询':'' }}</el-button>
@@ -78,70 +78,70 @@
             </el-table-column>
             <el-table-column label="索引" v-if="contents.tableIndex" type="index" width="50" />
             	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="tenantming"
+                    prop="tenantUsername"
                     header-align="center"
 		    label="用户名">
 		     <template slot-scope="scope">
-                       {{scope.row.tenantming}}
+                       {{scope.row.tenantUsername}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="mima"
+                    prop="password"
                     header-align="center"
 		    label="密码">
 		     <template slot-scope="scope">
-                       {{scope.row.mima}}
+                       {{scope.row.password}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="xingming"
+                    prop="fullName"
                     header-align="center"
 		    label="姓名">
 		     <template slot-scope="scope">
-                       {{scope.row.xingming}}
+                       {{scope.row.fullName}}
                      </template>
                 </el-table-column>
-                	                	                                      <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign" prop="touxiang"
+                	                	                                      <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign" prop="avatar"
                     header-align="center"
                     width="200"
                     label="头像">
                     <template slot-scope="scope">
-                      <div v-if="scope.row.touxiang">
-                        <img :src="scope.row.touxiang.split(',')[0]" width="100" height="100">
+                      <div v-if="scope.row.avatar">
+                        <img :src="scope.row.avatar.split(',')[0]" width="100" height="100">
                       </div>
                       <div v-else>无图片</div>
                     </template>
                   </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="xingbie"
+                    prop="gender"
                     header-align="center"
 		    label="性别">
 		     <template slot-scope="scope">
-                       {{scope.row.xingbie}}
+                       {{scope.row.gender}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="zhiye"
+                    prop="occupation"
                     header-align="center"
 		    label="职业">
 		     <template slot-scope="scope">
-                       {{scope.row.zhiye}}
+                       {{scope.row.occupation}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="lianxidianhua"
+                    prop="contactPhone"
                     header-align="center"
 		    label="联系电话">
 		     <template slot-scope="scope">
-                       {{scope.row.lianxidianhua}}
+                       {{scope.row.contactPhone}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="shenfenzheng"
+                    prop="idCardNumber"
                     header-align="center"
 		    label="身份证">
 		     <template slot-scope="scope">
-                       {{scope.row.shenfenzheng}}
+                       {{scope.row.idCardNumber}}
                      </template>
                 </el-table-column>
                 	                                        <el-table-column width="300" :align="contents.tableAlign"
@@ -202,7 +202,7 @@ export default {
       dataListLoading: false,
       dataListSelections: [],
       showFlag: true,
-      sfshVisiable: false,
+      reviewStatusVisiable: false,
       shForm: {},
       chartVisiable: false,
       addOrUpdateFlag:false,
@@ -419,8 +419,8 @@ export default {
         limit: this.pageSize,
         sort: 'id',
       }
-                                          if(this.searchForm.tenantming!='' && this.searchForm.tenantming!=undefined){
-            params['tenantming'] = '%' + this.searchForm.tenantming + '%'
+                                          if(this.searchForm.tenantUsername!='' && this.searchForm.tenantUsername!=undefined){
+            params['tenantUsername'] = '%' + this.searchForm.tenantUsername + '%'
           }
                                                                                                                                                                                         this.$http({
         url: "tenant/page",

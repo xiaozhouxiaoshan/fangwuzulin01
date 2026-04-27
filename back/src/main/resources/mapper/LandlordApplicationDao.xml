@@ -5,20 +5,20 @@
 
 	<!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.LandlordApplicationEntity" id="landlordApplicationMap">
-        <result property="fangwumingcheng" column="fangwumingcheng"/>
+        <result property="houseName" column="houseName"/>
         <result property="houseType" column="houseType"/>
         <result property="tupian" column="tupian"/>
-        <result property="zulinfangshi" column="zulinfangshi"/>
-        <result property="chaoxianglouceng" column="chaoxianglouceng"/>
-        <result property="xiaoqu" column="xiaoqu"/>
-        <result property="mianji" column="mianji"/>
-        <result property="yuezujiage" column="yuezujiage"/>
-        <result property="fangwuxiangqing" column="fangwuxiangqing"/>
-        <result property="faburiqi" column="faburiqi"/>
-        <result property="tenantming" column="tenantming"/>
-        <result property="lianxidianhua" column="lianxidianhua"/>
-        <result property="sfsh" column="sfsh"/>
-        <result property="shhf" column="shhf"/>
+        <result property="rentalMode" column="rentalMode"/>
+        <result property="orientationFloor" column="orientationFloor"/>
+        <result property="community" column="community"/>
+        <result property="area" column="area"/>
+        <result property="monthlyRent" column="monthlyRent"/>
+        <result property="houseDescription" column="houseDescription"/>
+        <result property="publishDate" column="publishDate"/>
+        <result property="tenantUsername" column="tenantUsername"/>
+        <result property="contactPhone" column="contactPhone"/>
+        <result property="reviewStatus" column="reviewStatus"/>
+        <result property="reviewReply" column="reviewReply"/>
     </resultMap>
 
 	<select id="selectListVO"

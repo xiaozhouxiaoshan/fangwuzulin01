@@ -5,18 +5,18 @@
 
 	<!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.RepairHandlingEntity" id="repairHandlingMap">
-        <result property="fangwumingcheng" column="fangwumingcheng"/>
+        <result property="houseName" column="houseName"/>
         <result property="houseType" column="houseType"/>
-        <result property="baoxiumingcheng" column="baoxiumingcheng"/>
-        <result property="leixing" column="leixing"/>
-        <result property="baoxiuriqi" column="baoxiuriqi"/>
-        <result property="weixiufankui" column="weixiufankui"/>
-        <result property="weixiujindu" column="weixiujindu"/>
-        <result property="gengxinriqi" column="gengxinriqi"/>
-        <result property="landlordzhanghao" column="landlordzhanghao"/>
-        <result property="landlordxingming" column="landlordxingming"/>
-        <result property="tenantming" column="tenantming"/>
-        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="repairTitle" column="repairTitle"/>
+        <result property="repairType" column="repairType"/>
+        <result property="repairDate" column="repairDate"/>
+        <result property="handlingFeedback" column="handlingFeedback"/>
+        <result property="handlingProgress" column="handlingProgress"/>
+        <result property="updatedDate" column="updatedDate"/>
+        <result property="landlordAccount" column="landlordAccount"/>
+        <result property="landlordName" column="landlordName"/>
+        <result property="tenantUsername" column="tenantUsername"/>
+        <result property="contactPhone" column="contactPhone"/>
     </resultMap>
 
 	<select id="selectListVO"

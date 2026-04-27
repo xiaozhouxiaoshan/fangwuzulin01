@@ -27,7 +27,7 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 房屋名称
 	 */
 	
-	private String fangwumingcheng;
+	private String houseName;
 		
 	/**
 	 * 房屋类型
@@ -39,37 +39,37 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 房屋状态
 	 */
 	
-	private String fangwuzhuangtai;
+	private String houseStatus;
 		
 	/**
 	 * 小区
 	 */
 	
-	private String xiaoqu;
+	private String community;
 		
 	/**
 	 * 月租价格
 	 */
 	
-	private Integer yuezujiage;
+	private Integer monthlyRent;
 		
 	/**
 	 * 押金
 	 */
 	
-	private String yajin;
+	private String deposit;
 		
 	/**
 	 * 租用月数
 	 */
 	
-	private Integer zuyongyueshu;
+	private Integer rentalMonths;
 		
 	/**
 	 * 租用金额
 	 */
 	
-	private String zuyongjine;
+	private String rentalAmount;
 		
 	/**
 	 * 预约时间
@@ -77,70 +77,70 @@ public class ViewingAppointmentModel  implements Serializable {
 		
 	@JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
 	@DateTimeFormat 
-	private Date yuyueshijian;
+	private Date appointmentTime;
 		
 	/**
 	 * 用户名
 	 */
 	
-	private String tenantming;
+	private String tenantUsername;
 		
 	/**
 	 * 姓名
 	 */
 	
-	private String xingming;
+	private String fullName;
 		
 	/**
 	 * 身份证
 	 */
 	
-	private String shenfenzheng;
+	private String idCardNumber;
 		
 	/**
 	 * 联系电话
 	 */
 	
-	private String lianxidianhua;
+	private String contactPhone;
 		
 	/**
 	 * 房主账号
 	 */
 	
-	private String landlordzhanghao;
+	private String landlordAccount;
 		
 	/**
 	 * 房主姓名
 	 */
 	
-	private String landlordxingming;
+	private String landlordName;
 		
 	/**
 	 * 是否审核
 	 */
 	
-	private String sfsh;
+	private String reviewStatus;
 		
 	/**
 	 * 审核回复
 	 */
 	
-	private String shhf;
+	private String reviewReply;
 				
 	
 	/**
 	 * 设置：房屋名称
 	 */
 	 
-	public void setFangwumingcheng(String fangwumingcheng) {
-		this.fangwumingcheng = fangwumingcheng;
+	public void setFangwumingcheng(String houseName) {
+		this.houseName = houseName;
 	}
 	
 	/**
 	 * 获取：房屋名称
 	 */
 	public String getFangwumingcheng() {
-		return fangwumingcheng;
+		return houseName;
 	}
 				
 	
@@ -164,15 +164,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：房屋状态
 	 */
 	 
-	public void setFangwuzhuangtai(String fangwuzhuangtai) {
-		this.fangwuzhuangtai = fangwuzhuangtai;
+	public void setFangwuzhuangtai(String houseStatus) {
+		this.houseStatus = houseStatus;
 	}
 	
 	/**
 	 * 获取：房屋状态
 	 */
 	public String getFangwuzhuangtai() {
-		return fangwuzhuangtai;
+		return houseStatus;
 	}
 				
 	
@@ -180,15 +180,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：小区
 	 */
 	 
-	public void setXiaoqu(String xiaoqu) {
-		this.xiaoqu = xiaoqu;
+	public void setXiaoqu(String community) {
+		this.community = community;
 	}
 	
 	/**
 	 * 获取：小区
 	 */
 	public String getXiaoqu() {
-		return xiaoqu;
+		return community;
 	}
 				
 	
@@ -196,15 +196,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：月租价格
 	 */
 	 
-	public void setYuezujiage(Integer yuezujiage) {
-		this.yuezujiage = yuezujiage;
+	public void setYuezujiage(Integer monthlyRent) {
+		this.monthlyRent = monthlyRent;
 	}
 	
 	/**
 	 * 获取：月租价格
 	 */
 	public Integer getYuezujiage() {
-		return yuezujiage;
+		return monthlyRent;
 	}
 				
 	
@@ -212,15 +212,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：押金
 	 */
 	 
-	public void setYajin(String yajin) {
-		this.yajin = yajin;
+	public void setYajin(String deposit) {
+		this.deposit = deposit;
 	}
 	
 	/**
 	 * 获取：押金
 	 */
 	public String getYajin() {
-		return yajin;
+		return deposit;
 	}
 				
 	
@@ -228,15 +228,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：租用月数
 	 */
 	 
-	public void setZuyongyueshu(Integer zuyongyueshu) {
-		this.zuyongyueshu = zuyongyueshu;
+	public void setZuyongyueshu(Integer rentalMonths) {
+		this.rentalMonths = rentalMonths;
 	}
 	
 	/**
 	 * 获取：租用月数
 	 */
 	public Integer getZuyongyueshu() {
-		return zuyongyueshu;
+		return rentalMonths;
 	}
 				
 	
@@ -244,15 +244,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：租用金额
 	 */
 	 
-	public void setZuyongjine(String zuyongjine) {
-		this.zuyongjine = zuyongjine;
+	public void setZuyongjine(String rentalAmount) {
+		this.rentalAmount = rentalAmount;
 	}
 	
 	/**
 	 * 获取：租用金额
 	 */
 	public String getZuyongjine() {
-		return zuyongjine;
+		return rentalAmount;
 	}
 				
 	
@@ -260,15 +260,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：预约时间
 	 */
 	 
-	public void setYuyueshijian(Date yuyueshijian) {
-		this.yuyueshijian = yuyueshijian;
+	public void setYuyueshijian(Date appointmentTime) {
+		this.appointmentTime = appointmentTime;
 	}
 	
 	/**
 	 * 获取：预约时间
 	 */
 	public Date getYuyueshijian() {
-		return yuyueshijian;
+		return appointmentTime;
 	}
 				
 	
@@ -276,15 +276,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：用户名
 	 */
 	 
-	public void setTenantming(String tenantming) {
-		this.tenantming = tenantming;
+	public void setTenantming(String tenantUsername) {
+		this.tenantUsername = tenantUsername;
 	}
 	
 	/**
 	 * 获取：用户名
 	 */
 	public String getTenantming() {
-		return tenantming;
+		return tenantUsername;
 	}
 				
 	
@@ -292,15 +292,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：姓名
 	 */
 	 
-	public void setXingming(String xingming) {
-		this.xingming = xingming;
+	public void setXingming(String fullName) {
+		this.fullName = fullName;
 	}
 	
 	/**
 	 * 获取：姓名
 	 */
 	public String getXingming() {
-		return xingming;
+		return fullName;
 	}
 				
 	
@@ -308,15 +308,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：身份证
 	 */
 	 
-	public void setShenfenzheng(String shenfenzheng) {
-		this.shenfenzheng = shenfenzheng;
+	public void setShenfenzheng(String idCardNumber) {
+		this.idCardNumber = idCardNumber;
 	}
 	
 	/**
 	 * 获取：身份证
 	 */
 	public String getShenfenzheng() {
-		return shenfenzheng;
+		return idCardNumber;
 	}
 				
 	
@@ -324,15 +324,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：联系电话
 	 */
 	 
-	public void setLianxidianhua(String lianxidianhua) {
-		this.lianxidianhua = lianxidianhua;
+	public void setLianxidianhua(String contactPhone) {
+		this.contactPhone = contactPhone;
 	}
 	
 	/**
 	 * 获取：联系电话
 	 */
 	public String getLianxidianhua() {
-		return lianxidianhua;
+		return contactPhone;
 	}
 				
 	
@@ -340,15 +340,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：房主账号
 	 */
 	 
-	public void setLandlordzhanghao(String landlordzhanghao) {
-		this.landlordzhanghao = landlordzhanghao;
+	public void setLandlordzhanghao(String landlordAccount) {
+		this.landlordAccount = landlordAccount;
 	}
 	
 	/**
 	 * 获取：房主账号
 	 */
 	public String getLandlordzhanghao() {
-		return landlordzhanghao;
+		return landlordAccount;
 	}
 				
 	
@@ -356,15 +356,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：房主姓名
 	 */
 	 
-	public void setLandlordxingming(String landlordxingming) {
-		this.landlordxingming = landlordxingming;
+	public void setLandlordfullName(String landlordName) {
+		this.landlordName = landlordName;
 	}
 	
 	/**
 	 * 获取：房主姓名
 	 */
-	public String getLandlordxingming() {
-		return landlordxingming;
+	public String getLandlordfullName() {
+		return landlordName;
 	}
 				
 	
@@ -372,15 +372,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：是否审核
 	 */
 	 
-	public void setSfsh(String sfsh) {
-		this.sfsh = sfsh;
+	public void setSfsh(String reviewStatus) {
+		this.reviewStatus = reviewStatus;
 	}
 	
 	/**
 	 * 获取：是否审核
 	 */
 	public String getSfsh() {
-		return sfsh;
+		return reviewStatus;
 	}
 				
 	
@@ -388,15 +388,15 @@ public class ViewingAppointmentModel  implements Serializable {
 	 * 设置：审核回复
 	 */
 	 
-	public void setShhf(String shhf) {
-		this.shhf = shhf;
+	public void setShhf(String reviewReply) {
+		this.reviewReply = reviewReply;
 	}
 	
 	/**
 	 * 获取：审核回复
 	 */
 	public String getShhf() {
-		return shhf;
+		return reviewReply;
 	}
 			
 }

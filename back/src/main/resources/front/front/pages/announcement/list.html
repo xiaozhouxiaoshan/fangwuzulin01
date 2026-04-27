@@ -250,12 +250,12 @@
             <div class="right" style="width: 750px;"> 
               <a href="javascript:void(0);" class="tit">{{item.title}}</a>
               <div class="text">{{item.content|announcementDesc}}...</div>
-              <a href="javascript:void(0);">[查看详情]</a> <span class="date">{{item.addtime}}</span>
+              <a href="javascript:void(0);">[查看详情]</a> <span class="date">{{item.createdAt}}</span>
             </div>
           </div>
           <ul class="other_list">
             <li v-for="(item,index) in dataList" v-bind:key="index" v-if="item.picture.substr(0,7)!='http://'">
-              <a href="#" @click="jump('../announcement/detail.html?id='+item.id)"> {{item.title}}</a><span>[{{item.addtime}}]</span>
+              <a href="#" @click="jump('../announcement/detail.html?id='+item.id)"> {{item.title}}</a><span>[{{item.createdAt}}]</span>
             </li>
           </ul>
           <div class="pager" id="pager" :style="{textAlign:1==1?'left':1==2?'center':'right'}"></div>

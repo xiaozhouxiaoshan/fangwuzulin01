@@ -156,7 +156,7 @@ export default {
       dataListLoading: false,
       dataListSelections: [],
       showFlag: true,
-      sfshVisiable: false,
+      reviewStatusVisiable: false,
       shForm: {},
       chartVisiable: false,
       addOrUpdateFlag:false,
@@ -372,7 +372,7 @@ export default {
         page: this.pageIndex,
         limit: this.pageSize,
         sort: 'id',
-	refid : this.$route.query.refid,
+	referenceId : this.$route.query.referenceId,
       }
                                                                                       if(this.searchForm.content!='' && this.searchForm.content!=undefined){
             params['content'] = '%' + this.searchForm.content + '%'
@@ -421,7 +421,7 @@ export default {
     },
     // 查看评论
     disscussListHandler(id,type) {
-	this.$router.push({path:'/landlordApplicationComment',query:{refid:id}});
+	this.$router.push({path:'/landlordApplicationComment',query:{referenceId:id}});
     },
         // 下载
     download(file){

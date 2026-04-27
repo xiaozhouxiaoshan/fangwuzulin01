@@ -121,38 +121,38 @@
                                                             <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">房主账号：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.landlordzhanghao" type="text" :readonly="ro.landlordzhanghao" name="landlordzhanghao" id="landlordzhanghao" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.landlordAccount" type="text" :readonly="ro.landlordAccount" name="landlordAccount" id="landlordAccount" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">密码：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.mima" type="text" :readonly="ro.mima" name="mima" id="mima" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.password" type="text" :readonly="ro.password" name="password" id="password" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">房主姓名：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.landlordxingming" type="text" :readonly="ro.landlordxingming" name="landlordxingming" id="landlordxingming" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.landlordName" type="text" :readonly="ro.landlordName" name="landlordName" id="landlordName" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
                         <label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">性别：</label>
                         <div class="layui-input-block">
-                            <select name="xingbie" id="xingbie" lay-filter="xingbie">
+                            <select name="gender" id="gender" lay-filter="gender">
                                 <option value="">请选择</option>
-                                <option v-for="(item,index) in xingbie" v-bind:key="index" :value="item">{{item}}</option>
+                                <option v-for="(item,index) in gender" v-bind:key="index" :value="item">{{item}}</option>
                             </select>
                         </div>
                     </div>
                                                                                 <div :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">头像：</label>
 						<div class="layui-input-block">
-							<div v-if="detail.touxiang" style="display:inline-block;margin-right:10px;">
-								<img id="touxiangImg" style="width: 100px;height: 100px;border-radius: 50%;border: 2px solid #EEEEEE;" :src="detail.touxiang">
-								<input type="hidden" :value="detail.touxiang" id="touxiang" name="touxiang" />
+							<div v-if="detail.avatar" style="display:inline-block;margin-right:10px;">
+								<img id="avatarImg" style="width: 100px;height: 100px;border-radius: 50%;border: 2px solid #EEEEEE;" :src="detail.avatar">
+								<input type="hidden" :value="detail.avatar" id="avatar" name="avatar" />
 							</div>
-							<button v-if="!ro.touxiang" :style='{"padding":"0 10px","boxShadow":"0 0 6px #7F4E16","margin":"0 10px 0 0","borderColor":"#ccc","backgroundColor":"rgba(127, 78, 22, 1)","color":"#fff","borderRadius":"8px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="button" class="layui-btn btn-theme" id="touxiangUpload">
+							<button v-if="!ro.avatar" :style='{"padding":"0 10px","boxShadow":"0 0 6px #7F4E16","margin":"0 10px 0 0","borderColor":"#ccc","backgroundColor":"rgba(127, 78, 22, 1)","color":"#fff","borderRadius":"8px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="button" class="layui-btn btn-theme" id="avatarUpload">
 								<i v-if="true" :style='{"color":"#fff","show":true,"fontSize":"14px"}' class="layui-icon">&#xe67c;</i>上传头像
 							</button>
 						</div>
@@ -160,13 +160,13 @@
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">手机：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.shouji" type="text" :readonly="ro.shouji" name="shouji" id="shouji" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.phoneNumber" type="text" :readonly="ro.phoneNumber" name="phoneNumber" id="phoneNumber" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">身份证：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.shenfenzheng" type="text" :readonly="ro.shenfenzheng" name="shenfenzheng" id="shenfenzheng" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.idCardNumber" type="text" :readonly="ro.idCardNumber" name="idCardNumber" id="idCardNumber" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                             
@@ -209,24 +209,24 @@
 					}],
 					dataList: [],
       					ro:{
-				        landlordzhanghao : false,
-				        mima : false,
-				        landlordxingming : false,
-				        xingbie : false,
-				        touxiang : false,
-				        shouji : false,
-				        shenfenzheng : false,
+				        landlordAccount : false,
+				        password : false,
+				        landlordName : false,
+				        gender : false,
+				        avatar : false,
+				        phoneNumber : false,
+				        idCardNumber : false,
               				},
                     detail: {
-                                                                        landlordzhanghao: '',
-                                                                                                mima: '',
-                                                                                                landlordxingming: '',
-                                                                                                xingbie: '',
-                                                                                                touxiang: '',
-                                                                                                shouji: '',
-                                                                                                shenfenzheng: '',
+                                                                        landlordAccount: '',
+                                                                                                password: '',
+                                                                                                landlordName: '',
+                                                                                                gender: '',
+                                                                                                avatar: '',
+                                                                                                phoneNumber: '',
+                                                                                                idCardNumber: '',
                                                                     },
-                    																																								xingbie: [],
+                    																																								gender: [],
 																																													centerMenu: centerMenu
 				},
 				updated: function() {
@@ -294,11 +294,11 @@
 					}
 				});
 
-                																																vue.xingbie = '男,女'.split(',')
+                																																vue.gender = '男,女'.split(',')
 																// 上传图片
-				var touxiangUpload = upload.render({
+				var avatarUpload = upload.render({
 					//绑定元素
-					elem: '#touxiangUpload',
+					elem: '#avatarUpload',
 					//上传接口
 					url: http.baseurl + 'file/upload',
 					// 请求头
@@ -323,9 +323,9 @@
 								icon: 6
 							})
 							var url = http.baseurl + 'upload/' + res.file;
-							jquery('#touxiang').val(url);
-							jquery('#touxiangImg').attr('src', url)
-                            vue.detail.touxiang = url;
+							jquery('#avatar').val(url);
+							jquery('#avatarImg').attr('src', url)
+                            vue.detail.avatar = url;
 						} else {
 							layer.msg(res.msg, {
 								time: 2000,
@@ -357,39 +357,39 @@
                 if(http.getParam('corss')){
 					var obj = JSON.parse(localStorage.getItem('crossObj'));
 					for (var o in obj){
-					if(o=='landlordzhanghao'){
+					if(o=='landlordAccount'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.landlordzhanghao = true;
+						vue.ro.landlordAccount = true;
 						continue;
                                         }
-					if(o=='mima'){
+					if(o=='password'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.mima = true;
+						vue.ro.password = true;
 						continue;
                                         }
-					if(o=='landlordxingming'){
+					if(o=='landlordName'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.landlordxingming = true;
+						vue.ro.landlordName = true;
 						continue;
                                         }
-					if(o=='xingbie'){
+					if(o=='gender'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.xingbie = true;
+						vue.ro.gender = true;
 						continue;
                                         }
-					if(o=='touxiang'){
+					if(o=='avatar'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.touxiang = true;
+						vue.ro.avatar = true;
 						continue;
                                         }
-					if(o=='shouji'){
+					if(o=='phoneNumber'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.shouji = true;
+						vue.ro.phoneNumber = true;
 						continue;
                                         }
-					if(o=='shenfenzheng'){
+					if(o=='idCardNumber'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.shenfenzheng = true;
+						vue.ro.idCardNumber = true;
 						continue;
                                         }
                                         }
@@ -401,28 +401,28 @@
 					data = data.field;
 					
                     // 数据校验
-                    if(!data.landlordzhanghao){
+                    if(!data.landlordAccount){
                         layer.msg('房主账号不能为空', {
 							time: 2000,
 							icon: 5
 						});
                         return false
                     }
-                                                                                                                                                                                    if(!data.mima){
+                                                                                                                                                                                    if(!data.password){
                         layer.msg('密码不能为空', {
 							time: 2000,
 							icon: 5
 						});
                         return false
                     }
-                                                                                                                                                                                    if(!data.landlordxingming){
+                                                                                                                                                                                    if(!data.landlordName){
                         layer.msg('房主姓名不能为空', {
 							time: 2000,
 							icon: 5
 						});
                         return false
                     }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            if(!isIdentity(data.shenfenzheng)){
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            if(!isIdentity(data.idCardNumber)){
                         layer.msg('身份证应输入身份证格式', {
 							time: 2000,
 							icon: 5

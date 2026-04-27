@@ -10,13 +10,13 @@
     >
       <el-row>
                         <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="房屋名称" prop="fangwumingcheng">
-          <el-input v-model="ruleForm.fangwumingcheng" 
-              placeholder="房屋名称" clearable  :readonly="ro.fangwumingcheng"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="房屋名称" prop="houseName">
+          <el-input v-model="ruleForm.houseName" 
+              placeholder="房屋名称" clearable  :readonly="ro.houseName"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="房屋名称" prop="fangwumingcheng">
-              <el-input v-model="ruleForm.fangwumingcheng" 
+          <el-form-item class="input" label="房屋名称" prop="houseName">
+              <el-input v-model="ruleForm.houseName" 
                 placeholder="房屋名称" readonly></el-input>
           </el-form-item>
         </div>
@@ -34,58 +34,58 @@
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="报修名称" prop="baoxiumingcheng">
-          <el-input v-model="ruleForm.baoxiumingcheng" 
-              placeholder="报修名称" clearable  :readonly="ro.baoxiumingcheng"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="报修名称" prop="repairTitle">
+          <el-input v-model="ruleForm.repairTitle" 
+              placeholder="报修名称" clearable  :readonly="ro.repairTitle"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="报修名称" prop="baoxiumingcheng">
-              <el-input v-model="ruleForm.baoxiumingcheng" 
+          <el-form-item class="input" label="报修名称" prop="repairTitle">
+              <el-input v-model="ruleForm.repairTitle" 
                 placeholder="报修名称" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="类型" prop="leixing">
-          <el-input v-model="ruleForm.leixing" 
-              placeholder="类型" clearable  :readonly="ro.leixing"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="类型" prop="repairType">
+          <el-input v-model="ruleForm.repairType" 
+              placeholder="类型" clearable  :readonly="ro.repairType"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="类型" prop="leixing">
-              <el-input v-model="ruleForm.leixing" 
+          <el-form-item class="input" label="类型" prop="repairType">
+              <el-input v-model="ruleForm.repairType" 
                 placeholder="类型" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="报修日期" prop="baoxiuriqi">
-          <el-input v-model="ruleForm.baoxiuriqi" 
-              placeholder="报修日期" clearable  :readonly="ro.baoxiuriqi"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="报修日期" prop="repairDate">
+          <el-input v-model="ruleForm.repairDate" 
+              placeholder="报修日期" clearable  :readonly="ro.repairDate"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="报修日期" prop="baoxiuriqi">
-              <el-input v-model="ruleForm.baoxiuriqi" 
+          <el-form-item class="input" label="报修日期" prop="repairDate">
+              <el-input v-model="ruleForm.repairDate" 
                 placeholder="报修日期" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="维修反馈" prop="weixiufankui">
-          <el-input v-model="ruleForm.weixiufankui" 
-              placeholder="维修反馈" clearable  :readonly="ro.weixiufankui"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="维修反馈" prop="handlingFeedback">
+          <el-input v-model="ruleForm.handlingFeedback" 
+              placeholder="维修反馈" clearable  :readonly="ro.handlingFeedback"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="维修反馈" prop="weixiufankui">
-              <el-input v-model="ruleForm.weixiufankui" 
+          <el-form-item class="input" label="维修反馈" prop="handlingFeedback">
+              <el-input v-model="ruleForm.handlingFeedback" 
                 placeholder="维修反馈" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="select" v-if="type!='info'"  label="维修进度" prop="weixiujindu">
-          <el-select v-model="ruleForm.weixiujindu" placeholder="请选择维修进度">
+        <el-form-item class="select" v-if="type!='info'"  label="维修进度" prop="handlingProgress">
+          <el-select v-model="ruleForm.handlingProgress" placeholder="请选择维修进度">
             <el-option
-                v-for="(item,index) in weixiujinduOptions"
+                v-for="(item,index) in handlingProgressOptions"
                 v-bind:key="index"
                 :label="item"
                 :value="item">
@@ -93,73 +93,73 @@
           </el-select>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="维修进度" prop="weixiujindu">
-	      <el-input v-model="ruleForm.weixiujindu"
+          <el-form-item class="input" label="维修进度" prop="handlingProgress">
+	      <el-input v-model="ruleForm.handlingProgress"
                 placeholder="维修进度" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="date" v-if="type!='info'" label="更新日期" prop="gengxinriqi">
+        <el-form-item class="date" v-if="type!='info'" label="更新日期" prop="updatedDate">
             <el-date-picker
                 format="yyyy 年 MM 月 dd 日"
                 value-format="yyyy-MM-dd"
-                v-model="ruleForm.gengxinriqi" 
+                v-model="ruleForm.updatedDate" 
                 type="date"
                 placeholder="更新日期">
             </el-date-picker> 
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" v-if="ruleForm.gengxinriqi" label="更新日期" prop="gengxinriqi">
-              <el-input v-model="ruleForm.gengxinriqi" 
+          <el-form-item class="input" v-if="ruleForm.updatedDate" label="更新日期" prop="updatedDate">
+              <el-input v-model="ruleForm.updatedDate" 
                 placeholder="更新日期" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="房主账号" prop="landlordzhanghao">
-          <el-input v-model="ruleForm.landlordzhanghao" 
-              placeholder="房主账号" clearable  :readonly="ro.landlordzhanghao"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="房主账号" prop="landlordAccount">
+          <el-input v-model="ruleForm.landlordAccount" 
+              placeholder="房主账号" clearable  :readonly="ro.landlordAccount"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="房主账号" prop="landlordzhanghao">
-              <el-input v-model="ruleForm.landlordzhanghao" 
+          <el-form-item class="input" label="房主账号" prop="landlordAccount">
+              <el-input v-model="ruleForm.landlordAccount" 
                 placeholder="房主账号" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="房主姓名" prop="landlordxingming">
-          <el-input v-model="ruleForm.landlordxingming" 
-              placeholder="房主姓名" clearable  :readonly="ro.landlordxingming"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="房主姓名" prop="landlordName">
+          <el-input v-model="ruleForm.landlordName" 
+              placeholder="房主姓名" clearable  :readonly="ro.landlordName"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="房主姓名" prop="landlordxingming">
-              <el-input v-model="ruleForm.landlordxingming" 
+          <el-form-item class="input" label="房主姓名" prop="landlordName">
+              <el-input v-model="ruleForm.landlordName" 
                 placeholder="房主姓名" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="用户名" prop="tenantming">
-          <el-input v-model="ruleForm.tenantming" 
-              placeholder="用户名" clearable  :readonly="ro.tenantming"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="用户名" prop="tenantUsername">
+          <el-input v-model="ruleForm.tenantUsername" 
+              placeholder="用户名" clearable  :readonly="ro.tenantUsername"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="用户名" prop="tenantming">
-              <el-input v-model="ruleForm.tenantming" 
+          <el-form-item class="input" label="用户名" prop="tenantUsername">
+              <el-input v-model="ruleForm.tenantUsername" 
                 placeholder="用户名" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="联系电话" prop="lianxidianhua">
-          <el-input v-model="ruleForm.lianxidianhua" 
-              placeholder="联系电话" clearable  :readonly="ro.lianxidianhua"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="联系电话" prop="contactPhone">
+          <el-input v-model="ruleForm.contactPhone" 
+              placeholder="联系电话" clearable  :readonly="ro.contactPhone"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="联系电话" prop="lianxidianhua">
-              <el-input v-model="ruleForm.lianxidianhua" 
+          <el-form-item class="input" label="联系电话" prop="contactPhone">
+              <el-input v-model="ruleForm.contactPhone" 
                 placeholder="联系电话" readonly></el-input>
           </el-form-item>
         </div>
@@ -249,58 +249,58 @@ export default {
       id: '',
       type: '',
       ro:{
-	fangwumingcheng : false,
+	houseName : false,
 	houseType : false,
-	baoxiumingcheng : false,
-	leixing : false,
-	baoxiuriqi : false,
-	weixiufankui : false,
-	weixiujindu : false,
-	gengxinriqi : false,
-	landlordzhanghao : false,
-	landlordxingming : false,
-	tenantming : false,
-	lianxidianhua : false,
+	repairTitle : false,
+	repairType : false,
+	repairDate : false,
+	handlingFeedback : false,
+	handlingProgress : false,
+	updatedDate : false,
+	landlordAccount : false,
+	landlordName : false,
+	tenantUsername : false,
+	contactPhone : false,
       },
             ruleForm: {
-                	        fangwumingcheng: '',
+                	        houseName: '',
 	                        	        houseType: '',
-	                        	        baoxiumingcheng: '',
-	                        	        leixing: '',
-	                        	        baoxiuriqi: '',
-	                        	        weixiufankui: '',
-	                        	        weixiujindu: '',
-	                        	        gengxinriqi: '',
-	                        	        landlordzhanghao: '',
-	                        	        landlordxingming: '',
-	                        	        tenantming: '',
-	                        	        lianxidianhua: '',
+	                        	        repairTitle: '',
+	                        	        repairType: '',
+	                        	        repairDate: '',
+	                        	        handlingFeedback: '',
+	                        	        handlingProgress: '',
+	                        	        updatedDate: '',
+	                        	        landlordAccount: '',
+	                        	        landlordName: '',
+	                        	        tenantUsername: '',
+	                        	        contactPhone: '',
 	                      },
-                                                                                                            weixiujinduOptions: [],
+                                                                                                            handlingProgressOptions: [],
                                                                                           rules: {
-                  fangwumingcheng: [
+                  houseName: [
                                     	                                                              ],
                   houseType: [
                                     	                                                              ],
-                  baoxiumingcheng: [
+                  repairTitle: [
                                     	                                                              ],
-                  leixing: [
+                  repairType: [
                                     	                                                              ],
-                  baoxiuriqi: [
+                  repairDate: [
                                     	                                                              ],
-                  weixiufankui: [
+                  handlingFeedback: [
                                     	                                                              ],
-                  weixiujindu: [
+                  handlingProgress: [
                                     	                                                              ],
-                  gengxinriqi: [
+                  updatedDate: [
                                     	                                                              ],
-                  landlordzhanghao: [
+                  landlordAccount: [
                                     	                                                              ],
-                  landlordxingming: [
+                  landlordName: [
                                     	                                                              ],
-                  tenantming: [
+                  tenantUsername: [
                                     	                                                              ],
-                  lianxidianhua: [
+                  contactPhone: [
                                     	                                                              ],
               }
     };
@@ -328,9 +328,9 @@ export default {
       }else if(this.type=='cross'){
         var obj = this.$storage.getObj('crossObj');
         for (var o in obj){
-          	            if(o=='fangwumingcheng'){
-            this.ruleForm.fangwumingcheng = obj[o];
-	    this.ro.fangwumingcheng = true;
+          	            if(o=='houseName'){
+            this.ruleForm.houseName = obj[o];
+	    this.ro.houseName = true;
             continue;
           }
 	            	            if(o=='houseType'){
@@ -338,54 +338,54 @@ export default {
 	    this.ro.houseType = true;
             continue;
           }
-	            	            if(o=='baoxiumingcheng'){
-            this.ruleForm.baoxiumingcheng = obj[o];
-	    this.ro.baoxiumingcheng = true;
+	            	            if(o=='repairTitle'){
+            this.ruleForm.repairTitle = obj[o];
+	    this.ro.repairTitle = true;
             continue;
           }
-	            	            if(o=='leixing'){
-            this.ruleForm.leixing = obj[o];
-	    this.ro.leixing = true;
+	            	            if(o=='repairType'){
+            this.ruleForm.repairType = obj[o];
+	    this.ro.repairType = true;
             continue;
           }
-	            	            if(o=='baoxiuriqi'){
-            this.ruleForm.baoxiuriqi = obj[o];
-	    this.ro.baoxiuriqi = true;
+	            	            if(o=='repairDate'){
+            this.ruleForm.repairDate = obj[o];
+	    this.ro.repairDate = true;
             continue;
           }
-	            	            if(o=='weixiufankui'){
-            this.ruleForm.weixiufankui = obj[o];
-	    this.ro.weixiufankui = true;
+	            	            if(o=='handlingFeedback'){
+            this.ruleForm.handlingFeedback = obj[o];
+	    this.ro.handlingFeedback = true;
             continue;
           }
-	            	            if(o=='weixiujindu'){
-            this.ruleForm.weixiujindu = obj[o];
-	    this.ro.weixiujindu = true;
+	            	            if(o=='handlingProgress'){
+            this.ruleForm.handlingProgress = obj[o];
+	    this.ro.handlingProgress = true;
             continue;
           }
-	            	            if(o=='gengxinriqi'){
-            this.ruleForm.gengxinriqi = obj[o];
-	    this.ro.gengxinriqi = true;
+	            	            if(o=='updatedDate'){
+            this.ruleForm.updatedDate = obj[o];
+	    this.ro.updatedDate = true;
             continue;
           }
-	            	            if(o=='landlordzhanghao'){
-            this.ruleForm.landlordzhanghao = obj[o];
-	    this.ro.landlordzhanghao = true;
+	            	            if(o=='landlordAccount'){
+            this.ruleForm.landlordAccount = obj[o];
+	    this.ro.landlordAccount = true;
             continue;
           }
-	            	            if(o=='landlordxingming'){
-            this.ruleForm.landlordxingming = obj[o];
-	    this.ro.landlordxingming = true;
+	            	            if(o=='landlordName'){
+            this.ruleForm.landlordName = obj[o];
+	    this.ro.landlordName = true;
             continue;
           }
-	            	            if(o=='tenantming'){
-            this.ruleForm.tenantming = obj[o];
-	    this.ro.tenantming = true;
+	            	            if(o=='tenantUsername'){
+            this.ruleForm.tenantUsername = obj[o];
+	    this.ro.tenantUsername = true;
             continue;
           }
-	            	            if(o=='lianxidianhua'){
-            this.ruleForm.lianxidianhua = obj[o];
-	    this.ro.lianxidianhua = true;
+	            	            if(o=='contactPhone'){
+            this.ruleForm.contactPhone = obj[o];
+	    this.ro.contactPhone = true;
             continue;
           }
 	                    }
@@ -401,7 +401,7 @@ export default {
           this.$message.error(data.msg);
         }
       });
-                                                                                                                                                      this.weixiujinduOptions = "维修中,已完成".split(',')
+                                                                                                                                                      this.handlingProgressOptions = "维修中,已完成".split(',')
                                                                                                                       },
                                                                                                         // 多级联动参数
                                                                                                                                     info(id) {

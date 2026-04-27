@@ -5,8 +5,8 @@
 
 	<!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.LandlordApplicationCommentEntity" id="landlordApplicationCommentMap">
-        <result property="refid" column="refid"/>
-        <result property="userid" column="userid"/>
+        <result property="referenceId" column="referenceId"/>
+        <result property="userId" column="userId"/>
         <result property="content" column="content"/>
         <result property="reply" column="reply"/>
     </resultMap>

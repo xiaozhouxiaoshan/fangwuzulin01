@@ -27,7 +27,7 @@ public class HouseRepairModel  implements Serializable {
 	 * 房屋名称
 	 */
 	
-	private String fangwumingcheng;
+	private String houseName;
 		
 	/**
 	 * 房屋类型
@@ -39,25 +39,25 @@ public class HouseRepairModel  implements Serializable {
 	 * 小区
 	 */
 	
-	private String xiaoqu;
+	private String community;
 		
 	/**
 	 * 报修名称
 	 */
 	
-	private String baoxiumingcheng;
+	private String repairTitle;
 		
 	/**
 	 * 类型
 	 */
 	
-	private String leixing;
+	private String repairType;
 		
 	/**
 	 * 报修内容
 	 */
 	
-	private String baoxiuneirong;
+	private String repairContent;
 		
 	/**
 	 * 图片
@@ -71,58 +71,58 @@ public class HouseRepairModel  implements Serializable {
 		
 	@JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
 	@DateTimeFormat 
-	private Date baoxiuriqi;
+	private Date repairDate;
 		
 	/**
 	 * 房主账号
 	 */
 	
-	private String landlordzhanghao;
+	private String landlordAccount;
 		
 	/**
 	 * 房主姓名
 	 */
 	
-	private String landlordxingming;
+	private String landlordName;
 		
 	/**
 	 * 用户名
 	 */
 	
-	private String tenantming;
+	private String tenantUsername;
 		
 	/**
 	 * 联系电话
 	 */
 	
-	private String lianxidianhua;
+	private String contactPhone;
 		
 	/**
 	 * 是否审核
 	 */
 	
-	private String sfsh;
+	private String reviewStatus;
 		
 	/**
 	 * 审核回复
 	 */
 	
-	private String shhf;
+	private String reviewReply;
 				
 	
 	/**
 	 * 设置：房屋名称
 	 */
 	 
-	public void setFangwumingcheng(String fangwumingcheng) {
-		this.fangwumingcheng = fangwumingcheng;
+	public void setFangwumingcheng(String houseName) {
+		this.houseName = houseName;
 	}
 	
 	/**
 	 * 获取：房屋名称
 	 */
 	public String getFangwumingcheng() {
-		return fangwumingcheng;
+		return houseName;
 	}
 				
 	
@@ -146,15 +146,15 @@ public class HouseRepairModel  implements Serializable {
 	 * 设置：小区
 	 */
 	 
-	public void setXiaoqu(String xiaoqu) {
-		this.xiaoqu = xiaoqu;
+	public void setXiaoqu(String community) {
+		this.community = community;
 	}
 	
 	/**
 	 * 获取：小区
 	 */
 	public String getXiaoqu() {
-		return xiaoqu;
+		return community;
 	}
 				
 	
@@ -162,15 +162,15 @@ public class HouseRepairModel  implements Serializable {
 	 * 设置：报修名称
 	 */
 	 
-	public void setBaoxiumingcheng(String baoxiumingcheng) {
-		this.baoxiumingcheng = baoxiumingcheng;
+	public void setBaoxiumingcheng(String repairTitle) {
+		this.repairTitle = repairTitle;
 	}
 	
 	/**
 	 * 获取：报修名称
 	 */
 	public String getBaoxiumingcheng() {
-		return baoxiumingcheng;
+		return repairTitle;
 	}
 				
 	
@@ -178,15 +178,15 @@ public class HouseRepairModel  implements Serializable {
 	 * 设置：类型
 	 */
 	 
-	public void setLeixing(String leixing) {
-		this.leixing = leixing;
+	public void setLeixing(String repairType) {
+		this.repairType = repairType;
 	}
 	
 	/**
 	 * 获取：类型
 	 */
 	public String getLeixing() {
-		return leixing;
+		return repairType;
 	}
 				
 	
@@ -194,15 +194,15 @@ public class HouseRepairModel  implements Serializable {
 	 * 设置：报修内容
 	 */
 	 
-	public void setBaoxiuneirong(String baoxiuneirong) {
-		this.baoxiuneirong = baoxiuneirong;
+	public void setBaoxiuneirong(String repairContent) {
+		this.repairContent = repairContent;
 	}
 	
 	/**
 	 * 获取：报修内容
 	 */
 	public String getBaoxiuneirong() {
-		return baoxiuneirong;
+		return repairContent;
 	}
 				
 	
@@ -226,15 +226,15 @@ public class HouseRepairModel  implements Serializable {
 	 * 设置：报修日期
 	 */
 	 
-	public void setBaoxiuriqi(Date baoxiuriqi) {
-		this.baoxiuriqi = baoxiuriqi;
+	public void setBaoxiuriqi(Date repairDate) {
+		this.repairDate = repairDate;
 	}
 	
 	/**
 	 * 获取：报修日期
 	 */
 	public Date getBaoxiuriqi() {
-		return baoxiuriqi;
+		return repairDate;
 	}
 				
 	
@@ -242,15 +242,15 @@ public class HouseRepairModel  implements Serializable {
 	 * 设置：房主账号
 	 */
 	 
-	public void setLandlordzhanghao(String landlordzhanghao) {
-		this.landlordzhanghao = landlordzhanghao;
+	public void setLandlordzhanghao(String landlordAccount) {
+		this.landlordAccount = landlordAccount;
 	}
 	
 	/**
 	 * 获取：房主账号
 	 */
 	public String getLandlordzhanghao() {
-		return landlordzhanghao;
+		return landlordAccount;
 	}
 				
 	
@@ -258,15 +258,15 @@ public class HouseRepairModel  implements Serializable {
 	 * 设置：房主姓名
 	 */
 	 
-	public void setLandlordxingming(String landlordxingming) {
-		this.landlordxingming = landlordxingming;
+	public void setLandlordfullName(String landlordName) {
+		this.landlordName = landlordName;
 	}
 	
 	/**
 	 * 获取：房主姓名
 	 */
-	public String getLandlordxingming() {
-		return landlordxingming;
+	public String getLandlordfullName() {
+		return landlordName;
 	}
 				
 	
@@ -274,15 +274,15 @@ public class HouseRepairModel  implements Serializable {
 	 * 设置：用户名
 	 */
 	 
-	public void setTenantming(String tenantming) {
-		this.tenantming = tenantming;
+	public void setTenantming(String tenantUsername) {
+		this.tenantUsername = tenantUsername;
 	}
 	
 	/**
 	 * 获取：用户名
 	 */
 	public String getTenantming() {
-		return tenantming;
+		return tenantUsername;
 	}
 				
 	
@@ -290,15 +290,15 @@ public class HouseRepairModel  implements Serializable {
 	 * 设置：联系电话
 	 */
 	 
-	public void setLianxidianhua(String lianxidianhua) {
-		this.lianxidianhua = lianxidianhua;
+	public void setLianxidianhua(String contactPhone) {
+		this.contactPhone = contactPhone;
 	}
 	
 	/**
 	 * 获取：联系电话
 	 */
 	public String getLianxidianhua() {
-		return lianxidianhua;
+		return contactPhone;
 	}
 				
 	
@@ -306,15 +306,15 @@ public class HouseRepairModel  implements Serializable {
 	 * 设置：是否审核
 	 */
 	 
-	public void setSfsh(String sfsh) {
-		this.sfsh = sfsh;
+	public void setSfsh(String reviewStatus) {
+		this.reviewStatus = reviewStatus;
 	}
 	
 	/**
 	 * 获取：是否审核
 	 */
 	public String getSfsh() {
-		return sfsh;
+		return reviewStatus;
 	}
 				
 	
@@ -322,15 +322,15 @@ public class HouseRepairModel  implements Serializable {
 	 * 设置：审核回复
 	 */
 	 
-	public void setShhf(String shhf) {
-		this.shhf = shhf;
+	public void setShhf(String reviewReply) {
+		this.reviewReply = reviewReply;
 	}
 	
 	/**
 	 * 获取：审核回复
 	 */
 	public String getShhf() {
-		return shhf;
+		return reviewReply;
 	}
 			
 }

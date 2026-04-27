@@ -10,25 +10,25 @@
     >
       <el-row>
                                                       <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="收藏id" prop="refid">
-          <el-input v-model="ruleForm.refid" 
-              placeholder="收藏id" clearable  :readonly="ro.refid"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="收藏id" prop="referenceId">
+          <el-input v-model="ruleForm.referenceId" 
+              placeholder="收藏id" clearable  :readonly="ro.referenceId"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="收藏id" prop="refid">
-              <el-input v-model="ruleForm.refid" 
+          <el-form-item class="input" label="收藏id" prop="referenceId">
+              <el-input v-model="ruleForm.referenceId" 
                 placeholder="收藏id" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="表名" prop="tablename">
-          <el-input v-model="ruleForm.tablename" 
-              placeholder="表名" clearable  :readonly="ro.tablename"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="表名" prop="tableName">
+          <el-input v-model="ruleForm.tableName" 
+              placeholder="表名" clearable  :readonly="ro.tableName"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="表名" prop="tablename">
-              <el-input v-model="ruleForm.tablename" 
+          <el-form-item class="input" label="表名" prop="tableName">
+              <el-input v-model="ruleForm.tableName" 
                 placeholder="表名" readonly></el-input>
           </el-form-item>
         </div>
@@ -147,26 +147,26 @@ export default {
       id: '',
       type: '',
       ro:{
-	userid : false,
-	refid : false,
-	tablename : false,
+	userId : false,
+	referenceId : false,
+	tableName : false,
 	name : false,
 	picture : false,
       },
             ruleForm: {
-                	        userid: '',
-	                        	        refid: '',
-	                        	        tablename: '',
+                	        userId: '',
+	                        	        referenceId: '',
+	                        	        tableName: '',
 	                        	        name: '',
 	                        	        picture: '',
 	                      },
                                                                                   rules: {
-                  userid: [
+                  userId: [
                             { required: true, message: '用户id不能为空', trigger: 'blur' },
                                     	                                                              ],
-                  refid: [
+                  referenceId: [
                                     	                                                              ],
-                  tablename: [
+                  tableName: [
                                     	                                                              ],
                   name: [
                             { required: true, message: '收藏名称不能为空', trigger: 'blur' },
@@ -200,19 +200,19 @@ export default {
       }else if(this.type=='cross'){
         var obj = this.$storage.getObj('crossObj');
         for (var o in obj){
-          	            if(o=='userid'){
-            this.ruleForm.userid = obj[o];
-	    this.ro.userid = true;
+          	            if(o=='userId'){
+            this.ruleForm.userId = obj[o];
+	    this.ro.userId = true;
             continue;
           }
-	            	            if(o=='refid'){
-            this.ruleForm.refid = obj[o];
-	    this.ro.refid = true;
+	            	            if(o=='referenceId'){
+            this.ruleForm.referenceId = obj[o];
+	    this.ro.referenceId = true;
             continue;
           }
-	            	            if(o=='tablename'){
-            this.ruleForm.tablename = obj[o];
-	    this.ro.tablename = true;
+	            	            if(o=='tableName'){
+            this.ruleForm.tableName = obj[o];
+	    this.ro.tableName = true;
             continue;
           }
 	            	            if(o=='name'){

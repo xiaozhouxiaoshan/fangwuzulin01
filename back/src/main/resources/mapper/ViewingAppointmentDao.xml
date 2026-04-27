@@ -5,24 +5,24 @@
 
 	<!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.ViewingAppointmentEntity" id="viewingAppointmentMap">
-        <result property="yuyuebianhao" column="yuyuebianhao"/>
-        <result property="fangwumingcheng" column="fangwumingcheng"/>
+        <result property="appointmentNumber" column="appointmentNumber"/>
+        <result property="houseName" column="houseName"/>
         <result property="houseType" column="houseType"/>
-        <result property="fangwuzhuangtai" column="fangwuzhuangtai"/>
-        <result property="xiaoqu" column="xiaoqu"/>
-        <result property="yuezujiage" column="yuezujiage"/>
-        <result property="yajin" column="yajin"/>
-        <result property="zuyongyueshu" column="zuyongyueshu"/>
-        <result property="zuyongjine" column="zuyongjine"/>
-        <result property="yuyueshijian" column="yuyueshijian"/>
-        <result property="tenantming" column="tenantming"/>
-        <result property="xingming" column="xingming"/>
-        <result property="shenfenzheng" column="shenfenzheng"/>
-        <result property="lianxidianhua" column="lianxidianhua"/>
-        <result property="landlordzhanghao" column="landlordzhanghao"/>
-        <result property="landlordxingming" column="landlordxingming"/>
-        <result property="sfsh" column="sfsh"/>
-        <result property="shhf" column="shhf"/>
+        <result property="houseStatus" column="houseStatus"/>
+        <result property="community" column="community"/>
+        <result property="monthlyRent" column="monthlyRent"/>
+        <result property="deposit" column="deposit"/>
+        <result property="rentalMonths" column="rentalMonths"/>
+        <result property="rentalAmount" column="rentalAmount"/>
+        <result property="appointmentTime" column="appointmentTime"/>
+        <result property="tenantUsername" column="tenantUsername"/>
+        <result property="fullName" column="fullName"/>
+        <result property="idCardNumber" column="idCardNumber"/>
+        <result property="contactPhone" column="contactPhone"/>
+        <result property="landlordAccount" column="landlordAccount"/>
+        <result property="landlordName" column="landlordName"/>
+        <result property="reviewStatus" column="reviewStatus"/>
+        <result property="reviewReply" column="reviewReply"/>
     </resultMap>
 
 	<select id="selectListVO"

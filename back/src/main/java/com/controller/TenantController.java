@@ -57,7 +57,7 @@ public class TenantController {
 	@IgnoreAuth
 	@RequestMapping(value = "/login")
 	public R login(String username, String password, String captcha, HttpServletRequest request) {
-		TenantEntity user = tenantService.selectOne(new EntityWrapper<TenantEntity>().eq("tenantming", username));
+		TenantEntity user = tenantService.selectOne(new EntityWrapper<TenantEntity>().eq("tenantUsername", username));
 		if(user==null || !user.getMima().equals(password)) {
 			return R.error("账号或密码不正确");
 		}
@@ -73,7 +73,7 @@ public class TenantController {
     @RequestMapping("/register")
     public R register(@RequestBody TenantEntity tenant){
     	//ValidatorUtils.validateEntity(tenant);
-    	TenantEntity user = tenantService.selectOne(new EntityWrapper<TenantEntity>().eq("tenantming", tenant.getTenantming()));
+    	TenantEntity user = tenantService.selectOne(new EntityWrapper<TenantEntity>().eq("tenantUsername", tenant.getTenantming()));
 		if(user!=null) {
 			return R.error("注册用户已存在");
 		}
@@ -108,7 +108,7 @@ public class TenantController {
     @IgnoreAuth
 	@RequestMapping(value = "/resetPass")
     public R resetPass(String username, HttpServletRequest request){
-    	TenantEntity user = tenantService.selectOne(new EntityWrapper<TenantEntity>().eq("tenantming", username));
+    	TenantEntity user = tenantService.selectOne(new EntityWrapper<TenantEntity>().eq("tenantUsername", username));
     	if(user==null) {
     		return R.error("账号不存在");
     	}
@@ -188,7 +188,7 @@ public class TenantController {
     public R save(@RequestBody TenantEntity tenant, HttpServletRequest request){
     	tenant.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
     	//ValidatorUtils.validateEntity(tenant);
-    	TenantEntity user = tenantService.selectOne(new EntityWrapper<TenantEntity>().eq("tenantming", tenant.getTenantming()));
+    	TenantEntity user = tenantService.selectOne(new EntityWrapper<TenantEntity>().eq("tenantUsername", tenant.getTenantming()));
 		if(user!=null) {
 			return R.error("用户已存在");
 		}
@@ -204,7 +204,7 @@ public class TenantController {
     public R add(@RequestBody TenantEntity tenant, HttpServletRequest request){
     	tenant.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
     	//ValidatorUtils.validateEntity(tenant);
-    	TenantEntity user = tenantService.selectOne(new EntityWrapper<TenantEntity>().eq("tenantming", tenant.getTenantming()));
+    	TenantEntity user = tenantService.selectOne(new EntityWrapper<TenantEntity>().eq("tenantUsername", tenant.getTenantming()));
 		if(user!=null) {
 			return R.error("用户已存在");
 		}

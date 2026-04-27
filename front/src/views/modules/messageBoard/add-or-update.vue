@@ -142,19 +142,19 @@ export default {
       id: '',
       type: '',
       ro:{
-	userid : false,
+	userId : false,
 	username : false,
 	content : false,
 	reply : false,
       },
             ruleForm: {
-                	        userid: '',
+                	        userId: '',
 	                        	        username: '',
 	                        	        content: '',
 	                        	        reply: '',
 	                      },
                                                                     rules: {
-                  userid: [
+                  userId: [
                             { required: true, message: '留言人id不能为空', trigger: 'blur' },
                                     	                                                              ],
                   username: [
@@ -190,9 +190,9 @@ export default {
       }else if(this.type=='cross'){
         var obj = this.$storage.getObj('crossObj');
         for (var o in obj){
-          	            if(o=='userid'){
-            this.ruleForm.userid = obj[o];
-	    this.ro.userid = true;
+          	            if(o=='userId'){
+            this.ruleForm.userId = obj[o];
+	    this.ro.userId = true;
             continue;
           }
 	            	            if(o=='username'){

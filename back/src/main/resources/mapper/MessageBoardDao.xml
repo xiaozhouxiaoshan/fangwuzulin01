@@ -5,7 +5,7 @@
 
 	<!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.MessageBoardEntity" id="messageBoardMap">
-        <result property="userid" column="userid"/>
+        <result property="userId" column="userId"/>
         <result property="username" column="username"/>
         <result property="content" column="content"/>
         <result property="reply" column="reply"/>

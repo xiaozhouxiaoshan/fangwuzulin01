@@ -55,54 +55,54 @@ public class LandlordEntity<T> implements Serializable {
 	 * 房主账号
 	 */
 					
-	private String landlordzhanghao;
+	private String landlordAccount;
 	
 	/**
 	 * 密码
 	 */
 					
-	private String mima;
+	private String password;
 	
 	/**
 	 * 房主姓名
 	 */
 					
-	private String landlordxingming;
+	private String landlordName;
 	
 	/**
 	 * 性别
 	 */
 					
-	private String xingbie;
+	private String gender;
 	
 	/**
 	 * 头像
 	 */
 					
-	private String touxiang;
+	private String avatar;
 	
 	/**
 	 * 手机
 	 */
 					
-	private String shouji;
+	private String phoneNumber;
 	
 	/**
 	 * 身份证
 	 */
 					
-	private String shenfenzheng;
+	private String idCardNumber;
 	
 	
 	@JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
 	@DateTimeFormat
-	private Date addtime;
+	private Date createdAt;
 
 	public Date getAddtime() {
-		return addtime;
+		return createdAt;
 	}
-	public void setAddtime(Date addtime) {
-		this.addtime = addtime;
+	public void setAddtime(Date createdAt) {
+		this.createdAt = createdAt;
 	}
 
 	public Long getId() {
@@ -115,86 +115,86 @@ public class LandlordEntity<T> implements Serializable {
 	/**
 	 * 设置：房主账号
 	 */
-	public void setLandlordzhanghao(String landlordzhanghao) {
-		this.landlordzhanghao = landlordzhanghao;
+	public void setLandlordzhanghao(String landlordAccount) {
+		this.landlordAccount = landlordAccount;
 	}
 	/**
 	 * 获取：房主账号
 	 */
 	public String getLandlordzhanghao() {
-		return landlordzhanghao;
+		return landlordAccount;
 	}
 	/**
 	 * 设置：密码
 	 */
-	public void setMima(String mima) {
-		this.mima = mima;
+	public void setMima(String password) {
+		this.password = password;
 	}
 	/**
 	 * 获取：密码
 	 */
 	public String getMima() {
-		return mima;
+		return password;
 	}
 	/**
 	 * 设置：房主姓名
 	 */
-	public void setLandlordxingming(String landlordxingming) {
-		this.landlordxingming = landlordxingming;
+	public void setLandlordfullName(String landlordName) {
+		this.landlordName = landlordName;
 	}
 	/**
 	 * 获取：房主姓名
 	 */
-	public String getLandlordxingming() {
-		return landlordxingming;
+	public String getLandlordfullName() {
+		return landlordName;
 	}
 	/**
 	 * 设置：性别
 	 */
-	public void setXingbie(String xingbie) {
-		this.xingbie = xingbie;
+	public void setXingbie(String gender) {
+		this.gender = gender;
 	}
 	/**
 	 * 获取：性别
 	 */
 	public String getXingbie() {
-		return xingbie;
+		return gender;
 	}
 	/**
 	 * 设置：头像
 	 */
-	public void setTouxiang(String touxiang) {
-		this.touxiang = touxiang;
+	public void setTouxiang(String avatar) {
+		this.avatar = avatar;
 	}
 	/**
 	 * 获取：头像
 	 */
 	public String getTouxiang() {
-		return touxiang;
+		return avatar;
 	}
 	/**
 	 * 设置：手机
 	 */
-	public void setShouji(String shouji) {
-		this.shouji = shouji;
+	public void setShouji(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 	/**
 	 * 获取：手机
 	 */
 	public String getShouji() {
-		return shouji;
+		return phoneNumber;
 	}
 	/**
 	 * 设置：身份证
 	 */
-	public void setShenfenzheng(String shenfenzheng) {
-		this.shenfenzheng = shenfenzheng;
+	public void setShenfenzheng(String idCardNumber) {
+		this.idCardNumber = idCardNumber;
 	}
 	/**
 	 * 获取：身份证
 	 */
 	public String getShenfenzheng() {
-		return shenfenzheng;
+		return idCardNumber;
 	}
 
 }

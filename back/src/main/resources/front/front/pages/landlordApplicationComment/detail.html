@@ -114,7 +114,7 @@
 																		<div :style='{"padding":"6px 15px","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"5px 5px","borderColor":"rgba(142, 72, 72, 0.3)","backgroundColor":"rgba(255, 255, 255, 1)","borderRadius":"0","borderWidth":"0 0 1px 0","borderStyle":"solid"}' class="detail-item">
 							<span :style='{"padding":"0 12px 0 0","minWidth":"94px","fontSize":"15px","color":"rgba(0, 0, 0, 1)","textAlign":"left"}'>关联表id：</span>
 							<span :style='{"padding":"5px 15px","boxShadow":"0 0 0px #7F4E16","borderColor":"rgba(0,0,0,.3)","backgroundColor":"#fff","color":"#333","borderRadius":"4px","textAlign":"left","borderWidth":"0","width":"auto","lineHeight":"auto","fontSize":"14px","borderStyle":"solid"}' class="desc">
-								{{detail.refid}}
+								{{detail.referenceId}}
 							</span>
 						</div>
 																																										<div :style='{"padding":"6px 15px","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"5px 5px","borderColor":"rgba(142, 72, 72, 0.3)","backgroundColor":"rgba(255, 255, 255, 1)","borderRadius":"0","borderWidth":"0 0 1px 0","borderStyle":"solid"}' class="detail-item">
@@ -181,7 +181,7 @@
 										<div :style='{"padding":"20px 0","boxShadow":"0 0 0px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"#fff","borderRadius":"0","borderWidth":"0 0 1px 0","borderStyle":"solid"}' class="message-item" v-for="(item,index) in dataList" v-bind:key="index">
 											<div class="username-container">
 												<img :style='{"boxShadow":"0 0 0px rgba(255,0,0,.3)","margin":"0 10px 0 0","borderColor":"rgba(0,0,0,.3)","borderRadius":"0%","borderWidth":"0","width":"40px","borderStyle":"solid","height":"40px"}' class="avator" src="http://codegen.caihongy.cn/20210116/52b808ba5ce64e77b071ee80829c3082.jpg">
-												<span style="display: inline-block;" :style='{"padding":"0 10px","boxShadow":"0 0 0px #7F4E16","margin":"0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"#fff","color":"#333","borderRadius":"4px","borderWidth":"1px","width":"auto","lineHeight":"28px","fontSize":"14px","borderStyle":"solid"}' class="username">用户：{{item.userid}}</span>
+												<span style="display: inline-block;" :style='{"padding":"0 10px","boxShadow":"0 0 0px #7F4E16","margin":"0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"#fff","color":"#333","borderRadius":"4px","borderWidth":"1px","width":"auto","lineHeight":"28px","fontSize":"14px","borderStyle":"solid"}' class="username">用户：{{item.userId}}</span>
 											</div>
 											<div class="content" style="margin: 0;flex: 1;">
 												<span style="display: inline-block;" :style='{"padding":"8px","boxShadow":"0 0 0px rgba(255,0,0,.3)","margin":"8px 0 0 50px","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(188, 152, 152, 0.3)","color":"rgba(0, 0, 0, 1)","borderRadius":"4px","borderWidth":"0","fontSize":"14px","borderStyle":"solid"}' class="message">
@@ -310,8 +310,8 @@
 					jump(url) {
 						jump(url)
 					},
-					isAuth(tablename, button) {
-						return isFrontAuth(tablename, button)
+					isAuth(tableName, button) {
+						return isFrontAuth(tableName, button)
 					},
 					// 倒计时初始化
 					countDown() {
@@ -415,7 +415,7 @@
 				http.request('landlordApplicationComment/list', 'get', {
 					page: 1,
 					limit: limit,
-					refid : vue.detail.id
+					referenceId : vue.detail.id
 				}, function(res) {
 					vue.dataList = res.data.list
 					// 分页
@@ -429,7 +429,7 @@
 								http.request('landlordApplicationComment/list', 'get', {
 									page: obj.curr,
 									limit: obj.limit,
-									refid : vue.detail.id
+									referenceId : vue.detail.id
 								}, function(res) {
 									vue.dataList = res.data.list
 								})
@@ -441,8 +441,8 @@
 				// 提交评论
 				form.on('submit(*)', function(data) {
 					data = data.field;
-					data.userid = localStorage.getItem('userid')
-					data.refid = vue.detail.id
+					data.userId = localStorage.getItem('userId')
+					data.referenceId = vue.detail.id
 					http.requestJson('landlordApplicationComment/save', 'post', data, function(res) {
 						layer.msg('评论成功', {
 							time: 2000,

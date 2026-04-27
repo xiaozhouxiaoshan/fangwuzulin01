@@ -5,22 +5,22 @@
 
 	<!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.HouseListingEntity" id="houseListingMap">
-        <result property="fangwumingcheng" column="fangwumingcheng"/>
+        <result property="houseName" column="houseName"/>
         <result property="houseType" column="houseType"/>
         <result property="tupian" column="tupian"/>
-        <result property="zulinfangshi" column="zulinfangshi"/>
-        <result property="chaoxianglouceng" column="chaoxianglouceng"/>
-        <result property="mianji" column="mianji"/>
-        <result property="fangwuzhuangtai" column="fangwuzhuangtai"/>
-        <result property="xiaoqu" column="xiaoqu"/>
-        <result property="xiangxidizhi" column="xiangxidizhi"/>
-        <result property="yuezujiage" column="yuezujiage"/>
-        <result property="yajin" column="yajin"/>
-        <result property="fangwusheshi" column="fangwusheshi"/>
-        <result property="fangwuxiangqing" column="fangwuxiangqing"/>
-        <result property="faburiqi" column="faburiqi"/>
-        <result property="landlordzhanghao" column="landlordzhanghao"/>
-        <result property="landlordxingming" column="landlordxingming"/>
+        <result property="rentalMode" column="rentalMode"/>
+        <result property="orientationFloor" column="orientationFloor"/>
+        <result property="area" column="area"/>
+        <result property="houseStatus" column="houseStatus"/>
+        <result property="community" column="community"/>
+        <result property="addressDetail" column="addressDetail"/>
+        <result property="monthlyRent" column="monthlyRent"/>
+        <result property="deposit" column="deposit"/>
+        <result property="facilities" column="facilities"/>
+        <result property="houseDescription" column="houseDescription"/>
+        <result property="publishDate" column="publishDate"/>
+        <result property="landlordAccount" column="landlordAccount"/>
+        <result property="landlordName" column="landlordName"/>
     </resultMap>
 
 	<select id="selectListVO"

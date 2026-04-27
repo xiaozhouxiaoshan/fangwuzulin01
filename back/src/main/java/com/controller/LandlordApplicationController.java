@@ -201,7 +201,7 @@ public class LandlordApplicationController {
 
 		String tableName = request.getSession().getAttribute("tableName").toString();
 		if(tableName.equals("tenant")) {
-			wrapper.eq("tenantming", (String)request.getSession().getAttribute("username"));
+			wrapper.eq("tenantUsername", (String)request.getSession().getAttribute("username"));
 		}
 
 		int count = landlordApplicationService.selectCount(wrapper);

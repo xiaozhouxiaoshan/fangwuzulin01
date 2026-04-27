@@ -38,61 +38,61 @@ public class HouseListingVO  implements Serializable {
 	 * 租赁方式
 	 */
 	
-	private String zulinfangshi;
+	private String rentalMode;
 		
 	/**
 	 * 朝向楼层
 	 */
 	
-	private String chaoxianglouceng;
+	private String orientationFloor;
 		
 	/**
 	 * 面积
 	 */
 	
-	private String mianji;
+	private String area;
 		
 	/**
 	 * 房屋状态
 	 */
 	
-	private String fangwuzhuangtai;
+	private String houseStatus;
 		
 	/**
 	 * 小区
 	 */
 	
-	private String xiaoqu;
+	private String community;
 		
 	/**
 	 * 详细地址
 	 */
 	
-	private String xiangxidizhi;
+	private String addressDetail;
 		
 	/**
 	 * 月租价格
 	 */
 	
-	private Integer yuezujiage;
+	private Integer monthlyRent;
 		
 	/**
 	 * 押金
 	 */
 	
-	private Integer yajin;
+	private Integer deposit;
 		
 	/**
 	 * 房屋设施
 	 */
 	
-	private String fangwusheshi;
+	private String facilities;
 		
 	/**
 	 * 房屋详情
 	 */
 	
-	private String fangwuxiangqing;
+	private String houseDescription;
 		
 	/**
 	 * 发布日期
@@ -100,19 +100,19 @@ public class HouseListingVO  implements Serializable {
 		
 	@JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
 	@DateTimeFormat 
-	private Date faburiqi;
+	private Date publishDate;
 		
 	/**
 	 * 房主账号
 	 */
 	
-	private String landlordzhanghao;
+	private String landlordAccount;
 		
 	/**
 	 * 房主姓名
 	 */
 	
-	private String landlordxingming;
+	private String landlordName;
 				
 	
 	/**
@@ -151,15 +151,15 @@ public class HouseListingVO  implements Serializable {
 	 * 设置：租赁方式
 	 */
 	 
-	public void setZulinfangshi(String zulinfangshi) {
-		this.zulinfangshi = zulinfangshi;
+	public void setZulinfangshi(String rentalMode) {
+		this.rentalMode = rentalMode;
 	}
 	
 	/**
 	 * 获取：租赁方式
 	 */
 	public String getZulinfangshi() {
-		return zulinfangshi;
+		return rentalMode;
 	}
 				
 	
@@ -167,15 +167,15 @@ public class HouseListingVO  implements Serializable {
 	 * 设置：朝向楼层
 	 */
 	 
-	public void setChaoxianglouceng(String chaoxianglouceng) {
-		this.chaoxianglouceng = chaoxianglouceng;
+	public void setChaoxianglouceng(String orientationFloor) {
+		this.orientationFloor = orientationFloor;
 	}
 	
 	/**
 	 * 获取：朝向楼层
 	 */
 	public String getChaoxianglouceng() {
-		return chaoxianglouceng;
+		return orientationFloor;
 	}
 				
 	
@@ -183,15 +183,15 @@ public class HouseListingVO  implements Serializable {
 	 * 设置：面积
 	 */
 	 
-	public void setMianji(String mianji) {
-		this.mianji = mianji;
+	public void setMianji(String area) {
+		this.area = area;
 	}
 	
 	/**
 	 * 获取：面积
 	 */
 	public String getMianji() {
-		return mianji;
+		return area;
 	}
 				
 	
@@ -199,15 +199,15 @@ public class HouseListingVO  implements Serializable {
 	 * 设置：房屋状态
 	 */
 	 
-	public void setFangwuzhuangtai(String fangwuzhuangtai) {
-		this.fangwuzhuangtai = fangwuzhuangtai;
+	public void setFangwuzhuangtai(String houseStatus) {
+		this.houseStatus = houseStatus;
 	}
 	
 	/**
 	 * 获取：房屋状态
 	 */
 	public String getFangwuzhuangtai() {
-		return fangwuzhuangtai;
+		return houseStatus;
 	}
 				
 	
@@ -215,15 +215,15 @@ public class HouseListingVO  implements Serializable {
 	 * 设置：小区
 	 */
 	 
-	public void setXiaoqu(String xiaoqu) {
-		this.xiaoqu = xiaoqu;
+	public void setXiaoqu(String community) {
+		this.community = community;
 	}
 	
 	/**
 	 * 获取：小区
 	 */
 	public String getXiaoqu() {
-		return xiaoqu;
+		return community;
 	}
 				
 	
@@ -231,15 +231,15 @@ public class HouseListingVO  implements Serializable {
 	 * 设置：详细地址
 	 */
 	 
-	public void setXiangxidizhi(String xiangxidizhi) {
-		this.xiangxidizhi = xiangxidizhi;
+	public void setXiangxidizhi(String addressDetail) {
+		this.addressDetail = addressDetail;
 	}
 	
 	/**
 	 * 获取：详细地址
 	 */
 	public String getXiangxidizhi() {
-		return xiangxidizhi;
+		return addressDetail;
 	}
 				
 	
@@ -247,15 +247,15 @@ public class HouseListingVO  implements Serializable {
 	 * 设置：月租价格
 	 */
 	 
-	public void setYuezujiage(Integer yuezujiage) {
-		this.yuezujiage = yuezujiage;
+	public void setYuezujiage(Integer monthlyRent) {
+		this.monthlyRent = monthlyRent;
 	}
 	
 	/**
 	 * 获取：月租价格
 	 */
 	public Integer getYuezujiage() {
-		return yuezujiage;
+		return monthlyRent;
 	}
 				
 	
@@ -263,15 +263,15 @@ public class HouseListingVO  implements Serializable {
 	 * 设置：押金
 	 */
 	 
-	public void setYajin(Integer yajin) {
-		this.yajin = yajin;
+	public void setYajin(Integer deposit) {
+		this.deposit = deposit;
 	}
 	
 	/**
 	 * 获取：押金
 	 */
 	public Integer getYajin() {
-		return yajin;
+		return deposit;
 	}
 				
 	
@@ -279,15 +279,15 @@ public class HouseListingVO  implements Serializable {
 	 * 设置：房屋设施
 	 */
 	 
-	public void setFangwusheshi(String fangwusheshi) {
-		this.fangwusheshi = fangwusheshi;
+	public void setFangwusheshi(String facilities) {
+		this.facilities = facilities;
 	}
 	
 	/**
 	 * 获取：房屋设施
 	 */
 	public String getFangwusheshi() {
-		return fangwusheshi;
+		return facilities;
 	}
 				
 	
@@ -295,15 +295,15 @@ public class HouseListingVO  implements Serializable {
 	 * 设置：房屋详情
 	 */
 	 
-	public void setFangwuxiangqing(String fangwuxiangqing) {
-		this.fangwuxiangqing = fangwuxiangqing;
+	public void setFangwuxiangqing(String houseDescription) {
+		this.houseDescription = houseDescription;
 	}
 	
 	/**
 	 * 获取：房屋详情
 	 */
 	public String getFangwuxiangqing() {
-		return fangwuxiangqing;
+		return houseDescription;
 	}
 				
 	
@@ -311,15 +311,15 @@ public class HouseListingVO  implements Serializable {
 	 * 设置：发布日期
 	 */
 	 
-	public void setFaburiqi(Date faburiqi) {
-		this.faburiqi = faburiqi;
+	public void setFaburiqi(Date publishDate) {
+		this.publishDate = publishDate;
 	}
 	
 	/**
 	 * 获取：发布日期
 	 */
 	public Date getFaburiqi() {
-		return faburiqi;
+		return publishDate;
 	}
 				
 	
@@ -327,15 +327,15 @@ public class HouseListingVO  implements Serializable {
 	 * 设置：房主账号
 	 */
 	 
-	public void setLandlordzhanghao(String landlordzhanghao) {
-		this.landlordzhanghao = landlordzhanghao;
+	public void setLandlordzhanghao(String landlordAccount) {
+		this.landlordAccount = landlordAccount;
 	}
 	
 	/**
 	 * 获取：房主账号
 	 */
 	public String getLandlordzhanghao() {
-		return landlordzhanghao;
+		return landlordAccount;
 	}
 				
 	
@@ -343,15 +343,15 @@ public class HouseListingVO  implements Serializable {
 	 * 设置：房主姓名
 	 */
 	 
-	public void setLandlordxingming(String landlordxingming) {
-		this.landlordxingming = landlordxingming;
+	public void setLandlordfullName(String landlordName) {
+		this.landlordName = landlordName;
 	}
 	
 	/**
 	 * 获取：房主姓名
 	 */
-	public String getLandlordxingming() {
-		return landlordxingming;
+	public String getLandlordfullName() {
+		return landlordName;
 	}
 			
 }

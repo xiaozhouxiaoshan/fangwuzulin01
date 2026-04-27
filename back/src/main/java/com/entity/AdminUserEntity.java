@@ -32,7 +32,7 @@ public class AdminUserEntity implements Serializable {
 	 */
 	private String role;
 	
-	private Date addtime;
+	private Date createdAt;
 
 	public String getUsername() {
 		return username;
@@ -59,11 +59,11 @@ public class AdminUserEntity implements Serializable {
 	}
 
 	public Date getAddtime() {
-		return addtime;
+		return createdAt;
 	}
 
-	public void setAddtime(Date addtime) {
-		this.addtime = addtime;
+	public void setAddtime(Date createdAt) {
+		this.createdAt = createdAt;
 	}
 
 	public Long getId() {

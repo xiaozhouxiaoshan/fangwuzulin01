@@ -92,7 +92,7 @@
 					</form>
 				</fieldset>
 				<div class="data-list layui-col-md8 layui-col-md-offset2">
-					<div @click="jump('../'+item.tablename+'/detail.html?id='+item.refid)" v-for="(item,index) in dataList" v-bind:key="index"
+					<div @click="jump('../'+item.tableName+'/detail.html?id='+item.referenceId)" v-for="(item,index) in dataList" v-bind:key="index"
 					 class="data-item layui-col-md3">
 						<img class="cover" :src="item.picture">
 						<h3 class="title">{{item.name}}</h3>
@@ -145,8 +145,8 @@
 						layui.http.request('favorite/list', 'get', {
 							page: 1,
 							limit: 100,
-							refid: item.refid,
-							tablename: item.tablename
+							referenceId: item.referenceId,
+							tableName: item.tableName
 						}, function(res) {
 							var ids = [];
 							if (res.data.list && res.data.list.length > 0) {
@@ -225,14 +225,14 @@
 					var param = {
 						page: 1,
 						limit: limit,
-						userid: localStorage.getItem('userid')
+						userId: localStorage.getItem('userId')
 					}
 					if (jquery('#name').val()) {
 						param['name'] = jquery('#name').val() ? '%' + jquery('#name').val() + '%' : '';
 					}
 					// 获取列表数据
 					http.request('favorite/list', 'get', param, function(res) {
-						vue.dataList = Array.from(new Map((res.data.list || []).map(function(item){ return [item.tablename + '-' + item.refid, item]; })).values())
+						vue.dataList = Array.from(new Map((res.data.list || []).map(function(item){ return [item.tableName + '-' + item.referenceId, item]; })).values())
 						// 分页
 						laypage.render({
 							elem: 'pager',
@@ -245,7 +245,7 @@
 								//首次不执行
 								if (!first) {
 									http.request('favorite/list', 'get', param, function(res) {
-										vue.dataList = Array.from(new Map((res.data.list || []).map(function(item){ return [item.tablename + '-' + item.refid, item]; })).values())
+										vue.dataList = Array.from(new Map((res.data.list || []).map(function(item){ return [item.tableName + '-' + item.referenceId, item]; })).values())
 									})
 								}
 							}

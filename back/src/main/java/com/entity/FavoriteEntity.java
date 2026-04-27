@@ -55,19 +55,19 @@ public class FavoriteEntity<T> implements Serializable {
 	 * 用户id
 	 */
 					
-	private Long userid;
+	private Long userId;
 	
 	/**
 	 * 收藏id
 	 */
 					
-	private Long refid;
+	private Long referenceId;
 	
 	/**
 	 * 表名
 	 */
 					
-	private String tablename;
+	private String tableName;
 	
 	/**
 	 * 收藏名称
@@ -84,13 +84,13 @@ public class FavoriteEntity<T> implements Serializable {
 	
 	@JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
 	@DateTimeFormat
-	private Date addtime;
+	private Date createdAt;
 
 	public Date getAddtime() {
-		return addtime;
+		return createdAt;
 	}
-	public void setAddtime(Date addtime) {
-		this.addtime = addtime;
+	public void setAddtime(Date createdAt) {
+		this.createdAt = createdAt;
 	}
 
 	public Long getId() {
@@ -103,38 +103,38 @@ public class FavoriteEntity<T> implements Serializable {
 	/**
 	 * 设置：用户id
 	 */
-	public void setUserid(Long userid) {
-		this.userid = userid;
+	public void setUserid(Long userId) {
+		this.userId = userId;
 	}
 	/**
 	 * 获取：用户id
 	 */
 	public Long getUserid() {
-		return userid;
+		return userId;
 	}
 	/**
 	 * 设置：收藏id
 	 */
-	public void setRefid(Long refid) {
-		this.refid = refid;
+	public void setRefid(Long referenceId) {
+		this.referenceId = referenceId;
 	}
 	/**
 	 * 获取：收藏id
 	 */
 	public Long getRefid() {
-		return refid;
+		return referenceId;
 	}
 	/**
 	 * 设置：表名
 	 */
-	public void setTablename(String tablename) {
-		this.tablename = tablename;
+	public void setTablename(String tableName) {
+		this.tableName = tableName;
 	}
 	/**
 	 * 获取：表名
 	 */
 	public String getTablename() {
-		return tablename;
+		return tableName;
 	}
 	/**
 	 * 设置：收藏名称

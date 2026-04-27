@@ -27,13 +27,13 @@ public class FavoriteModel  implements Serializable {
 	 * 收藏id
 	 */
 	
-	private Long refid;
+	private Long referenceId;
 		
 	/**
 	 * 表名
 	 */
 	
-	private String tablename;
+	private String tableName;
 		
 	/**
 	 * 收藏名称
@@ -52,15 +52,15 @@ public class FavoriteModel  implements Serializable {
 	 * 设置：收藏id
 	 */
 	 
-	public void setRefid(Long refid) {
-		this.refid = refid;
+	public void setRefid(Long referenceId) {
+		this.referenceId = referenceId;
 	}
 	
 	/**
 	 * 获取：收藏id
 	 */
 	public Long getRefid() {
-		return refid;
+		return referenceId;
 	}
 				
 	
@@ -68,15 +68,15 @@ public class FavoriteModel  implements Serializable {
 	 * 设置：表名
 	 */
 	 
-	public void setTablename(String tablename) {
-		this.tablename = tablename;
+	public void setTablename(String tableName) {
+		this.tableName = tableName;
 	}
 	
 	/**
 	 * 获取：表名
 	 */
 	public String getTablename() {
-		return tablename;
+		return tableName;
 	}
 				
 	

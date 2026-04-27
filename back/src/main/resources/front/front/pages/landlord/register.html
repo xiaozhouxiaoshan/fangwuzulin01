@@ -62,23 +62,23 @@
             	<p class="title" v-if="true" :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(127, 78, 22, 1)","margin":"10px auto","borderColor":"rgba(0,0,0,1)","backgroundColor":"#f7f7f7","color":"rgba(127, 78, 22, 1)","isshow":true,"borderRadius":"8px","borderWidth":"0","width":"auto","lineHeight":"32px","fontSize":"16px","borderStyle":"solid"}'>房主注册</p>		
 				<div :style='{"padding":"0","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0 auto","borderColor":"rgba(0,0,0,1)","backgroundColor":"#fff","borderRadius":"0","borderWidth":"0 0 0px 0","width":"80%","borderStyle":"solid","height":"64px"}' class="form-item layui-form-text">
 					<label v-if="true" :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(0,0,0,0)","backgroundColor":"transparent","color":"rgba(127, 78, 22, 1)","borderRadius":"0","textAlign":"right","borderWidth":"0","width":"84px","fontSize":"16px","borderStyle":"solid"}' class="form-label">房主账号：</label>
-					<input :style='{"padding":"0 10px","boxShadow":"0 10px 6px rgba(127, 78, 22, 1)","borderColor":"rgba(127, 78, 22, 1)","backgroundColor":"#fff","color":"#333","borderRadius":"8px","textAlign":"left","borderWidth":"1px","width":"180px","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="text" id="landlordzhanghao" name="landlordzhanghao" placeholder="请输入房主账号" autocomplete="off" class="layui-input">
+					<input :style='{"padding":"0 10px","boxShadow":"0 10px 6px rgba(127, 78, 22, 1)","borderColor":"rgba(127, 78, 22, 1)","backgroundColor":"#fff","color":"#333","borderRadius":"8px","textAlign":"left","borderWidth":"1px","width":"180px","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="text" id="landlordAccount" name="landlordAccount" placeholder="请输入房主账号" autocomplete="off" class="layui-input">
 				</div>
 				<div :style='{"padding":"0","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0 auto","borderColor":"rgba(0,0,0,1)","backgroundColor":"#fff","borderRadius":"0","borderWidth":"0 0 0px 0","width":"80%","borderStyle":"solid","height":"64px"}' class="form-item">
 					<label v-if="true" :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(0,0,0,0)","backgroundColor":"transparent","color":"rgba(127, 78, 22, 1)","borderRadius":"0","textAlign":"right","borderWidth":"0","width":"84px","fontSize":"16px","borderStyle":"solid"}' class="form-label">密码：</label>
-					<input :style='{"padding":"0 10px","boxShadow":"0 10px 6px rgba(127, 78, 22, 1)","borderColor":"rgba(127, 78, 22, 1)","backgroundColor":"#fff","color":"#333","borderRadius":"8px","textAlign":"left","borderWidth":"1px","width":"180px","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="password" name="mima" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+					<input :style='{"padding":"0 10px","boxShadow":"0 10px 6px rgba(127, 78, 22, 1)","borderColor":"rgba(127, 78, 22, 1)","backgroundColor":"#fff","color":"#333","borderRadius":"8px","textAlign":"left","borderWidth":"1px","width":"180px","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
 				</div>
 				<div :style='{"padding":"0","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0 auto","borderColor":"rgba(0,0,0,1)","backgroundColor":"#fff","borderRadius":"0","borderWidth":"0 0 0px 0","width":"80%","borderStyle":"solid","height":"64px"}' class="form-item layui-form-text">
 					<label v-if="true" :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(0,0,0,0)","backgroundColor":"transparent","color":"rgba(127, 78, 22, 1)","borderRadius":"0","textAlign":"right","borderWidth":"0","width":"84px","fontSize":"16px","borderStyle":"solid"}' class="form-label">房主姓名：</label>
-					<input :style='{"padding":"0 10px","boxShadow":"0 10px 6px rgba(127, 78, 22, 1)","borderColor":"rgba(127, 78, 22, 1)","backgroundColor":"#fff","color":"#333","borderRadius":"8px","textAlign":"left","borderWidth":"1px","width":"180px","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="text" id="landlordxingming" name="landlordxingming" placeholder="请输入房主姓名" autocomplete="off" class="layui-input">
+					<input :style='{"padding":"0 10px","boxShadow":"0 10px 6px rgba(127, 78, 22, 1)","borderColor":"rgba(127, 78, 22, 1)","backgroundColor":"#fff","color":"#333","borderRadius":"8px","textAlign":"left","borderWidth":"1px","width":"180px","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="text" id="landlordName" name="landlordName" placeholder="请输入房主姓名" autocomplete="off" class="layui-input">
 				</div>
 				<div :style='{"padding":"0","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0 auto","borderColor":"rgba(0,0,0,1)","backgroundColor":"#fff","borderRadius":"0","borderWidth":"0 0 0px 0","width":"80%","borderStyle":"solid","height":"64px"}' class="form-item layui-form-text">
 					<label v-if="true" :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(0,0,0,0)","backgroundColor":"transparent","color":"rgba(127, 78, 22, 1)","borderRadius":"0","textAlign":"right","borderWidth":"0","width":"84px","fontSize":"16px","borderStyle":"solid"}' class="form-label">手机：</label>
-					<input :style='{"padding":"0 10px","boxShadow":"0 10px 6px rgba(127, 78, 22, 1)","borderColor":"rgba(127, 78, 22, 1)","backgroundColor":"#fff","color":"#333","borderRadius":"8px","textAlign":"left","borderWidth":"1px","width":"180px","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="text" id="shouji" name="shouji" placeholder="请输入手机" autocomplete="off" class="layui-input">
+					<input :style='{"padding":"0 10px","boxShadow":"0 10px 6px rgba(127, 78, 22, 1)","borderColor":"rgba(127, 78, 22, 1)","backgroundColor":"#fff","color":"#333","borderRadius":"8px","textAlign":"left","borderWidth":"1px","width":"180px","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="text" id="phoneNumber" name="phoneNumber" placeholder="请输入手机" autocomplete="off" class="layui-input">
 				</div>
 				<div :style='{"padding":"0","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0 auto","borderColor":"rgba(0,0,0,1)","backgroundColor":"#fff","borderRadius":"0","borderWidth":"0 0 0px 0","width":"80%","borderStyle":"solid","height":"64px"}' class="form-item layui-form-text">
 					<label v-if="true" :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(0,0,0,0)","backgroundColor":"transparent","color":"rgba(127, 78, 22, 1)","borderRadius":"0","textAlign":"right","borderWidth":"0","width":"84px","fontSize":"16px","borderStyle":"solid"}' class="form-label">身份证：</label>
-					<input :style='{"padding":"0 10px","boxShadow":"0 10px 6px rgba(127, 78, 22, 1)","borderColor":"rgba(127, 78, 22, 1)","backgroundColor":"#fff","color":"#333","borderRadius":"8px","textAlign":"left","borderWidth":"1px","width":"180px","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="text" id="shenfenzheng" name="shenfenzheng" placeholder="请输入身份证" autocomplete="off" class="layui-input">
+					<input :style='{"padding":"0 10px","boxShadow":"0 10px 6px rgba(127, 78, 22, 1)","borderColor":"rgba(127, 78, 22, 1)","backgroundColor":"#fff","color":"#333","borderRadius":"8px","textAlign":"left","borderWidth":"1px","width":"180px","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="text" id="idCardNumber" name="idCardNumber" placeholder="请输入身份证" autocomplete="off" class="layui-input">
 				</div>
 				<button :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(127, 78, 22, 1)","margin":"10px auto","borderColor":"#ccc","backgroundColor":"rgba(127, 78, 22, 1)","color":"#fff","borderRadius":"8px","borderWidth":"0","width":"60%","fontSize":"14px","lineHeight":"1px","borderStyle":"solid","height":"44px"}' class="layui-btn layui-btn-fluid layui-btn-danger btn-submit" lay-submit lay-filter="register" style="width: 280px;">注册</button>
             	<p :style='{"color":"#999","textAlign":"center","fontSize":"12px"}' class="txt"><a href="javascript:window.location.href='../login/login.html'">已有账号登录</a></p>
@@ -115,47 +115,47 @@
 				var http = layui.http;
 				var jquery = layui.jquery;
 
-				var tablename = http.getParam('tablename');
+				var tableName = http.getParam('tableName');
 								
 				// 注册
 				form.on('submit(register)', function(data) {
 					data = data.field;
-                    					                    if(!data.landlordzhanghao){
+                    					                    if(!data.landlordAccount){
                         layer.msg('房主账号不能为空', {
 							time: 2000,
 							icon: 5
 						});
                         return false
                     }
-                                                                                                                                                                                    					                    if(!data.mima){
+                                                                                                                                                                                    					                    if(!data.password){
                         layer.msg('密码不能为空', {
 							time: 2000,
 							icon: 5
 						});
                         return false
                     }
-                                                                                                                                                                                    					                    if(!data.landlordxingming){
+                                                                                                                                                                                    					                    if(!data.landlordName){
                         layer.msg('房主姓名不能为空', {
 							time: 2000,
 							icon: 5
 						});
                         return false
                     }
-                                                                                                                                                                                    					                                                                                                                                                                					                                                                                                                                                                					                                                                                if(!isMobile(data.shouji)){
+                                                                                                                                                                                    					                                                                                                                                                                					                                                                                                                                                                					                                                                                if(!isMobile(data.phoneNumber)){
                         layer.msg('手机应输入手机格式', {
 							time: 2000,
 							icon: 5
 						});
                         return false
                     }
-                                                                                                                        					                                                                                                                                            if(!isIdentity(data.shenfenzheng)){
+                                                                                                                        					                                                                                                                                            if(!isIdentity(data.idCardNumber)){
                         layer.msg('身份证应输入身份证格式', {
 							time: 2000,
 							icon: 5
 						});
                         return false 
                     }
-                                                                                http.requestJson(tablename + '/register', 'post', data, function(res) {
+                                                                                http.requestJson(tableName + '/register', 'post', data, function(res) {
 						layer.msg('注册成功', {
 							time: 2000,
 							icon: 6

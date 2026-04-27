@@ -7,101 +7,101 @@
 															<!-- <div v-if="tableName=='tenant'" class="input-group">
 			   <div class="label">用户名</div>
 			   <div class="input-container">
-			     <input v-model="ruleForm.tenantming" class="input" type="text" placeholder="用户名">
+			     <input v-model="ruleForm.tenantUsername" class="input" type="text" placeholder="用户名">
 			   </div>
 			 </div> -->
 			<el-form-item label="用户名" class="input" v-if="tableName=='tenant'">
-			  <el-input v-model="ruleForm.tenantming" autocomplete="off" placeholder="用户名" type="text" />
+			  <el-input v-model="ruleForm.tenantUsername" autocomplete="off" placeholder="用户名" type="text" />
 			</el-form-item>
 												<!-- <div v-if="tableName=='tenant'" class="input-group">
 			   <div class="label">密码</div>
 			   <div class="input-container">
-			     <input v-model="ruleForm.mima" class="input" type="text" placeholder="密码">
+			     <input v-model="ruleForm.password" class="input" type="text" placeholder="密码">
 			   </div>
 			 </div> -->
 			<el-form-item label="密码" class="input" v-if="tableName=='tenant'">
-			  <el-input v-model="ruleForm.mima" autocomplete="off" placeholder="密码" type="text" />
+			  <el-input v-model="ruleForm.password" autocomplete="off" placeholder="密码" type="text" />
 			</el-form-item>
 												<!-- <div v-if="tableName=='tenant'" class="input-group">
 			   <div class="label">姓名</div>
 			   <div class="input-container">
-			     <input v-model="ruleForm.xingming" class="input" type="text" placeholder="姓名">
+			     <input v-model="ruleForm.fullName" class="input" type="text" placeholder="姓名">
 			   </div>
 			 </div> -->
 			<el-form-item label="姓名" class="input" v-if="tableName=='tenant'">
-			  <el-input v-model="ruleForm.xingming" autocomplete="off" placeholder="姓名" type="text" />
+			  <el-input v-model="ruleForm.fullName" autocomplete="off" placeholder="姓名" type="text" />
 			</el-form-item>
 																														<!-- <div v-if="tableName=='tenant'" class="input-group">
 			   <div class="label">职业</div>
 			   <div class="input-container">
-			     <input v-model="ruleForm.zhiye" class="input" type="text" placeholder="职业">
+			     <input v-model="ruleForm.occupation" class="input" type="text" placeholder="职业">
 			   </div>
 			 </div> -->
 			<el-form-item label="职业" class="input" v-if="tableName=='tenant'">
-			  <el-input v-model="ruleForm.zhiye" autocomplete="off" placeholder="职业" type="text" />
+			  <el-input v-model="ruleForm.occupation" autocomplete="off" placeholder="职业" type="text" />
 			</el-form-item>
 												<!-- <div v-if="tableName=='tenant'" class="input-group">
 			   <div class="label">联系电话</div>
 			   <div class="input-container">
-			     <input v-model="ruleForm.lianxidianhua" class="input" type="text" placeholder="联系电话">
+			     <input v-model="ruleForm.contactPhone" class="input" type="text" placeholder="联系电话">
 			   </div>
 			 </div> -->
 			<el-form-item label="联系电话" class="input" v-if="tableName=='tenant'">
-			  <el-input v-model="ruleForm.lianxidianhua" autocomplete="off" placeholder="联系电话" type="text" />
+			  <el-input v-model="ruleForm.contactPhone" autocomplete="off" placeholder="联系电话" type="text" />
 			</el-form-item>
 												<!-- <div v-if="tableName=='tenant'" class="input-group">
 			   <div class="label">身份证</div>
 			   <div class="input-container">
-			     <input v-model="ruleForm.shenfenzheng" class="input" type="text" placeholder="身份证">
+			     <input v-model="ruleForm.idCardNumber" class="input" type="text" placeholder="身份证">
 			   </div>
 			 </div> -->
 			<el-form-item label="身份证" class="input" v-if="tableName=='tenant'">
-			  <el-input v-model="ruleForm.shenfenzheng" autocomplete="off" placeholder="身份证" type="text" />
+			  <el-input v-model="ruleForm.idCardNumber" autocomplete="off" placeholder="身份证" type="text" />
 			</el-form-item>
 																								<!-- <div v-if="tableName=='landlord'" class="input-group">
 			   <div class="label">房主账号</div>
 			   <div class="input-container">
-			     <input v-model="ruleForm.landlordzhanghao" class="input" type="text" placeholder="房主账号">
+			     <input v-model="ruleForm.landlordAccount" class="input" type="text" placeholder="房主账号">
 			   </div>
 			 </div> -->
 			<el-form-item label="房主账号" class="input" v-if="tableName=='landlord'">
-			  <el-input v-model="ruleForm.landlordzhanghao" autocomplete="off" placeholder="房主账号" type="text" />
+			  <el-input v-model="ruleForm.landlordAccount" autocomplete="off" placeholder="房主账号" type="text" />
 			</el-form-item>
 												<!-- <div v-if="tableName=='landlord'" class="input-group">
 			   <div class="label">密码</div>
 			   <div class="input-container">
-			     <input v-model="ruleForm.mima" class="input" type="text" placeholder="密码">
+			     <input v-model="ruleForm.password" class="input" type="text" placeholder="密码">
 			   </div>
 			 </div> -->
 			<el-form-item label="密码" class="input" v-if="tableName=='landlord'">
-			  <el-input v-model="ruleForm.mima" autocomplete="off" placeholder="密码" type="text" />
+			  <el-input v-model="ruleForm.password" autocomplete="off" placeholder="密码" type="text" />
 			</el-form-item>
 												<!-- <div v-if="tableName=='landlord'" class="input-group">
 			   <div class="label">房主姓名</div>
 			   <div class="input-container">
-			     <input v-model="ruleForm.landlordxingming" class="input" type="text" placeholder="房主姓名">
+			     <input v-model="ruleForm.landlordName" class="input" type="text" placeholder="房主姓名">
 			   </div>
 			 </div> -->
 			<el-form-item label="房主姓名" class="input" v-if="tableName=='landlord'">
-			  <el-input v-model="ruleForm.landlordxingming" autocomplete="off" placeholder="房主姓名" type="text" />
+			  <el-input v-model="ruleForm.landlordName" autocomplete="off" placeholder="房主姓名" type="text" />
 			</el-form-item>
 																														<!-- <div v-if="tableName=='landlord'" class="input-group">
 			   <div class="label">手机</div>
 			   <div class="input-container">
-			     <input v-model="ruleForm.shouji" class="input" type="text" placeholder="手机">
+			     <input v-model="ruleForm.phoneNumber" class="input" type="text" placeholder="手机">
 			   </div>
 			 </div> -->
 			<el-form-item label="手机" class="input" v-if="tableName=='landlord'">
-			  <el-input v-model="ruleForm.shouji" autocomplete="off" placeholder="手机" type="text" />
+			  <el-input v-model="ruleForm.phoneNumber" autocomplete="off" placeholder="手机" type="text" />
 			</el-form-item>
 												<!-- <div v-if="tableName=='landlord'" class="input-group">
 			   <div class="label">身份证</div>
 			   <div class="input-container">
-			     <input v-model="ruleForm.shenfenzheng" class="input" type="text" placeholder="身份证">
+			     <input v-model="ruleForm.idCardNumber" class="input" type="text" placeholder="身份证">
 			   </div>
 			 </div> -->
 			<el-form-item label="身份证" class="input" v-if="tableName=='landlord'">
-			  <el-input v-model="ruleForm.shenfenzheng" autocomplete="off" placeholder="身份证" type="text" />
+			  <el-input v-model="ruleForm.idCardNumber" autocomplete="off" placeholder="身份证" type="text" />
 			</el-form-item>
 																																																																																													<div class="action-group">
 																																																																																													  <el-button class="btn btn-back" @click="goLogin()">返回登录</el-button>
@@ -138,39 +138,39 @@ export default {
     },
     // 注册
     login() {
-                              if((!this.ruleForm.tenantming) && `tenant` == this.tableName){
+                              if((!this.ruleForm.tenantUsername) && `tenant` == this.tableName){
         this.$message.error(`用户名不能为空`);
         return
       }
-                                                                  if((!this.ruleForm.mima) && `tenant` == this.tableName){
+                                                                  if((!this.ruleForm.password) && `tenant` == this.tableName){
         this.$message.error(`密码不能为空`);
         return
       }
-                                                                                                                                                                                                                                                                                                                  if(`tenant` == this.tableName && this.ruleForm.lianxidianhua&&(!this.$validate.isMobile(this.ruleForm.lianxidianhua))){
+                                                                                                                                                                                                                                                                                                                  if(`tenant` == this.tableName && this.ruleForm.contactPhone&&(!this.$validate.isMobile(this.ruleForm.contactPhone))){
         this.$message.error(`联系电话应输入手机格式`);
         return
       }
-                                                                              if(`tenant` == this.tableName && this.ruleForm.shenfenzheng&&(!this.$validate.checkIdCard(this.ruleForm.shenfenzheng))){
+                                                                              if(`tenant` == this.tableName && this.ruleForm.idCardNumber&&(!this.$validate.checkIdCard(this.ruleForm.idCardNumber))){
         this.$message.error(`身份证应输入身份证格式`);
         return
       }
-                                                      if((!this.ruleForm.landlordzhanghao) && `landlord` == this.tableName){
+                                                      if((!this.ruleForm.landlordAccount) && `landlord` == this.tableName){
         this.$message.error(`房主账号不能为空`);
         return
       }
-                                                                  if((!this.ruleForm.mima) && `landlord` == this.tableName){
+                                                                  if((!this.ruleForm.password) && `landlord` == this.tableName){
         this.$message.error(`密码不能为空`);
         return
       }
-                                                                  if((!this.ruleForm.landlordxingming) && `landlord` == this.tableName){
+                                                                  if((!this.ruleForm.landlordName) && `landlord` == this.tableName){
         this.$message.error(`房主姓名不能为空`);
         return
       }
-                                                                                                                                                                                                      if(`landlord` == this.tableName && this.ruleForm.shouji&&(!this.$validate.isMobile(this.ruleForm.shouji))){
+                                                                                                                                                                                                      if(`landlord` == this.tableName && this.ruleForm.phoneNumber&&(!this.$validate.isMobile(this.ruleForm.phoneNumber))){
         this.$message.error(`手机应输入手机格式`);
         return
       }
-                                                                              if(`landlord` == this.tableName && this.ruleForm.shenfenzheng&&(!this.$validate.checkIdCard(this.ruleForm.shenfenzheng))){
+                                                                              if(`landlord` == this.tableName && this.ruleForm.idCardNumber&&(!this.$validate.checkIdCard(this.ruleForm.idCardNumber))){
         this.$message.error(`身份证应输入身份证格式`);
         return
       }

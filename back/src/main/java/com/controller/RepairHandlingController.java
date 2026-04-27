@@ -202,10 +202,10 @@ public class RepairHandlingController {
 
 		String tableName = request.getSession().getAttribute("tableName").toString();
 		if(tableName.equals("landlord")) {
-			wrapper.eq("landlordzhanghao", (String)request.getSession().getAttribute("username"));
+			wrapper.eq("landlordAccount", (String)request.getSession().getAttribute("username"));
 		}
 		if(tableName.equals("tenant")) {
-			wrapper.eq("tenantming", (String)request.getSession().getAttribute("username"));
+			wrapper.eq("tenantUsername", (String)request.getSession().getAttribute("username"));
 		}
 
 		int count = repairHandlingService.selectCount(wrapper);

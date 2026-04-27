@@ -55,13 +55,13 @@ public class LandlordApplicationCommentEntity<T> implements Serializable {
 	 * 关联表id
 	 */
 					
-	private Long refid;
+	private Long referenceId;
 	
 	/**
 	 * 用户id
 	 */
 					
-	private Long userid;
+	private Long userId;
 	
 	/**
 	 * 评论内容
@@ -78,13 +78,13 @@ public class LandlordApplicationCommentEntity<T> implements Serializable {
 	
 	@JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
 	@DateTimeFormat
-	private Date addtime;
+	private Date createdAt;
 
 	public Date getAddtime() {
-		return addtime;
+		return createdAt;
 	}
-	public void setAddtime(Date addtime) {
-		this.addtime = addtime;
+	public void setAddtime(Date createdAt) {
+		this.createdAt = createdAt;
 	}
 
 	public Long getId() {
@@ -97,26 +97,26 @@ public class LandlordApplicationCommentEntity<T> implements Serializable {
 	/**
 	 * 设置：关联表id
 	 */
-	public void setRefid(Long refid) {
-		this.refid = refid;
+	public void setRefid(Long referenceId) {
+		this.referenceId = referenceId;
 	}
 	/**
 	 * 获取：关联表id
 	 */
 	public Long getRefid() {
-		return refid;
+		return referenceId;
 	}
 	/**
 	 * 设置：用户id
 	 */
-	public void setUserid(Long userid) {
-		this.userid = userid;
+	public void setUserid(Long userId) {
+		this.userId = userId;
 	}
 	/**
 	 * 获取：用户id
 	 */
 	public Long getUserid() {
-		return userid;
+		return userId;
 	}
 	/**
 	 * 设置：评论内容

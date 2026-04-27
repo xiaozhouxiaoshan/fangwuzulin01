@@ -5,18 +5,18 @@
 
 	<!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.HouseReviewEntity" id="houseReviewMap">
-        <result property="hetongbianhao" column="hetongbianhao"/>
-        <result property="fangwumingcheng" column="fangwumingcheng"/>
+        <result property="contractNumber" column="contractNumber"/>
+        <result property="houseName" column="houseName"/>
         <result property="houseType" column="houseType"/>
-        <result property="xiaoqu" column="xiaoqu"/>
-        <result property="pingfen" column="pingfen"/>
-        <result property="pingjianeirong" column="pingjianeirong"/>
-        <result property="pingjiariqi" column="pingjiariqi"/>
-        <result property="landlordzhanghao" column="landlordzhanghao"/>
-        <result property="tenantming" column="tenantming"/>
-        <result property="lianxidianhua" column="lianxidianhua"/>
-        <result property="sfsh" column="sfsh"/>
-        <result property="shhf" column="shhf"/>
+        <result property="community" column="community"/>
+        <result property="rating" column="rating"/>
+        <result property="reviewContent" column="reviewContent"/>
+        <result property="reviewDate" column="reviewDate"/>
+        <result property="landlordAccount" column="landlordAccount"/>
+        <result property="tenantUsername" column="tenantUsername"/>
+        <result property="contactPhone" column="contactPhone"/>
+        <result property="reviewStatus" column="reviewStatus"/>
+        <result property="reviewReply" column="reviewReply"/>
     </resultMap>
 
 	<select id="selectListVO"

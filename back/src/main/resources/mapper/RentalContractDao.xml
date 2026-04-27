@@ -5,26 +5,26 @@
 
 	<!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.RentalContractEntity" id="rentalContractMap">
-        <result property="hetongbianhao" column="hetongbianhao"/>
-        <result property="fangwumingcheng" column="fangwumingcheng"/>
+        <result property="contractNumber" column="contractNumber"/>
+        <result property="houseName" column="houseName"/>
         <result property="houseType" column="houseType"/>
-        <result property="xiaoqu" column="xiaoqu"/>
-        <result property="yuezujiage" column="yuezujiage"/>
-        <result property="zuyongyueshu" column="zuyongyueshu"/>
-        <result property="zuyongjine" column="zuyongjine"/>
-        <result property="yajin" column="yajin"/>
-        <result property="fangzuzhuangtai" column="fangzuzhuangtai"/>
-        <result property="hetongjine" column="hetongjine"/>
-        <result property="hetongneirong" column="hetongneirong"/>
-        <result property="shengxiaori" column="shengxiaori"/>
-        <result property="youxianqizhi" column="youxianqizhi"/>
-        <result property="tenantming" column="tenantming"/>
-        <result property="lianxidianhua" column="lianxidianhua"/>
-        <result property="landlordzhanghao" column="landlordzhanghao"/>
-        <result property="landlordxingming" column="landlordxingming"/>
-        <result property="sfsh" column="sfsh"/>
-        <result property="shhf" column="shhf"/>
-        <result property="ispay" column="ispay"/>
+        <result property="community" column="community"/>
+        <result property="monthlyRent" column="monthlyRent"/>
+        <result property="rentalMonths" column="rentalMonths"/>
+        <result property="rentalAmount" column="rentalAmount"/>
+        <result property="deposit" column="deposit"/>
+        <result property="rentalStatus" column="rentalStatus"/>
+        <result property="contractAmount" column="contractAmount"/>
+        <result property="contractContent" column="contractContent"/>
+        <result property="effectiveDate" column="effectiveDate"/>
+        <result property="expiryDate" column="expiryDate"/>
+        <result property="tenantUsername" column="tenantUsername"/>
+        <result property="contactPhone" column="contactPhone"/>
+        <result property="landlordAccount" column="landlordAccount"/>
+        <result property="landlordName" column="landlordName"/>
+        <result property="reviewStatus" column="reviewStatus"/>
+        <result property="reviewReply" column="reviewReply"/>
+        <result property="paymentStatus" column="paymentStatus"/>
     </resultMap>
 
 	<select id="selectListVO"

@@ -169,11 +169,11 @@ public class AssistantController {
 
     private Map<String, Object> buildTenantHouseReply(String message, String username, String role) {
         List<HouseListingEntity> houses = houseListingService.selectList(
-                new EntityWrapper<HouseListingEntity>().eq("fangwuzhuangtai", "可租")
+                new EntityWrapper<HouseListingEntity>().eq("houseStatus", "可租")
         );
 
         String houseType = detectHouseType(message);
-        String xiaoqu = detectXiaoqu(message, houses);
+        String community = detectXiaoqu(message, houses);
         Integer budget = detectBudget(message);
 
         List<HouseListingEntity> filtered = new ArrayList<HouseListingEntity>();
@@ -182,7 +182,7 @@ public class AssistantController {
             if (StringUtils.isNotBlank(houseType) && !houseType.equals(house.getHouseType())) {
                 matched = false;
             }
-            if (StringUtils.isNotBlank(xiaoqu) && !xiaoqu.equals(house.getXiaoqu())) {
+            if (StringUtils.isNotBlank(community) && !community.equals(house.getXiaoqu())) {
                 matched = false;
             }
             if (budget != null && containsAny(message, "预算", "以内", "以下", "不超过") && house.getYuezujiage() != null
@@ -223,10 +223,10 @@ public class AssistantController {
         }
 
         long appointmentCount = viewingAppointmentService.selectCount(
-                new EntityWrapper<ViewingAppointmentEntity>().eq("tenantming", username)
+                new EntityWrapper<ViewingAppointmentEntity>().eq("tenantUsername", username)
         );
         long contractCount = rentalContractService.selectCount(
-                new EntityWrapper<RentalContractEntity>().eq("tenantming", username)
+                new EntityWrapper<RentalContractEntity>().eq("tenantUsername", username)
         );
 
         StringBuilder reply = new StringBuilder("我先按你的租房场景做了一轮筛选。");
@@ -236,8 +236,8 @@ public class AssistantController {
         if (StringUtils.isNotBlank(houseType)) {
             reply.append("你更关注").append(houseType).append("。");
         }
-        if (StringUtils.isNotBlank(xiaoqu)) {
-            reply.append("你提到了").append(xiaoqu).append("。");
+        if (StringUtils.isNotBlank(community)) {
+            reply.append("你提到了").append(community).append("。");
         }
         reply.append("另外，你当前共有").append(appointmentCount).append("条预约记录，")
                 .append(contractCount).append("条合同记录。");
@@ -247,7 +247,7 @@ public class AssistantController {
 
     private Map<String, Object> buildTenantAppointmentReply(String username, String role) {
         List<ViewingAppointmentEntity> appointments = viewingAppointmentService.selectList(
-                new EntityWrapper<ViewingAppointmentEntity>().eq("tenantming", username)
+                new EntityWrapper<ViewingAppointmentEntity>().eq("tenantUsername", username)
         );
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(appointments.size(), 3);
@@ -264,7 +264,7 @@ public class AssistantController {
 
     private Map<String, Object> buildTenantContractReply(String username, String role) {
         List<RentalContractEntity> contracts = rentalContractService.selectList(
-                new EntityWrapper<RentalContractEntity>().eq("tenantming", username)
+                new EntityWrapper<RentalContractEntity>().eq("tenantUsername", username)
         );
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(contracts.size(), 3);
@@ -281,7 +281,7 @@ public class AssistantController {
 
     private Map<String, Object> buildTenantRepairReply(String username, String role) {
         List<HouseRepairEntity> repairs = houseRepairService.selectList(
-                new EntityWrapper<HouseRepairEntity>().eq("tenantming", username)
+                new EntityWrapper<HouseRepairEntity>().eq("tenantUsername", username)
         );
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(repairs.size(), 3);
@@ -298,19 +298,19 @@ public class AssistantController {
 
     private Map<String, Object> buildLandlordTodoReply(String username, String role) {
         long houseCount = houseListingService.selectCount(
-                new EntityWrapper<HouseListingEntity>().eq("landlordzhanghao", username)
+                new EntityWrapper<HouseListingEntity>().eq("landlordAccount", username)
         );
         long pendingAppointments = viewingAppointmentService.selectCount(
-                new EntityWrapper<ViewingAppointmentEntity>().eq("landlordzhanghao", username).eq("sfsh", "否")
+                new EntityWrapper<ViewingAppointmentEntity>().eq("landlordAccount", username).eq("reviewStatus", "否")
         );
         long pendingContracts = rentalContractService.selectCount(
-                new EntityWrapper<RentalContractEntity>().eq("landlordzhanghao", username).eq("sfsh", "否")
+                new EntityWrapper<RentalContractEntity>().eq("landlordAccount", username).eq("reviewStatus", "否")
         );
         long unpaidContracts = rentalContractService.selectCount(
-                new EntityWrapper<RentalContractEntity>().eq("landlordzhanghao", username).eq("ispay", "未支付")
+                new EntityWrapper<RentalContractEntity>().eq("landlordAccount", username).eq("paymentStatus", "未支付")
         );
         long unfinishedRepairs = repairHandlingService.selectCount(
-                new EntityWrapper<RepairHandlingEntity>().eq("landlordzhanghao", username).ne("weixiujindu", "已完成")
+                new EntityWrapper<RepairHandlingEntity>().eq("landlordAccount", username).ne("handlingProgress", "已完成")
         );
 
         List<Map<String, String>> cards = buildQuickCards(new String[][]{
@@ -327,7 +327,7 @@ public class AssistantController {
 
     private Map<String, Object> buildLandlordHouseReply(String username, String role) {
         List<HouseListingEntity> houses = houseListingService.selectList(
-                new EntityWrapper<HouseListingEntity>().eq("landlordzhanghao", username)
+                new EntityWrapper<HouseListingEntity>().eq("landlordAccount", username)
         );
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(houses.size(), 3);
@@ -344,7 +344,7 @@ public class AssistantController {
 
     private Map<String, Object> buildLandlordAppointmentReply(String username, String role) {
         List<ViewingAppointmentEntity> appointments = viewingAppointmentService.selectList(
-                new EntityWrapper<ViewingAppointmentEntity>().eq("landlordzhanghao", username)
+                new EntityWrapper<ViewingAppointmentEntity>().eq("landlordAccount", username)
         );
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(appointments.size(), 3);
@@ -361,7 +361,7 @@ public class AssistantController {
 
     private Map<String, Object> buildLandlordContractReply(String username, String role) {
         List<RentalContractEntity> contracts = rentalContractService.selectList(
-                new EntityWrapper<RentalContractEntity>().eq("landlordzhanghao", username)
+                new EntityWrapper<RentalContractEntity>().eq("landlordAccount", username)
         );
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(contracts.size(), 3);
@@ -378,7 +378,7 @@ public class AssistantController {
 
     private Map<String, Object> buildLandlordRepairReply(String username, String role) {
         List<RepairHandlingEntity> repairs = repairHandlingService.selectList(
-                new EntityWrapper<RepairHandlingEntity>().eq("landlordzhanghao", username)
+                new EntityWrapper<RepairHandlingEntity>().eq("landlordAccount", username)
         );
         List<Map<String, String>> cards = new ArrayList<Map<String, String>>();
         int size = Math.min(repairs.size(), 3);
@@ -414,13 +414,13 @@ public class AssistantController {
 
     private Map<String, Object> buildAdminPendingReply(String role) {
         long pendingAppointments = viewingAppointmentService.selectCount(
-                new EntityWrapper<ViewingAppointmentEntity>().eq("sfsh", "否")
+                new EntityWrapper<ViewingAppointmentEntity>().eq("reviewStatus", "否")
         );
         long pendingContracts = rentalContractService.selectCount(
-                new EntityWrapper<RentalContractEntity>().eq("sfsh", "否")
+                new EntityWrapper<RentalContractEntity>().eq("reviewStatus", "否")
         );
         long unpaidContracts = rentalContractService.selectCount(
-                new EntityWrapper<RentalContractEntity>().eq("ispay", "未支付")
+                new EntityWrapper<RentalContractEntity>().eq("paymentStatus", "未支付")
         );
         List<Map<String, String>> cards = buildQuickCards(new String[][]{
                 {"待审核预约", String.valueOf(pendingAppointments)},
@@ -433,10 +433,10 @@ public class AssistantController {
     private Map<String, Object> buildAdminRepairReply(String role) {
         long repairApplyCount = houseRepairService.selectCount(new EntityWrapper<HouseRepairEntity>());
         long unfinishedRepair = repairHandlingService.selectCount(
-                new EntityWrapper<RepairHandlingEntity>().ne("weixiujindu", "已完成")
+                new EntityWrapper<RepairHandlingEntity>().ne("handlingProgress", "已完成")
         );
         long finishedRepair = repairHandlingService.selectCount(
-                new EntityWrapper<RepairHandlingEntity>().eq("weixiujindu", "已完成")
+                new EntityWrapper<RepairHandlingEntity>().eq("handlingProgress", "已完成")
         );
         List<Map<String, String>> cards = buildQuickCards(new String[][]{
                 {"报修申请", String.valueOf(repairApplyCount)},

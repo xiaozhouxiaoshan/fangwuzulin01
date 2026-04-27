@@ -5,24 +5,24 @@
       <el-form :inline="true" :model="searchForm" class="form-content">
         <el-row :gutter="20" class="slt" :style="{justifyContent:contents.searchBoxPosition=='1'?'flex-start':contents.searchBoxPosition=='2'?'center':'flex-end'}">
                                                                           <el-form-item :label="contents.inputTitle == 1 ? '房屋名称' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.fangwumingcheng" placeholder="房屋名称" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.fangwumingcheng" placeholder="房屋名称" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.fangwumingcheng" placeholder="房屋名称" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.houseName" placeholder="房屋名称" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.houseName" placeholder="房屋名称" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.houseName" placeholder="房屋名称" clearable></el-input>
                 </el-form-item>
                                                                                                                                                                                                                                                               <el-form-item :label="contents.inputTitle == 1 ? '用户名' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.tenantming" placeholder="用户名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.tenantming" placeholder="用户名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.tenantming" placeholder="用户名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.tenantUsername" placeholder="用户名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.tenantUsername" placeholder="用户名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.tenantUsername" placeholder="用户名" clearable></el-input>
                 </el-form-item>
                                                                               <el-form-item :label="contents.inputTitle == 1 ? '姓名' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.xingming" placeholder="姓名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.xingming" placeholder="姓名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.xingming" placeholder="姓名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.fullName" placeholder="姓名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.fullName" placeholder="姓名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.fullName" placeholder="姓名" clearable></el-input>
                 </el-form-item>
                                                                                                                                                 <el-form-item :label="contents.inputTitle == 1 ? '房主姓名' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.landlordxingming" placeholder="房主姓名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.landlordxingming" placeholder="房主姓名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.landlordxingming" placeholder="房主姓名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.landlordName" placeholder="房主姓名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.landlordName" placeholder="房主姓名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.landlordName" placeholder="房主姓名" clearable></el-input>
                 </el-form-item>
                                                                                           <el-form-item>
             <el-button v-if="contents.searchBtnIcon == 1 && contents.searchBtnIconPosition == 1" icon="el-icon-search" type="success" @click="search()">{{ contents.searchBtnFont == 1?'查询':'' }}</el-button>
@@ -93,19 +93,19 @@
             </el-table-column>
             <el-table-column label="索引" v-if="contents.tableIndex" type="index" width="50" />
             	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="yuyuebianhao"
+                    prop="appointmentNumber"
                     header-align="center"
 		    label="预约编号">
 		     <template slot-scope="scope">
-                       {{scope.row.yuyuebianhao}}
+                       {{scope.row.appointmentNumber}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="fangwumingcheng"
+                    prop="houseName"
                     header-align="center"
 		    label="房屋名称">
 		     <template slot-scope="scope">
-                       {{scope.row.fangwumingcheng}}
+                       {{scope.row.houseName}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
@@ -117,125 +117,125 @@
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="fangwuzhuangtai"
+                    prop="houseStatus"
                     header-align="center"
 		    label="房屋状态">
 		     <template slot-scope="scope">
-                       {{scope.row.fangwuzhuangtai}}
+                       {{scope.row.houseStatus}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="xiaoqu"
+                    prop="community"
                     header-align="center"
 		    label="小区">
 		     <template slot-scope="scope">
-                       {{scope.row.xiaoqu}}
+                       {{scope.row.community}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="yuezujiage"
+                    prop="monthlyRent"
                     header-align="center"
 		    label="月租价格">
 		     <template slot-scope="scope">
-                       {{scope.row.yuezujiage}}
+                       {{scope.row.monthlyRent}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="yajin"
+                    prop="deposit"
                     header-align="center"
 		    label="押金">
 		     <template slot-scope="scope">
-                       {{scope.row.yajin}}
+                       {{scope.row.deposit}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="zuyongyueshu"
+                    prop="rentalMonths"
                     header-align="center"
 		    label="租用月数">
 		     <template slot-scope="scope">
-                       {{scope.row.zuyongyueshu}}
+                       {{scope.row.rentalMonths}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="zuyongjine"
+                    prop="rentalAmount"
                     header-align="center"
 		    label="租用金额">
 		     <template slot-scope="scope">
-                       {{scope.row.zuyongjine}}
+                       {{scope.row.rentalAmount}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="yuyueshijian"
+                    prop="appointmentTime"
                     header-align="center"
 		    label="预约时间">
 		     <template slot-scope="scope">
-                       {{scope.row.yuyueshijian}}
+                       {{scope.row.appointmentTime}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="tenantming"
+                    prop="tenantUsername"
                     header-align="center"
 		    label="用户名">
 		     <template slot-scope="scope">
-                       {{scope.row.tenantming}}
+                       {{scope.row.tenantUsername}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="xingming"
+                    prop="fullName"
                     header-align="center"
 		    label="姓名">
 		     <template slot-scope="scope">
-                       {{scope.row.xingming}}
+                       {{scope.row.fullName}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="shenfenzheng"
+                    prop="idCardNumber"
                     header-align="center"
 		    label="身份证">
 		     <template slot-scope="scope">
-                       {{scope.row.shenfenzheng}}
+                       {{scope.row.idCardNumber}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="lianxidianhua"
+                    prop="contactPhone"
                     header-align="center"
 		    label="联系电话">
 		     <template slot-scope="scope">
-                       {{scope.row.lianxidianhua}}
+                       {{scope.row.contactPhone}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="landlordzhanghao"
+                    prop="landlordAccount"
                     header-align="center"
 		    label="房主账号">
 		     <template slot-scope="scope">
-                       {{scope.row.landlordzhanghao}}
+                       {{scope.row.landlordAccount}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="landlordxingming"
+                    prop="landlordName"
                     header-align="center"
 		    label="房主姓名">
 		     <template slot-scope="scope">
-                       {{scope.row.landlordxingming}}
+                       {{scope.row.landlordName}}
                      </template>
                 </el-table-column>
                 	                	                                    	                	                                    	                                          <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                  prop="shhf"
+                  prop="reviewReply"
                   header-align="center"
                   label="审核回复">
               </el-table-column>
               <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                  prop="sfsh"
+                  prop="reviewStatus"
                   header-align="center"
                   label="审核状态">
                   <template slot-scope="scope">
-                    <span style="margin-right:10px">{{scope.row.sfsh=='是'?'通过':'未通过'}}</span>
+                    <span style="margin-right:10px">{{scope.row.reviewStatus=='是'?'通过':'未通过'}}</span>
                   </template>
               </el-table-column>
               <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
                   v-if="isAuth('viewingAppointment','审核')"
-                  prop="sfsh"
+                  prop="reviewStatus"
                   header-align="center"
                   label="审核">
                   <template slot-scope="scope">
@@ -288,17 +288,17 @@
         
         <el-dialog
       title="审核"
-      :visible.sync="sfshVisiable"
+      :visible.sync="reviewStatusVisiable"
       width="50%">
       <el-form ref="form" :model="form" label-width="80px">
         <el-form-item label="审核状态">
-          <el-select v-model="shForm.sfsh" placeholder="审核状态">
+          <el-select v-model="shForm.reviewStatus" placeholder="审核状态">
             <el-option label="通过" value="是"></el-option>
             <el-option label="不通过" value="否"></el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="内容">
-          <el-input type="textarea" :rows="8" v-model="shForm.shhf"></el-input>
+          <el-input type="textarea" :rows="8" v-model="shForm.reviewReply"></el-input>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
@@ -325,7 +325,7 @@ export default {
       dataListLoading: false,
       dataListSelections: [],
       showFlag: true,
-      sfshVisiable: false,
+      reviewStatusVisiable: false,
       shForm: {},
       chartVisiable: false,
       addOrUpdateFlag:false,
@@ -554,17 +554,17 @@ export default {
         limit: this.pageSize,
         sort: 'id',
       }
-                                                                if(this.searchForm.fangwumingcheng!='' && this.searchForm.fangwumingcheng!=undefined){
-            params['fangwumingcheng'] = '%' + this.searchForm.fangwumingcheng + '%'
+                                                                if(this.searchForm.houseName!='' && this.searchForm.houseName!=undefined){
+            params['houseName'] = '%' + this.searchForm.houseName + '%'
           }
-                                                                                                                                                                                                                                            if(this.searchForm.tenantming!='' && this.searchForm.tenantming!=undefined){
-            params['tenantming'] = '%' + this.searchForm.tenantming + '%'
+                                                                                                                                                                                                                                            if(this.searchForm.tenantUsername!='' && this.searchForm.tenantUsername!=undefined){
+            params['tenantUsername'] = '%' + this.searchForm.tenantUsername + '%'
           }
-                                                            if(this.searchForm.xingming!='' && this.searchForm.xingming!=undefined){
-            params['xingming'] = '%' + this.searchForm.xingming + '%'
+                                                            if(this.searchForm.fullName!='' && this.searchForm.fullName!=undefined){
+            params['fullName'] = '%' + this.searchForm.fullName + '%'
           }
-                                                                                                                              if(this.searchForm.landlordxingming!='' && this.searchForm.landlordxingming!=undefined){
-            params['landlordxingming'] = '%' + this.searchForm.landlordxingming + '%'
+                                                                                                                              if(this.searchForm.landlordName!='' && this.searchForm.landlordName!=undefined){
+            params['landlordName'] = '%' + this.searchForm.landlordName + '%'
           }
                                                                           this.$http({
         url: "viewingAppointment/page",
@@ -611,27 +611,27 @@ export default {
     // 查看评论
         // 审核窗口
     shDialog(row){
-      this.sfshVisiable = !this.sfshVisiable;
+      this.reviewStatusVisiable = !this.reviewStatusVisiable;
       if(row){
         this.shForm = {
-                    yuyuebianhao: row.yuyuebianhao,
-                    fangwumingcheng: row.fangwumingcheng,
+                    appointmentNumber: row.appointmentNumber,
+                    houseName: row.houseName,
                     houseType: row.houseType,
-                    fangwuzhuangtai: row.fangwuzhuangtai,
-                    xiaoqu: row.xiaoqu,
-                    yuezujiage: row.yuezujiage,
-                    yajin: row.yajin,
-                    zuyongyueshu: row.zuyongyueshu,
-                    zuyongjine: row.zuyongjine,
-                    yuyueshijian: row.yuyueshijian,
-                    tenantming: row.tenantming,
-                    xingming: row.xingming,
-                    shenfenzheng: row.shenfenzheng,
-                    lianxidianhua: row.lianxidianhua,
-                    landlordzhanghao: row.landlordzhanghao,
-                    landlordxingming: row.landlordxingming,
-                    sfsh: row.sfsh,
-                    shhf: row.shhf,
+                    houseStatus: row.houseStatus,
+                    community: row.community,
+                    monthlyRent: row.monthlyRent,
+                    deposit: row.deposit,
+                    rentalMonths: row.rentalMonths,
+                    rentalAmount: row.rentalAmount,
+                    appointmentTime: row.appointmentTime,
+                    tenantUsername: row.tenantUsername,
+                    fullName: row.fullName,
+                    idCardNumber: row.idCardNumber,
+                    contactPhone: row.contactPhone,
+                    landlordAccount: row.landlordAccount,
+                    landlordName: row.landlordName,
+                    reviewStatus: row.reviewStatus,
+                    reviewReply: row.reviewReply,
                     id: row.id
         }
       }

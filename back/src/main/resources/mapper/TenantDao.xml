@@ -5,14 +5,14 @@
 
 	<!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.TenantEntity" id="tenantMap">
-        <result property="tenantming" column="tenantming"/>
-        <result property="mima" column="mima"/>
-        <result property="xingming" column="xingming"/>
-        <result property="touxiang" column="touxiang"/>
-        <result property="xingbie" column="xingbie"/>
-        <result property="zhiye" column="zhiye"/>
-        <result property="lianxidianhua" column="lianxidianhua"/>
-        <result property="shenfenzheng" column="shenfenzheng"/>
+        <result property="tenantUsername" column="tenantUsername"/>
+        <result property="password" column="password"/>
+        <result property="fullName" column="fullName"/>
+        <result property="avatar" column="avatar"/>
+        <result property="gender" column="gender"/>
+        <result property="occupation" column="occupation"/>
+        <result property="contactPhone" column="contactPhone"/>
+        <result property="idCardNumber" column="idCardNumber"/>
     </resultMap>
 
 	<select id="selectListVO"

@@ -251,7 +251,7 @@
 				// 提交数据
 				form.on('submit(*)', function(data) {
 					data = data.field;
-					data.userid = localStorage.getItem('userid')
+					data.userId = localStorage.getItem('userId')
 					data.username = localStorage.getItem('adminName')
 					http.requestJson('messageBoard/add', 'post', data, function(res) {
 						layer.msg('留言成功', {

@@ -261,11 +261,11 @@ width: 100%;
 		<form class="layui-form filter" :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"10px 0 10px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(238, 238, 238, 1)","borderRadius":"4px","alignItems":"center","borderWidth":"0","borderStyle":"solid","justifyContent":"flex-end","height":"54px"}'>
 									<div class="item-list">
 				<div class="lable" :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(0, 0, 0, 0.78)","backgroundColor":"transparent","color":"rgba(127, 78, 22, 1)","borderRadius":"0","textAlign":"right","borderWidth":"0px","width":"auto","fontSize":"16px","borderStyle":"solid"}'>房主账号</div>
-				<input type="text" :style='{"boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(50, 47, 47, 1)","backgroundColor":"#fff","color":"rgba(13, 12, 12, 1)","borderRadius":"8px","textAlign":"center","borderWidth":"1px","width":"140px","fontSize":"14px","borderStyle":"solid","height":"48px"}' name="landlordzhanghao" id="landlordzhanghao" placeholder="房主账号" autocomplete="off" class="layui-input">
+				<input type="text" :style='{"boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(50, 47, 47, 1)","backgroundColor":"#fff","color":"rgba(13, 12, 12, 1)","borderRadius":"8px","textAlign":"center","borderWidth":"1px","width":"140px","fontSize":"14px","borderStyle":"solid","height":"48px"}' name="landlordAccount" id="landlordAccount" placeholder="房主账号" autocomplete="off" class="layui-input">
 			</div>
 																		<div class="item-list">
 				<div class="lable" :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(0, 0, 0, 0.78)","backgroundColor":"transparent","color":"rgba(127, 78, 22, 1)","borderRadius":"0","textAlign":"right","borderWidth":"0px","width":"auto","fontSize":"16px","borderStyle":"solid"}'>房主姓名</div>
-				<input type="text" :style='{"boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(50, 47, 47, 1)","backgroundColor":"#fff","color":"rgba(13, 12, 12, 1)","borderRadius":"8px","textAlign":"center","borderWidth":"1px","width":"140px","fontSize":"14px","borderStyle":"solid","height":"48px"}' name="landlordxingming" id="landlordxingming" placeholder="房主姓名" autocomplete="off" class="layui-input">
+				<input type="text" :style='{"boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(50, 47, 47, 1)","backgroundColor":"#fff","color":"rgba(13, 12, 12, 1)","borderRadius":"8px","textAlign":"center","borderWidth":"1px","width":"140px","fontSize":"14px","borderStyle":"solid","height":"48px"}' name="landlordName" id="landlordName" placeholder="房主姓名" autocomplete="off" class="layui-input">
 			</div>
 																																	<button :style='{"padding":"0 15px","boxShadow":"2px 2px 0px rgba(69,69,69, 1) ","margin":"0 0 0 10px","borderColor":"#409EFF","backgroundColor":"rgba(127, 78, 22, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"40px"}' id="btn-search" type="button" class="layui-btn layui-btn-normal">
 			  <i v-if="true" class="layui-icon layui-icon-search"></i>搜索
@@ -318,8 +318,8 @@ width: 100%;
         }
       },
       methods: {
-      	isAuth(tablename, button) {
-          return isFrontAuth(tablename, button)
+      	isAuth(tableName, button) {
+          return isFrontAuth(tableName, button)
         },
         jump(url) {
           jump(url)
@@ -388,11 +388,11 @@ width: 100%;
         }
 
 
-        if (jquery('#landlordzhanghao').val()) {
-          param['landlordzhanghao'] = jquery('#landlordzhanghao').val() ? '%' + jquery('#landlordzhanghao').val() + '%' : '';
+        if (jquery('#landlordAccount').val()) {
+          param['landlordAccount'] = jquery('#landlordAccount').val() ? '%' + jquery('#landlordAccount').val() + '%' : '';
         }
-        if (jquery('#landlordxingming').val()) {
-          param['landlordxingming'] = jquery('#landlordxingming').val() ? '%' + jquery('#landlordxingming').val() + '%' : '';
+        if (jquery('#landlordName').val()) {
+          param['landlordName'] = jquery('#landlordName').val() ? '%' + jquery('#landlordName').val() + '%' : '';
         }
 
 

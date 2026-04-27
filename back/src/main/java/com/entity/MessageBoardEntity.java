@@ -55,7 +55,7 @@ public class MessageBoardEntity<T> implements Serializable {
 	 * 留言人id
 	 */
 					
-	private Long userid;
+	private Long userId;
 	
 	/**
 	 * 用户名
@@ -78,13 +78,13 @@ public class MessageBoardEntity<T> implements Serializable {
 	
 	@JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
 	@DateTimeFormat
-	private Date addtime;
+	private Date createdAt;
 
 	public Date getAddtime() {
-		return addtime;
+		return createdAt;
 	}
-	public void setAddtime(Date addtime) {
-		this.addtime = addtime;
+	public void setAddtime(Date createdAt) {
+		this.createdAt = createdAt;
 	}
 
 	public Long getId() {
@@ -97,14 +97,14 @@ public class MessageBoardEntity<T> implements Serializable {
 	/**
 	 * 设置：留言人id
 	 */
-	public void setUserid(Long userid) {
-		this.userid = userid;
+	public void setUserid(Long userId) {
+		this.userId = userId;
 	}
 	/**
 	 * 获取：留言人id
 	 */
 	public Long getUserid() {
-		return userid;
+		return userId;
 	}
 	/**
 	 * 设置：用户名

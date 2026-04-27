@@ -151,7 +151,7 @@
                     localStorage.setItem('adminName', data.username);
                     http.request(data.role + '/session', 'get', {}, function(res) {
                         // 用户id
-                        localStorage.setItem('userid', res.data.id);
+                        localStorage.setItem('userId', res.data.id);
                         // 路径访问设置
                         window.location.href = '../../index.html';
                     })
@@ -164,10 +164,10 @@
 
         /**
          * 跳转登录
-         * @param {Object} tablename
+         * @param {Object} tableName
          */
-        function registerClick(tablename) {
-            window.location.href = '../' + tablename + '/register.html?tablename=' + tablename;
+        function registerClick(tableName) {
+            window.location.href = '../' + tableName + '/register.html?tableName=' + tableName;
         }
     </script>
 </body>

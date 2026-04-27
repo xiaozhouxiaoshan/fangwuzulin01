@@ -27,52 +27,52 @@ public class LandlordModel  implements Serializable {
 	 * 密码
 	 */
 	
-	private String mima;
+	private String password;
 		
 	/**
 	 * 房主姓名
 	 */
 	
-	private String landlordxingming;
+	private String landlordName;
 		
 	/**
 	 * 性别
 	 */
 	
-	private String xingbie;
+	private String gender;
 		
 	/**
 	 * 头像
 	 */
 	
-	private String touxiang;
+	private String avatar;
 		
 	/**
 	 * 手机
 	 */
 	
-	private String shouji;
+	private String phoneNumber;
 		
 	/**
 	 * 身份证
 	 */
 	
-	private String shenfenzheng;
+	private String idCardNumber;
 				
 	
 	/**
 	 * 设置：密码
 	 */
 	 
-	public void setMima(String mima) {
-		this.mima = mima;
+	public void setMima(String password) {
+		this.password = password;
 	}
 	
 	/**
 	 * 获取：密码
 	 */
 	public String getMima() {
-		return mima;
+		return password;
 	}
 				
 	
@@ -80,15 +80,15 @@ public class LandlordModel  implements Serializable {
 	 * 设置：房主姓名
 	 */
 	 
-	public void setLandlordxingming(String landlordxingming) {
-		this.landlordxingming = landlordxingming;
+	public void setLandlordfullName(String landlordName) {
+		this.landlordName = landlordName;
 	}
 	
 	/**
 	 * 获取：房主姓名
 	 */
-	public String getLandlordxingming() {
-		return landlordxingming;
+	public String getLandlordfullName() {
+		return landlordName;
 	}
 				
 	
@@ -96,15 +96,15 @@ public class LandlordModel  implements Serializable {
 	 * 设置：性别
 	 */
 	 
-	public void setXingbie(String xingbie) {
-		this.xingbie = xingbie;
+	public void setXingbie(String gender) {
+		this.gender = gender;
 	}
 	
 	/**
 	 * 获取：性别
 	 */
 	public String getXingbie() {
-		return xingbie;
+		return gender;
 	}
 				
 	
@@ -112,15 +112,15 @@ public class LandlordModel  implements Serializable {
 	 * 设置：头像
 	 */
 	 
-	public void setTouxiang(String touxiang) {
-		this.touxiang = touxiang;
+	public void setTouxiang(String avatar) {
+		this.avatar = avatar;
 	}
 	
 	/**
 	 * 获取：头像
 	 */
 	public String getTouxiang() {
-		return touxiang;
+		return avatar;
 	}
 				
 	
@@ -128,15 +128,15 @@ public class LandlordModel  implements Serializable {
 	 * 设置：手机
 	 */
 	 
-	public void setShouji(String shouji) {
-		this.shouji = shouji;
+	public void setShouji(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 	
 	/**
 	 * 获取：手机
 	 */
 	public String getShouji() {
-		return shouji;
+		return phoneNumber;
 	}
 				
 	
@@ -144,15 +144,15 @@ public class LandlordModel  implements Serializable {
 	 * 设置：身份证
 	 */
 	 
-	public void setShenfenzheng(String shenfenzheng) {
-		this.shenfenzheng = shenfenzheng;
+	public void setShenfenzheng(String idCardNumber) {
+		this.idCardNumber = idCardNumber;
 	}
 	
 	/**
 	 * 获取：身份证
 	 */
 	public String getShenfenzheng() {
-		return shenfenzheng;
+		return idCardNumber;
 	}
 			
 }

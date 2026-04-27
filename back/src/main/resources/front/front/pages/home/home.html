@@ -444,7 +444,7 @@
 			  <img :style='{"boxShadow":"0 0 0px rgba(255,0,0,.8)","borderColor":"rgba(0,0,0,.3)","borderRadius":"130px","borderWidth":"0","width":"130px","borderStyle":"solid","height":"130px"}' :src="item.picture" alt="" />
 	          <div class="item-info">
 				<div v-if='true' :style='{"isshow":true,"padding":"0","margin":"5px 0","backgroundColor":"rgba(0,0,0,0)","color":"rgba(127, 78, 22, 1)","borderRadius":"0","textAlign":"left","fontSize":"16px"}' class="name">{{item.title}}</div>
-				<div :style='{"padding":"0","margin":"0","backgroundColor":"rgba(0,0,0,0)","color":"#999","borderRadius":"0","textAlign":"right","fontSize":"12px"}' class="time">{{item.addtime}}</div>
+				<div :style='{"padding":"0","margin":"0","backgroundColor":"rgba(0,0,0,0)","color":"#999","borderRadius":"0","textAlign":"right","fontSize":"12px"}' class="time">{{item.createdAt}}</div>
 	          </div>
 	        </div>
 	      </div>
@@ -467,7 +467,7 @@
 	      <div v-for="(item,index) in houseListingList" :key="index" @click="jump('../houseListing/detail.html?id='+item.id)" class="list-item" :class="4=='3'?'list-item3':4=='5'?'list-item5':''">
 	        <div class="list-item-body animation-box" :style='{"padding":"0px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"20px 0 0px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(69, 69, 69, 1)","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'>
 																												<img :style='{"boxShadow":"0 0 0px rgba(255,0,0,.8)","borderColor":"rgba(0,0,0,.3)","borderRadius":"0","borderWidth":"0","width":"100%","borderStyle":"solid","height":"260px"}' :src="item.tupian?item.tupian.split(',')[0]:''" alt="" />
-																																																																																																																												<div v-if='true' :style='{"isshow":true,"padding":"20px","margin":"5px 0","backgroundColor":"rgba(69, 69, 69, 1)","color":"rgba(255, 255, 255, 1)","borderRadius":"0 0 6px 6px","textAlign":"center","fontSize":"16px"}' class="name">{{item.fangwumingcheng}}</div>
+																																																																																																																												<div v-if='true' :style='{"isshow":true,"padding":"20px","margin":"5px 0","backgroundColor":"rgba(69, 69, 69, 1)","color":"rgba(255, 255, 255, 1)","borderRadius":"0 0 6px 6px","textAlign":"center","fontSize":"16px"}' class="name">{{item.houseName}}</div>
 																																																																																																																																	        </div>
 	      </div>
 	    </div>
@@ -573,7 +573,7 @@
       }, function(res) {
         var announcementList = res.data.list;
 		for(var i = 0; i<announcementList.length; i++) {
-			let d = announcementList[i].addtime.split(' ')
+			let d = announcementList[i].createdAt.split(' ')
 			d = d[0].split('-')
 			announcementList[i].year = d[0]
 			announcementList[i].month = d[1] + '-' + d[2]

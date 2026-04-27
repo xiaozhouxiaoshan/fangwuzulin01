@@ -201,7 +201,7 @@ public class HouseListingController {
 
 		String tableName = request.getSession().getAttribute("tableName").toString();
 		if(tableName.equals("landlord")) {
-			wrapper.eq("landlordzhanghao", (String)request.getSession().getAttribute("username"));
+			wrapper.eq("landlordAccount", (String)request.getSession().getAttribute("username"));
 		}
 
 		int count = houseListingService.selectCount(wrapper);

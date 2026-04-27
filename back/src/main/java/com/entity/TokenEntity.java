@@ -20,7 +20,7 @@ public class TokenEntity implements Serializable {
 	/**
 	 * 用户id
 	 */
-	private Long userid;
+	private Long userId;
 	
 	/**
 	 * 用户名
@@ -30,7 +30,7 @@ public class TokenEntity implements Serializable {
 	/**
 	 * 表名
 	 */
-	private String tablename;
+	private String tableName;
 	
 	/**
 	 * 角色
@@ -45,12 +45,12 @@ public class TokenEntity implements Serializable {
 	/**
 	 * 过期时间
 	 */
-	private Date expiratedtime;
+	private Date expiresAt;
 	
 	/**
 	 * 新增时间
 	 */
-	private Date addtime;
+	private Date createdAt;
 
 	public Long getId() {
 		return id;
@@ -61,11 +61,11 @@ public class TokenEntity implements Serializable {
 	}
 
 	public Long getUserid() {
-		return userid;
+		return userId;
 	}
 
-	public void setUserid(Long userid) {
-		this.userid = userid;
+	public void setUserid(Long userId) {
+		this.userId = userId;
 	}
 
 	public String getRole() {
@@ -81,11 +81,11 @@ public class TokenEntity implements Serializable {
 	}
 
 	public String getTablename() {
-		return tablename;
+		return tableName;
 	}
 
-	public void setTablename(String tablename) {
-		this.tablename = tablename;
+	public void setTablename(String tableName) {
+		this.tableName = tableName;
 	}
 
 	public void setToken(String token) {
@@ -93,19 +93,19 @@ public class TokenEntity implements Serializable {
 	}
 
 	public Date getExpiratedtime() {
-		return expiratedtime;
+		return expiresAt;
 	}
 
-	public void setExpiratedtime(Date expiratedtime) {
-		this.expiratedtime = expiratedtime;
+	public void setExpiratedtime(Date expiresAt) {
+		this.expiresAt = expiresAt;
 	}
 
 	public Date getAddtime() {
-		return addtime;
+		return createdAt;
 	}
 
-	public void setAddtime(Date addtime) {
-		this.addtime = addtime;
+	public void setAddtime(Date createdAt) {
+		this.createdAt = createdAt;
 	}
 
 	public String getUsername() {
@@ -116,14 +116,14 @@ public class TokenEntity implements Serializable {
 		this.username = username;
 	}
 
-	public TokenEntity(Long userid, String username, String tablename,String role, String token, Date expiratedtime) {
+	public TokenEntity(Long userId, String username, String tableName,String role, String token, Date expiresAt) {
 		super();
-		this.userid = userid;
+		this.userId = userId;
 		this.username = username;
-		this.tablename = tablename;
+		this.tableName = tableName;
 		this.role = role;
 		this.token = token;
-		this.expiratedtime = expiratedtime;
+		this.expiresAt = expiresAt;
 	}
 	
 	public TokenEntity() {

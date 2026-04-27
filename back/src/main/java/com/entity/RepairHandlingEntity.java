@@ -55,7 +55,7 @@ public class RepairHandlingEntity<T> implements Serializable {
 	 * 房屋名称
 	 */
 					
-	private String fangwumingcheng;
+	private String houseName;
 	
 	/**
 	 * 房屋类型
@@ -67,31 +67,31 @@ public class RepairHandlingEntity<T> implements Serializable {
 	 * 报修名称
 	 */
 					
-	private String baoxiumingcheng;
+	private String repairTitle;
 	
 	/**
 	 * 类型
 	 */
 					
-	private String leixing;
+	private String repairType;
 	
 	/**
 	 * 报修日期
 	 */
 					
-	private String baoxiuriqi;
+	private String repairDate;
 	
 	/**
 	 * 维修反馈
 	 */
 					
-	private String weixiufankui;
+	private String handlingFeedback;
 	
 	/**
 	 * 维修进度
 	 */
 					
-	private String weixiujindu;
+	private String handlingProgress;
 	
 	/**
 	 * 更新日期
@@ -99,42 +99,42 @@ public class RepairHandlingEntity<T> implements Serializable {
 				
 	@JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd")
 	@DateTimeFormat 		
-	private Date gengxinriqi;
+	private Date updatedDate;
 	
 	/**
 	 * 房主账号
 	 */
 					
-	private String landlordzhanghao;
+	private String landlordAccount;
 	
 	/**
 	 * 房主姓名
 	 */
 					
-	private String landlordxingming;
+	private String landlordName;
 	
 	/**
 	 * 用户名
 	 */
 					
-	private String tenantming;
+	private String tenantUsername;
 	
 	/**
 	 * 联系电话
 	 */
 					
-	private String lianxidianhua;
+	private String contactPhone;
 	
 	
 	@JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
 	@DateTimeFormat
-	private Date addtime;
+	private Date createdAt;
 
 	public Date getAddtime() {
-		return addtime;
+		return createdAt;
 	}
-	public void setAddtime(Date addtime) {
-		this.addtime = addtime;
+	public void setAddtime(Date createdAt) {
+		this.createdAt = createdAt;
 	}
 
 	public Long getId() {
@@ -147,14 +147,14 @@ public class RepairHandlingEntity<T> implements Serializable {
 	/**
 	 * 设置：房屋名称
 	 */
-	public void setFangwumingcheng(String fangwumingcheng) {
-		this.fangwumingcheng = fangwumingcheng;
+	public void setFangwumingcheng(String houseName) {
+		this.houseName = houseName;
 	}
 	/**
 	 * 获取：房屋名称
 	 */
 	public String getFangwumingcheng() {
-		return fangwumingcheng;
+		return houseName;
 	}
 	/**
 	 * 设置：房屋类型
@@ -171,122 +171,122 @@ public class RepairHandlingEntity<T> implements Serializable {
 	/**
 	 * 设置：报修名称
 	 */
-	public void setBaoxiumingcheng(String baoxiumingcheng) {
-		this.baoxiumingcheng = baoxiumingcheng;
+	public void setBaoxiumingcheng(String repairTitle) {
+		this.repairTitle = repairTitle;
 	}
 	/**
 	 * 获取：报修名称
 	 */
 	public String getBaoxiumingcheng() {
-		return baoxiumingcheng;
+		return repairTitle;
 	}
 	/**
 	 * 设置：类型
 	 */
-	public void setLeixing(String leixing) {
-		this.leixing = leixing;
+	public void setLeixing(String repairType) {
+		this.repairType = repairType;
 	}
 	/**
 	 * 获取：类型
 	 */
 	public String getLeixing() {
-		return leixing;
+		return repairType;
 	}
 	/**
 	 * 设置：报修日期
 	 */
-	public void setBaoxiuriqi(String baoxiuriqi) {
-		this.baoxiuriqi = baoxiuriqi;
+	public void setBaoxiuriqi(String repairDate) {
+		this.repairDate = repairDate;
 	}
 	/**
 	 * 获取：报修日期
 	 */
 	public String getBaoxiuriqi() {
-		return baoxiuriqi;
+		return repairDate;
 	}
 	/**
 	 * 设置：维修反馈
 	 */
-	public void setWeixiufankui(String weixiufankui) {
-		this.weixiufankui = weixiufankui;
+	public void setWeixiufankui(String handlingFeedback) {
+		this.handlingFeedback = handlingFeedback;
 	}
 	/**
 	 * 获取：维修反馈
 	 */
 	public String getWeixiufankui() {
-		return weixiufankui;
+		return handlingFeedback;
 	}
 	/**
 	 * 设置：维修进度
 	 */
-	public void setWeixiujindu(String weixiujindu) {
-		this.weixiujindu = weixiujindu;
+	public void setWeixiujindu(String handlingProgress) {
+		this.handlingProgress = handlingProgress;
 	}
 	/**
 	 * 获取：维修进度
 	 */
 	public String getWeixiujindu() {
-		return weixiujindu;
+		return handlingProgress;
 	}
 	/**
 	 * 设置：更新日期
 	 */
-	public void setGengxinriqi(Date gengxinriqi) {
-		this.gengxinriqi = gengxinriqi;
+	public void setGengxinriqi(Date updatedDate) {
+		this.updatedDate = updatedDate;
 	}
 	/**
 	 * 获取：更新日期
 	 */
 	public Date getGengxinriqi() {
-		return gengxinriqi;
+		return updatedDate;
 	}
 	/**
 	 * 设置：房主账号
 	 */
-	public void setLandlordzhanghao(String landlordzhanghao) {
-		this.landlordzhanghao = landlordzhanghao;
+	public void setLandlordzhanghao(String landlordAccount) {
+		this.landlordAccount = landlordAccount;
 	}
 	/**
 	 * 获取：房主账号
 	 */
 	public String getLandlordzhanghao() {
-		return landlordzhanghao;
+		return landlordAccount;
 	}
 	/**
 	 * 设置：房主姓名
 	 */
-	public void setLandlordxingming(String landlordxingming) {
-		this.landlordxingming = landlordxingming;
+	public void setLandlordfullName(String landlordName) {
+		this.landlordName = landlordName;
 	}
 	/**
 	 * 获取：房主姓名
 	 */
-	public String getLandlordxingming() {
-		return landlordxingming;
+	public String getLandlordfullName() {
+		return landlordName;
 	}
 	/**
 	 * 设置：用户名
 	 */
-	public void setTenantming(String tenantming) {
-		this.tenantming = tenantming;
+	public void setTenantming(String tenantUsername) {
+		this.tenantUsername = tenantUsername;
 	}
 	/**
 	 * 获取：用户名
 	 */
 	public String getTenantming() {
-		return tenantming;
+		return tenantUsername;
 	}
 	/**
 	 * 设置：联系电话
 	 */
-	public void setLianxidianhua(String lianxidianhua) {
-		this.lianxidianhua = lianxidianhua;
+	public void setLianxidianhua(String contactPhone) {
+		this.contactPhone = contactPhone;
 	}
 	/**
 	 * 获取：联系电话
 	 */
 	public String getLianxidianhua() {
-		return lianxidianhua;
+		return contactPhone;
 	}
 
 }

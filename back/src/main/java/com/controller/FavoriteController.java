@@ -129,9 +129,9 @@ public class FavoriteController {
     	Long userId = (Long)request.getSession().getAttribute("userId");
     	favorite.setUserid(userId);
     	FavoriteEntity exist = favoriteService.selectOne(new EntityWrapper<FavoriteEntity>()
-    			.eq("userid", userId)
-    			.eq("refid", favorite.getRefid())
-    			.eq("tablename", favorite.getTablename()));
+    			.eq("userId", userId)
+    			.eq("referenceId", favorite.getRefid())
+    			.eq("tableName", favorite.getTablename()));
     	if(exist != null) {
     		return R.error("宸叉敹钘忥紝璇峰嬁閲嶅鎿嶄綔");
     	}
@@ -149,9 +149,9 @@ public class FavoriteController {
     	Long userId = (Long)request.getSession().getAttribute("userId");
     	favorite.setUserid(userId);
     	FavoriteEntity exist = favoriteService.selectOne(new EntityWrapper<FavoriteEntity>()
-    			.eq("userid", userId)
-    			.eq("refid", favorite.getRefid())
-    			.eq("tablename", favorite.getTablename()));
+    			.eq("userId", userId)
+    			.eq("referenceId", favorite.getRefid())
+    			.eq("tableName", favorite.getTablename()));
     	if(exist != null) {
     		return R.error("宸叉敹钘忥紝璇峰嬁閲嶅鎿嶄綔");
     	}
@@ -217,7 +217,7 @@ public class FavoriteController {
 			wrapper.le(columnName, map.get("remindend"));
 		}
 		if(!request.getSession().getAttribute("role").toString().equals("管理员")) {
-    		wrapper.eq("userid", (Long)request.getSession().getAttribute("userId"));
+    		wrapper.eq("userId", (Long)request.getSession().getAttribute("userId"));
     	}
 
 

@@ -215,41 +215,41 @@
 						                                                <div class="layui-form-item"  :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0","borderColor":"rgba(177, 176, 175, 1)","backgroundColor":"#fff","borderRadius":"0px","borderWidth":"0 0 1px 0","borderStyle":"solid"}'>
 							<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"rgba(127, 78, 22, 1)","textAlign":"right"}' class="layui-form-label">房主账号</label>
 							<div class="layui-input-block input">
-								<input type="text" name="landlordzhanghao" id="landlordzhanghao" placeholder="房主账号" autocomplete="off" class="layui-input">
+								<input type="text" name="landlordAccount" id="landlordAccount" placeholder="房主账号" autocomplete="off" class="layui-input">
 							</div>
 						</div>
                                                                                                 <div class="layui-form-item"  :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0","borderColor":"rgba(177, 176, 175, 1)","backgroundColor":"#fff","borderRadius":"0px","borderWidth":"0 0 1px 0","borderStyle":"solid"}'>
 							<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"rgba(127, 78, 22, 1)","textAlign":"right"}' class="layui-form-label">密码</label>
 							<div class="layui-input-block input">
-								<input type="password" name="mima" id="mima" placeholder="密码" autocomplete="off" class="layui-input">
+								<input type="password" name="password" id="password" placeholder="密码" autocomplete="off" class="layui-input">
 							</div>
 						</div>
                                                                                                 <div class="layui-form-item"  :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0","borderColor":"rgba(177, 176, 175, 1)","backgroundColor":"#fff","borderRadius":"0px","borderWidth":"0 0 1px 0","borderStyle":"solid"}'>
 							<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"rgba(127, 78, 22, 1)","textAlign":"right"}' class="layui-form-label">房主姓名</label>
 							<div class="layui-input-block input">
-								<input type="text" name="landlordxingming" id="landlordxingming" placeholder="房主姓名" autocomplete="off" class="layui-input">
+								<input type="text" name="landlordName" id="landlordName" placeholder="房主姓名" autocomplete="off" class="layui-input">
 							</div>
 						</div>
                                                                                                 <div class="layui-form-item"  :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0","borderColor":"rgba(177, 176, 175, 1)","backgroundColor":"#fff","borderRadius":"0px","borderWidth":"0 0 1px 0","borderStyle":"solid"}'>
 							<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"rgba(127, 78, 22, 1)","textAlign":"right"}' class="layui-form-label">性别</label>
 							<div class="layui-input-block select">
-								<select name="xingbie" id="xingbie">
+								<select name="gender" id="gender">
 									<option value="">请选择</option>
-									<option v-for="(item,index) in xingbie" v-bind:key="index" :value="item">{{item}}</option>
+									<option v-for="(item,index) in gender" v-bind:key="index" :value="item">{{item}}</option>
 								</select>
 							</div>
 						</div>
                                                                                                 <div class="layui-form-item"  :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0","borderColor":"rgba(177, 176, 175, 1)","backgroundColor":"#fff","borderRadius":"0px","borderWidth":"0 0 1px 0","borderStyle":"solid"}'>
 							<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"rgba(127, 78, 22, 1)","textAlign":"right"}' style="opacity: 0;" class="layui-form-label">头像</label>
 							<div class="layui-input-block">
-								<img id="touxiangImg" style="width: 100px;height: 100px;border-radius: 50%;border: 2px solid #EEEEEE;" :style='{"boxShadow":"0 0 0px rgba(255,0,0,.8)","borderColor":"#DCDFE6","backgroundColor":"#fff","borderRadius":"10px","borderWidth":"1px","width":"80px","borderStyle":"solid","height":"80px"}' src="../../img/avator.png">
-								<input type="hidden" id="touxiang" name="touxiang" />
+								<img id="avatarImg" style="width: 100px;height: 100px;border-radius: 50%;border: 2px solid #EEEEEE;" :style='{"boxShadow":"0 0 0px rgba(255,0,0,.8)","borderColor":"#DCDFE6","backgroundColor":"#fff","borderRadius":"10px","borderWidth":"1px","width":"80px","borderStyle":"solid","height":"80px"}' src="../../img/avator.png">
+								<input type="hidden" id="avatar" name="avatar" />
 							</div>
 						</div>
 						<div class="layui-form-item"  :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0","borderColor":"rgba(177, 176, 175, 1)","backgroundColor":"#fff","borderRadius":"0px","borderWidth":"0 0 1px 0","borderStyle":"solid"}'>
 							<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"rgba(127, 78, 22, 1)","textAlign":"right"}' style="opacity: 0;" class="layui-form-label">图片</label>
 							<div class="layui-input-block">
-								<button :style='{"padding":"0 10px","boxShadow":"0 0 6px #7F4E16","margin":"0 10px 0 0","borderColor":"#ccc","backgroundColor":"rgba(127, 78, 22, 1)","color":"#fff","borderRadius":"8px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="button" class="layui-btn btn-theme" id="touxiangUpload">
+								<button :style='{"padding":"0 10px","boxShadow":"0 0 6px #7F4E16","margin":"0 10px 0 0","borderColor":"#ccc","backgroundColor":"rgba(127, 78, 22, 1)","color":"#fff","borderRadius":"8px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="button" class="layui-btn btn-theme" id="avatarUpload">
 									<i v-if="true" :style='{"color":"#fff","show":true,"fontSize":"14px"}' class="layui-icon">&#xe67c;</i>上传图片
 								</button>
 							</div>
@@ -257,13 +257,13 @@
                                                                                                 <div class="layui-form-item"  :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0","borderColor":"rgba(177, 176, 175, 1)","backgroundColor":"#fff","borderRadius":"0px","borderWidth":"0 0 1px 0","borderStyle":"solid"}'>
 							<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"rgba(127, 78, 22, 1)","textAlign":"right"}' class="layui-form-label">手机</label>
 							<div class="layui-input-block input">
-								<input type="text" name="shouji" id="shouji" placeholder="手机" autocomplete="off" class="layui-input">
+								<input type="text" name="phoneNumber" id="phoneNumber" placeholder="手机" autocomplete="off" class="layui-input">
 							</div>
 						</div>
                                                                                                 <div class="layui-form-item"  :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0","borderColor":"rgba(177, 176, 175, 1)","backgroundColor":"#fff","borderRadius":"0px","borderWidth":"0 0 1px 0","borderStyle":"solid"}'>
 							<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"rgba(127, 78, 22, 1)","textAlign":"right"}' class="layui-form-label">身份证</label>
 							<div class="layui-input-block input">
-								<input type="text" name="shenfenzheng" id="shenfenzheng" placeholder="身份证" autocomplete="off" class="layui-input">
+								<input type="text" name="idCardNumber" id="idCardNumber" placeholder="身份证" autocomplete="off" class="layui-input">
 							</div>
 						</div>
                                                 
@@ -304,7 +304,7 @@
 				data: {
 					// 轮播图
 					swiperList: [],
-																																													xingbie: [],
+																																													gender: [],
 																																													centerMenu: centerMenu
 				},
                 updated: function() {
@@ -319,7 +319,7 @@
 						localStorage.removeItem('role');
 						localStorage.removeItem('sessionTable');
 						localStorage.removeItem('adminName');
-						localStorage.removeItem('userid');
+						localStorage.removeItem('userId');
 						localStorage.removeItem('userTable');
 						window.parent.location.href = '../login/login.html';
 					}
@@ -418,11 +418,11 @@
 					}
 				});
 
-                																																vue.xingbie = '男,女'.split(',')
+                																																vue.gender = '男,女'.split(',')
 																// 上传图片
-				var touxiangUpload = upload.render({
+				var avatarUpload = upload.render({
 					//绑定元素
-					elem: '#touxiangUpload',
+					elem: '#avatarUpload',
 					//上传接口
 					url: http.baseurl + 'file/upload',
 					// 请求头
@@ -447,8 +447,8 @@
 								icon: 6
 							})
 							var url = http.baseurl + 'upload/' + res.file;
-							jquery('#touxiang').val(url);
-							jquery('#touxiangImg').attr('src', url)
+							jquery('#avatar').val(url);
+							jquery('#avatarImg').attr('src', url)
 						} else {
 							layer.msg(res.msg, {
 								time: 2000,
@@ -483,41 +483,41 @@
 					// 表单赋值
 					form.val("myForm", data.data);
 																																																							// 图片赋值
-					jquery("#touxiangImg").attr("src", data.data.touxiang);
+					jquery("#avatarImg").attr("src", data.data.avatar);
 																																		});
 
 				// 提交表单
 				form.on('submit(*)', function(data) {
 					data = data.field;
-															if(!data.landlordzhanghao){
+															if(!data.landlordAccount){
 						layer.msg('房主账号不能为空', {
 														time: 2000,
 														icon: 5
 												});
 						return false
 					}
-																																																							if(!data.mima){
+																																																							if(!data.password){
 						layer.msg('密码不能为空', {
 														time: 2000,
 														icon: 5
 												});
 						return false
 					}
-																																																							if(!data.landlordxingming){
+																																																							if(!data.landlordName){
 						layer.msg('房主姓名不能为空', {
 														time: 2000,
 														icon: 5
 												});
 						return false
 					}
-																																																																																																																																																																if(!isMobile(data.shouji)){
+																																																																																																																																																																if(!isMobile(data.phoneNumber)){
 						layer.msg('手机应输入手机格式', {
 														time: 2000,
 														icon: 5
 												});
 						return false
 					}
-																																																																						if(!isIdentity(data.shenfenzheng)){
+																																																																						if(!isIdentity(data.idCardNumber)){
 						layer.msg('身份证应输入身份证格式', {
 														time: 2000,
 														icon: 5

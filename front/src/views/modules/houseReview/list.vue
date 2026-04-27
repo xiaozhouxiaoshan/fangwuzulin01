@@ -5,24 +5,24 @@
       <el-form :inline="true" :model="searchForm" class="form-content">
         <el-row :gutter="20" class="slt" :style="{justifyContent:contents.searchBoxPosition=='1'?'flex-start':contents.searchBoxPosition=='2'?'center':'flex-end'}">
                                                                           <el-form-item :label="contents.inputTitle == 1 ? '房屋名称' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.fangwumingcheng" placeholder="房屋名称" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.fangwumingcheng" placeholder="房屋名称" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.fangwumingcheng" placeholder="房屋名称" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.houseName" placeholder="房屋名称" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.houseName" placeholder="房屋名称" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.houseName" placeholder="房屋名称" clearable></el-input>
                 </el-form-item>
                                                                                                                           <el-form-item :label="contents.inputTitle == 1 ? '评分' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.pingfen" placeholder="评分" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.pingfen" placeholder="评分" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.pingfen" placeholder="评分" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.rating" placeholder="评分" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.rating" placeholder="评分" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.rating" placeholder="评分" clearable></el-input>
                 </el-form-item>
                                                                                                                           <el-form-item :label="contents.inputTitle == 1 ? '房主账号' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.landlordzhanghao" placeholder="房主账号" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.landlordzhanghao" placeholder="房主账号" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.landlordzhanghao" placeholder="房主账号" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.landlordAccount" placeholder="房主账号" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.landlordAccount" placeholder="房主账号" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.landlordAccount" placeholder="房主账号" clearable></el-input>
                 </el-form-item>
                                                                               <el-form-item :label="contents.inputTitle == 1 ? '用户名' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.tenantming" placeholder="用户名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.tenantming" placeholder="用户名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.tenantming" placeholder="用户名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.tenantUsername" placeholder="用户名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.tenantUsername" placeholder="用户名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.tenantUsername" placeholder="用户名" clearable></el-input>
                 </el-form-item>
                                                                                                                 <el-form-item>
             <el-button v-if="contents.searchBtnIcon == 1 && contents.searchBtnIconPosition == 1" icon="el-icon-search" type="success" @click="search()">{{ contents.searchBtnFont == 1?'查询':'' }}</el-button>
@@ -109,19 +109,19 @@
             </el-table-column>
             <el-table-column label="索引" v-if="contents.tableIndex" type="index" width="50" />
             	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="hetongbianhao"
+                    prop="contractNumber"
                     header-align="center"
 		    label="合同编号">
 		     <template slot-scope="scope">
-                       {{scope.row.hetongbianhao}}
+                       {{scope.row.contractNumber}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="fangwumingcheng"
+                    prop="houseName"
                     header-align="center"
 		    label="房屋名称">
 		     <template slot-scope="scope">
-                       {{scope.row.fangwumingcheng}}
+                       {{scope.row.houseName}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
@@ -133,77 +133,77 @@
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="xiaoqu"
+                    prop="community"
                     header-align="center"
 		    label="小区">
 		     <template slot-scope="scope">
-                       {{scope.row.xiaoqu}}
+                       {{scope.row.community}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="pingfen"
+                    prop="rating"
                     header-align="center"
 		    label="评分">
 		     <template slot-scope="scope">
-                       {{scope.row.pingfen}}
+                       {{scope.row.rating}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="pingjianeirong"
+                    prop="reviewContent"
                     header-align="center"
 		    label="评价内容">
 		     <template slot-scope="scope">
-                       {{scope.row.pingjianeirong}}
+                       {{scope.row.reviewContent}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="pingjiariqi"
+                    prop="reviewDate"
                     header-align="center"
 		    label="评价日期">
 		     <template slot-scope="scope">
-                       {{scope.row.pingjiariqi}}
+                       {{scope.row.reviewDate}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="landlordzhanghao"
+                    prop="landlordAccount"
                     header-align="center"
 		    label="房主账号">
 		     <template slot-scope="scope">
-                       {{scope.row.landlordzhanghao}}
+                       {{scope.row.landlordAccount}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="tenantming"
+                    prop="tenantUsername"
                     header-align="center"
 		    label="用户名">
 		     <template slot-scope="scope">
-                       {{scope.row.tenantming}}
+                       {{scope.row.tenantUsername}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="lianxidianhua"
+                    prop="contactPhone"
                     header-align="center"
 		    label="联系电话">
 		     <template slot-scope="scope">
-                       {{scope.row.lianxidianhua}}
+                       {{scope.row.contactPhone}}
                      </template>
                 </el-table-column>
                 	                	                                    	                	                                    	                                          <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                  prop="shhf"
+                  prop="reviewReply"
                   header-align="center"
                   label="审核回复">
               </el-table-column>
               <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                  prop="sfsh"
+                  prop="reviewStatus"
                   header-align="center"
                   label="审核状态">
                   <template slot-scope="scope">
-                    <span style="margin-right:10px">{{scope.row.sfsh=='是'?'通过':'未通过'}}</span>
+                    <span style="margin-right:10px">{{scope.row.reviewStatus=='是'?'通过':'未通过'}}</span>
                   </template>
               </el-table-column>
               <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
                   v-if="isAuth('houseReview','审核')"
-                  prop="sfsh"
+                  prop="reviewStatus"
                   header-align="center"
                   label="审核">
                   <template slot-scope="scope">
@@ -252,17 +252,17 @@
     
         <el-dialog
       title="审核"
-      :visible.sync="sfshVisiable"
+      :visible.sync="reviewStatusVisiable"
       width="50%">
       <el-form ref="form" :model="form" label-width="80px">
         <el-form-item label="审核状态">
-          <el-select v-model="shForm.sfsh" placeholder="审核状态">
+          <el-select v-model="shForm.reviewStatus" placeholder="审核状态">
             <el-option label="通过" value="是"></el-option>
             <el-option label="不通过" value="否"></el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="内容">
-          <el-input type="textarea" :rows="8" v-model="shForm.shhf"></el-input>
+          <el-input type="textarea" :rows="8" v-model="shForm.reviewReply"></el-input>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
@@ -275,7 +275,7 @@
       title="统计报表"
       :visible.sync="chartVisiable"
       width="800">
-                                                                              <div id="pingfenChart" style="width:100%;height:600px;"></div>
+                                                                              <div id="ratingChart" style="width:100%;height:600px;"></div>
                                                                                                                       <span slot="footer" class="dialog-footer">
         <el-button @click="chartDialog">返回</el-button>
       </span>
@@ -297,7 +297,7 @@ export default {
       dataListLoading: false,
       dataListSelections: [],
       showFlag: true,
-      sfshVisiable: false,
+      reviewStatusVisiable: false,
       shForm: {},
       chartVisiable: false,
       addOrUpdateFlag:false,
@@ -503,9 +503,9 @@ export default {
                 chartDialog() {
       this.chartVisiable = !this.chartVisiable;
       this.$nextTick(()=>{
-                                                                                                                                             var pingfenChart = this.$echarts.init(document.getElementById("pingfenChart"),'macarons');
+                                                                                                                                             var ratingChart = this.$echarts.init(document.getElementById("ratingChart"),'macarons');
         this.$http({
-            url: "group/houseReview/pingfen",
+            url: "group/houseReview/rating",
             method: "get",
         }).then(({ data }) => {
             if (data && data.code === 0) {
@@ -514,11 +514,11 @@ export default {
             let yAxis = [];
             let pArray = []
             for(let i=0;i<res.length;i++){
-                xAxis.push(res[i].pingfen);
+                xAxis.push(res[i].rating);
                 yAxis.push(res[i].total);
                 pArray.push({
                 value: res[i].total,
-                name: res[i].pingfen
+                name: res[i].rating
                 })
                 var option = {};
                                 option = {
@@ -547,10 +547,10 @@ export default {
                         ]
                 };
                                 // 使用刚指定的配置项和数据显示图表。
-                pingfenChart.setOption(option);
+                ratingChart.setOption(option);
                   //根据窗口的大小变动图表
                 window.onresize = function() {
-                    pingfenChart.resize();
+                    ratingChart.resize();
                 };
             }
             }
@@ -559,7 +559,7 @@ export default {
               })
     },
         init () {
-                                                                                            this.pingfenOptions = "1,2,3,4,5".split(',')
+                                                                                            this.ratingOptions = "1,2,3,4,5".split(',')
                                                                                                                                                                                                                                                                                                                       },
     search() {
       this.pageIndex = 1;
@@ -573,17 +573,17 @@ export default {
         limit: this.pageSize,
         sort: 'id',
       }
-                                                                if(this.searchForm.fangwumingcheng!='' && this.searchForm.fangwumingcheng!=undefined){
-            params['fangwumingcheng'] = '%' + this.searchForm.fangwumingcheng + '%'
+                                                                if(this.searchForm.houseName!='' && this.searchForm.houseName!=undefined){
+            params['houseName'] = '%' + this.searchForm.houseName + '%'
           }
-                                                                                                        if(this.searchForm.pingfen!='' && this.searchForm.pingfen!=undefined){
-            params['pingfen'] = '%' + this.searchForm.pingfen + '%'
+                                                                                                        if(this.searchForm.rating!='' && this.searchForm.rating!=undefined){
+            params['rating'] = '%' + this.searchForm.rating + '%'
           }
-                                                                                                        if(this.searchForm.landlordzhanghao!='' && this.searchForm.landlordzhanghao!=undefined){
-            params['landlordzhanghao'] = '%' + this.searchForm.landlordzhanghao + '%'
+                                                                                                        if(this.searchForm.landlordAccount!='' && this.searchForm.landlordAccount!=undefined){
+            params['landlordAccount'] = '%' + this.searchForm.landlordAccount + '%'
           }
-                                                            if(this.searchForm.tenantming!='' && this.searchForm.tenantming!=undefined){
-            params['tenantming'] = '%' + this.searchForm.tenantming + '%'
+                                                            if(this.searchForm.tenantUsername!='' && this.searchForm.tenantUsername!=undefined){
+            params['tenantUsername'] = '%' + this.searchForm.tenantUsername + '%'
           }
                                                                                                 this.$http({
         url: "houseReview/page",
@@ -630,21 +630,21 @@ export default {
     // 查看评论
         // 审核窗口
     shDialog(row){
-      this.sfshVisiable = !this.sfshVisiable;
+      this.reviewStatusVisiable = !this.reviewStatusVisiable;
       if(row){
         this.shForm = {
-                    hetongbianhao: row.hetongbianhao,
-                    fangwumingcheng: row.fangwumingcheng,
+                    contractNumber: row.contractNumber,
+                    houseName: row.houseName,
                     houseType: row.houseType,
-                    xiaoqu: row.xiaoqu,
-                    pingfen: row.pingfen,
-                    pingjianeirong: row.pingjianeirong,
-                    pingjiariqi: row.pingjiariqi,
-                    landlordzhanghao: row.landlordzhanghao,
-                    tenantming: row.tenantming,
-                    lianxidianhua: row.lianxidianhua,
-                    sfsh: row.sfsh,
-                    shhf: row.shhf,
+                    community: row.community,
+                    rating: row.rating,
+                    reviewContent: row.reviewContent,
+                    reviewDate: row.reviewDate,
+                    landlordAccount: row.landlordAccount,
+                    tenantUsername: row.tenantUsername,
+                    contactPhone: row.contactPhone,
+                    reviewStatus: row.reviewStatus,
+                    reviewReply: row.reviewReply,
                     id: row.id
         }
       }

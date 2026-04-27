@@ -121,13 +121,13 @@
                                                             <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">预约编号：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.yuyuebianhao" type="text" :readonly="ro.yuyuebianhao" name="yuyuebianhao" id="yuyuebianhao" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.appointmentNumber" type="text" :readonly="ro.appointmentNumber" name="appointmentNumber" id="appointmentNumber" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">房屋名称：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.fangwumingcheng" type="text" :readonly="ro.fangwumingcheng" name="fangwumingcheng" id="fangwumingcheng" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.houseName" type="text" :readonly="ro.houseName" name="houseName" id="houseName" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
@@ -139,79 +139,79 @@
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">房屋状态：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.fangwuzhuangtai" type="text" :readonly="ro.fangwuzhuangtai" name="fangwuzhuangtai" id="fangwuzhuangtai" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.houseStatus" type="text" :readonly="ro.houseStatus" name="houseStatus" id="houseStatus" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">小区：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.xiaoqu" type="text" :readonly="ro.xiaoqu" name="xiaoqu" id="xiaoqu" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.community" type="text" :readonly="ro.community" name="community" id="community" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">月租价格：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.yuezujiage" type="text" :readonly="ro.yuezujiage" name="yuezujiage" id="yuezujiage" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.monthlyRent" type="text" :readonly="ro.monthlyRent" name="monthlyRent" id="monthlyRent" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">押金：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.yajin" type="text" :readonly="ro.yajin" name="yajin" id="yajin" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.deposit" type="text" :readonly="ro.deposit" name="deposit" id="deposit" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">租用月数：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.zuyongyueshu" type="text" :readonly="ro.zuyongyueshu" name="zuyongyueshu" id="zuyongyueshu" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.rentalMonths" type="text" :readonly="ro.rentalMonths" name="rentalMonths" id="rentalMonths" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">租用金额：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="zuyongjine" type="text" name="zuyongjine" id="zuyongjine" disabled="disabled" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="rentalAmount" type="text" name="rentalAmount" id="rentalAmount" disabled="disabled" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">预约时间：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"#333","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' type="text" name="yuyueshijian" id="yuyueshijian" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"#333","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' type="text" name="appointmentTime" id="appointmentTime" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">用户名：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.tenantming" type="text" :readonly="ro.tenantming" name="tenantming" id="tenantming" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.tenantUsername" type="text" :readonly="ro.tenantUsername" name="tenantUsername" id="tenantUsername" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">姓名：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.xingming" type="text" :readonly="ro.xingming" name="xingming" id="xingming" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.fullName" type="text" :readonly="ro.fullName" name="fullName" id="fullName" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">身份证：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.shenfenzheng" type="text" :readonly="ro.shenfenzheng" name="shenfenzheng" id="shenfenzheng" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.idCardNumber" type="text" :readonly="ro.idCardNumber" name="idCardNumber" id="idCardNumber" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">联系电话：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.lianxidianhua" type="text" :readonly="ro.lianxidianhua" name="lianxidianhua" id="lianxidianhua" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.contactPhone" type="text" :readonly="ro.contactPhone" name="contactPhone" id="contactPhone" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">房主账号：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.landlordzhanghao" type="text" :readonly="ro.landlordzhanghao" name="landlordzhanghao" id="landlordzhanghao" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.landlordAccount" type="text" :readonly="ro.landlordAccount" name="landlordAccount" id="landlordAccount" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                 <div  :style='{"padding":"10px","boxShadow":"0 0 6px #7F4E16","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"double"}' class="layui-form-item" pane>
 						<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' class="layui-form-label">房主姓名：</label>
 						<div class="layui-input-block">
-							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.landlordxingming" type="text" :readonly="ro.landlordxingming" name="landlordxingming" id="landlordxingming" autocomplete="off" class="layui-input">
+							<input :style='{"padding":"0 12px","boxShadow":"0 0 6px #7F4E16","borderColor":"#DCDFE6","backgroundColor":"#fff","color":"rgba(127, 78, 22, 1)","borderRadius":"50px","textAlign":"left","borderWidth":"1px","fontSize":"14px","borderStyle":"solid","height":"40px"}' v-model="detail.landlordName" type="text" :readonly="ro.landlordName" name="landlordName" id="landlordName" autocomplete="off" class="layui-input">
 						</div>
 					</div>
                                                                                                                                                                                     
@@ -254,44 +254,44 @@
 					}],
 					dataList: [],
       					ro:{
-				        yuyuebianhao : false,
-				        fangwumingcheng : false,
+				        appointmentNumber : false,
+				        houseName : false,
 				        houseType : false,
-				        fangwuzhuangtai : false,
-				        xiaoqu : false,
-				        yuezujiage : false,
-				        yajin : false,
-				        zuyongyueshu : false,
-				        zuyongjine : false,
-				        yuyueshijian : false,
-				        tenantming : false,
-				        xingming : false,
-				        shenfenzheng : false,
-				        lianxidianhua : false,
-				        landlordzhanghao : false,
-				        landlordxingming : false,
-				        sfsh : false,
-				        shhf : false,
+				        houseStatus : false,
+				        community : false,
+				        monthlyRent : false,
+				        deposit : false,
+				        rentalMonths : false,
+				        rentalAmount : false,
+				        appointmentTime : false,
+				        tenantUsername : false,
+				        fullName : false,
+				        idCardNumber : false,
+				        contactPhone : false,
+				        landlordAccount : false,
+				        landlordName : false,
+				        reviewStatus : false,
+				        reviewReply : false,
               				},
                     detail: {
-                                                                        yuyuebianhao: genTradeNo(),
-                                                                                                fangwumingcheng: '',
+                                                                        appointmentNumber: genTradeNo(),
+                                                                                                houseName: '',
                                                                                                 houseType: '',
-                                                                                                fangwuzhuangtai: '',
-                                                                                                xiaoqu: '',
-                                                                                                yuezujiage: '',
-                                                                                                yajin: '',
-                                                                                                zuyongyueshu: '',
-                                                                                                zuyongjine: '',
-                                                                                                yuyueshijian: '',
-                                                                                                tenantming: '',
-                                                                                                xingming: '',
-                                                                                                shenfenzheng: '',
-                                                                                                lianxidianhua: '',
-                                                                                                landlordzhanghao: '',
-                                                                                                landlordxingming: '',
-                                                                                                sfsh: '',
-                                                                                                shhf: '',
+                                                                                                houseStatus: '',
+                                                                                                community: '',
+                                                                                                monthlyRent: '',
+                                                                                                deposit: '',
+                                                                                                rentalMonths: '',
+                                                                                                rentalAmount: '',
+                                                                                                appointmentTime: '',
+                                                                                                tenantUsername: '',
+                                                                                                fullName: '',
+                                                                                                idCardNumber: '',
+                                                                                                contactPhone: '',
+                                                                                                landlordAccount: '',
+                                                                                                landlordName: '',
+                                                                                                reviewStatus: '',
+                                                                                                reviewReply: '',
                                                                     },
                     																																																																																																																																																																																									centerMenu: centerMenu
 				},
@@ -299,9 +299,9 @@
 					layui.form.render('select', 'myForm');
 				},
                 computed: {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            zuyongjine:{
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            rentalAmount:{
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 get: function () {
-                        return 1*this.detail.yuezujiage*this.detail.zuyongyueshu
+                        return 1*this.detail.monthlyRent*this.detail.rentalMonths
                     }
                     },
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         },
@@ -366,7 +366,7 @@
 				});
 
                 																																																																																laydate.render({
-					elem: '#yuyueshijian',
+					elem: '#appointmentTime',
 					type: 'datetime'
 				});
                 																																																																								
@@ -377,19 +377,19 @@
 					//form.val("myForm", data.data);
 					data = data.data
 					for (var key in data){
-					if(key=='tenantming'){
+					if(key=='tenantUsername'){
 						vue.detail[`${key}`] = data[`${key}`]
 						continue;
                                         }
-					if(key=='xingming'){
+					if(key=='fullName'){
 						vue.detail[`${key}`] = data[`${key}`]
 						continue;
                                         }
-					if(key=='shenfenzheng'){
+					if(key=='idCardNumber'){
 						vue.detail[`${key}`] = data[`${key}`]
 						continue;
                                         }
-					if(key=='lianxidianhua'){
+					if(key=='contactPhone'){
 						vue.detail[`${key}`] = data[`${key}`]
 						continue;
                                         }
@@ -400,14 +400,14 @@
                 if(http.getParam('corss')){
 					var obj = JSON.parse(localStorage.getItem('crossObj'));
 					for (var o in obj){
-					if(o=='yuyuebianhao'){
+					if(o=='appointmentNumber'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.yuyuebianhao = true;
+						vue.ro.appointmentNumber = true;
 						continue;
                                         }
-					if(o=='fangwumingcheng'){
+					if(o=='houseName'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.fangwumingcheng = true;
+						vue.ro.houseName = true;
 						continue;
                                         }
 					if(o=='houseType'){
@@ -415,69 +415,69 @@
 						vue.ro.houseType = true;
 						continue;
                                         }
-					if(o=='fangwuzhuangtai'){
+					if(o=='houseStatus'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.fangwuzhuangtai = true;
+						vue.ro.houseStatus = true;
 						continue;
                                         }
-					if(o=='xiaoqu'){
+					if(o=='community'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.xiaoqu = true;
+						vue.ro.community = true;
 						continue;
                                         }
-					if(o=='yuezujiage'){
+					if(o=='monthlyRent'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.yuezujiage = true;
+						vue.ro.monthlyRent = true;
 						continue;
                                         }
-					if(o=='yajin'){
+					if(o=='deposit'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.yajin = true;
+						vue.ro.deposit = true;
 						continue;
                                         }
-					if(o=='zuyongyueshu'){
+					if(o=='rentalMonths'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.zuyongyueshu = true;
+						vue.ro.rentalMonths = true;
 						continue;
                                         }
-					if(o=='zuyongjine'){
+					if(o=='rentalAmount'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.zuyongjine = true;
+						vue.ro.rentalAmount = true;
 						continue;
                                         }
-					if(o=='yuyueshijian'){
+					if(o=='appointmentTime'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.yuyueshijian = true;
+						vue.ro.appointmentTime = true;
 						continue;
                                         }
-					if(o=='tenantming'){
+					if(o=='tenantUsername'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.tenantming = true;
+						vue.ro.tenantUsername = true;
 						continue;
                                         }
-					if(o=='xingming'){
+					if(o=='fullName'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.xingming = true;
+						vue.ro.fullName = true;
 						continue;
                                         }
-					if(o=='shenfenzheng'){
+					if(o=='idCardNumber'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.shenfenzheng = true;
+						vue.ro.idCardNumber = true;
 						continue;
                                         }
-					if(o=='lianxidianhua'){
+					if(o=='contactPhone'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.lianxidianhua = true;
+						vue.ro.contactPhone = true;
 						continue;
                                         }
-					if(o=='landlordzhanghao'){
+					if(o=='landlordAccount'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.landlordzhanghao = true;
+						vue.ro.landlordAccount = true;
 						continue;
                                         }
-					if(o=='landlordxingming'){
+					if(o=='landlordName'){
           	                                vue.detail[o] = obj[o];
-						vue.ro.landlordxingming = true;
+						vue.ro.landlordName = true;
 						continue;
                                         }
                                         }
@@ -489,28 +489,28 @@
 					data = data.field;
 					
                     // 数据校验
-                    if(!data.yuyuebianhao){
+                    if(!data.appointmentNumber){
                         layer.msg('预约编号不能为空', {
 							time: 2000,
 							icon: 5
 						});
                         return false
                     }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        if(!isIntNumer(data.yuezujiage)){
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        if(!isIntNumer(data.monthlyRent)){
                         layer.msg('月租价格应输入整数', {
 							time: 2000,
 							icon: 5
 						});
                         return false
                     }
-                                                                                                                                                                                                                                                                                                                                if(!isIntNumer(data.zuyongyueshu)){
+                                                                                                                                                                                                                                                                                                                                if(!isIntNumer(data.rentalMonths)){
                         layer.msg('租用月数应输入整数', {
 							time: 2000,
 							icon: 5
 						});
                         return false
                     }
-                                                                                                                                                                                                                                                                                                            if(!data.yuyueshijian){
+                                                                                                                                                                                                                                                                                                            if(!data.appointmentTime){
                         layer.msg('预约时间不能为空', {
 							time: 2000,
 							icon: 5

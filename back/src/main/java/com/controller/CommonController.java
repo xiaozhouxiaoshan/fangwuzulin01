@@ -144,7 +144,7 @@ public class CommonController{
 	}
 	
 	/**
-	 * 修改table表的sfsh状态
+	 * 修改table表的reviewStatus状态
 	 * @param table
 	 * @param map
 	 * @return

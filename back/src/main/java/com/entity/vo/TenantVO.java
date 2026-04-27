@@ -26,58 +26,58 @@ public class TenantVO  implements Serializable {
 	 * 密码
 	 */
 	
-	private String mima;
+	private String password;
 		
 	/**
 	 * 姓名
 	 */
 	
-	private String xingming;
+	private String fullName;
 		
 	/**
 	 * 头像
 	 */
 	
-	private String touxiang;
+	private String avatar;
 		
 	/**
 	 * 性别
 	 */
 	
-	private String xingbie;
+	private String gender;
 		
 	/**
 	 * 职业
 	 */
 	
-	private String zhiye;
+	private String occupation;
 		
 	/**
 	 * 联系电话
 	 */
 	
-	private String lianxidianhua;
+	private String contactPhone;
 		
 	/**
 	 * 身份证
 	 */
 	
-	private String shenfenzheng;
+	private String idCardNumber;
 				
 	
 	/**
 	 * 设置：密码
 	 */
 	 
-	public void setMima(String mima) {
-		this.mima = mima;
+	public void setMima(String password) {
+		this.password = password;
 	}
 	
 	/**
 	 * 获取：密码
 	 */
 	public String getMima() {
-		return mima;
+		return password;
 	}
 				
 	
@@ -85,15 +85,15 @@ public class TenantVO  implements Serializable {
 	 * 设置：姓名
 	 */
 	 
-	public void setXingming(String xingming) {
-		this.xingming = xingming;
+	public void setXingming(String fullName) {
+		this.fullName = fullName;
 	}
 	
 	/**
 	 * 获取：姓名
 	 */
 	public String getXingming() {
-		return xingming;
+		return fullName;
 	}
 				
 	
@@ -101,15 +101,15 @@ public class TenantVO  implements Serializable {
 	 * 设置：头像
 	 */
 	 
-	public void setTouxiang(String touxiang) {
-		this.touxiang = touxiang;
+	public void setTouxiang(String avatar) {
+		this.avatar = avatar;
 	}
 	
 	/**
 	 * 获取：头像
 	 */
 	public String getTouxiang() {
-		return touxiang;
+		return avatar;
 	}
 				
 	
@@ -117,15 +117,15 @@ public class TenantVO  implements Serializable {
 	 * 设置：性别
 	 */
 	 
-	public void setXingbie(String xingbie) {
-		this.xingbie = xingbie;
+	public void setXingbie(String gender) {
+		this.gender = gender;
 	}
 	
 	/**
 	 * 获取：性别
 	 */
 	public String getXingbie() {
-		return xingbie;
+		return gender;
 	}
 				
 	
@@ -133,15 +133,15 @@ public class TenantVO  implements Serializable {
 	 * 设置：职业
 	 */
 	 
-	public void setZhiye(String zhiye) {
-		this.zhiye = zhiye;
+	public void setZhiye(String occupation) {
+		this.occupation = occupation;
 	}
 	
 	/**
 	 * 获取：职业
 	 */
 	public String getZhiye() {
-		return zhiye;
+		return occupation;
 	}
 				
 	
@@ -149,15 +149,15 @@ public class TenantVO  implements Serializable {
 	 * 设置：联系电话
 	 */
 	 
-	public void setLianxidianhua(String lianxidianhua) {
-		this.lianxidianhua = lianxidianhua;
+	public void setLianxidianhua(String contactPhone) {
+		this.contactPhone = contactPhone;
 	}
 	
 	/**
 	 * 获取：联系电话
 	 */
 	public String getLianxidianhua() {
-		return lianxidianhua;
+		return contactPhone;
 	}
 				
 	
@@ -165,15 +165,15 @@ public class TenantVO  implements Serializable {
 	 * 设置：身份证
 	 */
 	 
-	public void setShenfenzheng(String shenfenzheng) {
-		this.shenfenzheng = shenfenzheng;
+	public void setShenfenzheng(String idCardNumber) {
+		this.idCardNumber = idCardNumber;
 	}
 	
 	/**
 	 * 获取：身份证
 	 */
 	public String getShenfenzheng() {
-		return shenfenzheng;
+		return idCardNumber;
 	}
 			
 }

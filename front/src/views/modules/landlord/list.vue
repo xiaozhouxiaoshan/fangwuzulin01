@@ -5,14 +5,14 @@
       <el-form :inline="true" :model="searchForm" class="form-content">
         <el-row :gutter="20" class="slt" :style="{justifyContent:contents.searchBoxPosition=='1'?'flex-start':contents.searchBoxPosition=='2'?'center':'flex-end'}">
                                                     <el-form-item :label="contents.inputTitle == 1 ? '房主账号' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.landlordzhanghao" placeholder="房主账号" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.landlordzhanghao" placeholder="房主账号" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.landlordzhanghao" placeholder="房主账号" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.landlordAccount" placeholder="房主账号" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.landlordAccount" placeholder="房主账号" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.landlordAccount" placeholder="房主账号" clearable></el-input>
                 </el-form-item>
                                                                                                     <el-form-item :label="contents.inputTitle == 1 ? '房主姓名' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.landlordxingming" placeholder="房主姓名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.landlordxingming" placeholder="房主姓名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.landlordxingming" placeholder="房主姓名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.landlordName" placeholder="房主姓名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.landlordName" placeholder="房主姓名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.landlordName" placeholder="房主姓名" clearable></el-input>
                 </el-form-item>
                                                                                                                                       <el-form-item>
             <el-button v-if="contents.searchBtnIcon == 1 && contents.searchBtnIconPosition == 1" icon="el-icon-search" type="success" @click="search()">{{ contents.searchBtnFont == 1?'查询':'' }}</el-button>
@@ -83,62 +83,62 @@
             </el-table-column>
             <el-table-column label="索引" v-if="contents.tableIndex" type="index" width="50" />
             	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="landlordzhanghao"
+                    prop="landlordAccount"
                     header-align="center"
 		    label="房主账号">
 		     <template slot-scope="scope">
-                       {{scope.row.landlordzhanghao}}
+                       {{scope.row.landlordAccount}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="mima"
+                    prop="password"
                     header-align="center"
 		    label="密码">
 		     <template slot-scope="scope">
-                       {{scope.row.mima}}
+                       {{scope.row.password}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="landlordxingming"
+                    prop="landlordName"
                     header-align="center"
 		    label="房主姓名">
 		     <template slot-scope="scope">
-                       {{scope.row.landlordxingming}}
+                       {{scope.row.landlordName}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="xingbie"
+                    prop="gender"
                     header-align="center"
 		    label="性别">
 		     <template slot-scope="scope">
-                       {{scope.row.xingbie}}
+                       {{scope.row.gender}}
                      </template>
                 </el-table-column>
-                	                	                                      <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign" prop="touxiang"
+                	                	                                      <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign" prop="avatar"
                     header-align="center"
                     width="200"
                     label="头像">
                     <template slot-scope="scope">
-                      <div v-if="scope.row.touxiang">
-                        <img :src="scope.row.touxiang.split(',')[0]" width="100" height="100">
+                      <div v-if="scope.row.avatar">
+                        <img :src="scope.row.avatar.split(',')[0]" width="100" height="100">
                       </div>
                       <div v-else>无图片</div>
                     </template>
                   </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="shouji"
+                    prop="phoneNumber"
                     header-align="center"
 		    label="手机">
 		     <template slot-scope="scope">
-                       {{scope.row.shouji}}
+                       {{scope.row.phoneNumber}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="shenfenzheng"
+                    prop="idCardNumber"
                     header-align="center"
 		    label="身份证">
 		     <template slot-scope="scope">
-                       {{scope.row.shenfenzheng}}
+                       {{scope.row.idCardNumber}}
                      </template>
                 </el-table-column>
                 	                                        <el-table-column width="300" :align="contents.tableAlign"
@@ -196,7 +196,7 @@ export default {
       dataListLoading: false,
       dataListSelections: [],
       showFlag: true,
-      sfshVisiable: false,
+      reviewStatusVisiable: false,
       shForm: {},
       chartVisiable: false,
       addOrUpdateFlag:false,
@@ -413,11 +413,11 @@ export default {
         limit: this.pageSize,
         sort: 'id',
       }
-                                          if(this.searchForm.landlordzhanghao!='' && this.searchForm.landlordzhanghao!=undefined){
-            params['landlordzhanghao'] = '%' + this.searchForm.landlordzhanghao + '%'
+                                          if(this.searchForm.landlordAccount!='' && this.searchForm.landlordAccount!=undefined){
+            params['landlordAccount'] = '%' + this.searchForm.landlordAccount + '%'
           }
-                                                                                  if(this.searchForm.landlordxingming!='' && this.searchForm.landlordxingming!=undefined){
-            params['landlordxingming'] = '%' + this.searchForm.landlordxingming + '%'
+                                                                                  if(this.searchForm.landlordName!='' && this.searchForm.landlordName!=undefined){
+            params['landlordName'] = '%' + this.searchForm.landlordName + '%'
           }
                                                                                                                       this.$http({
         url: "landlord/page",

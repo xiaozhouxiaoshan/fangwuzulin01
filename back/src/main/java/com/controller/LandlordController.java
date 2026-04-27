@@ -57,7 +57,7 @@ public class LandlordController {
 	@IgnoreAuth
 	@RequestMapping(value = "/login")
 	public R login(String username, String password, String captcha, HttpServletRequest request) {
-		LandlordEntity user = landlordService.selectOne(new EntityWrapper<LandlordEntity>().eq("landlordzhanghao", username));
+		LandlordEntity user = landlordService.selectOne(new EntityWrapper<LandlordEntity>().eq("landlordAccount", username));
 		if(user==null || !user.getMima().equals(password)) {
 			return R.error("账号或密码不正确");
 		}
@@ -73,7 +73,7 @@ public class LandlordController {
     @RequestMapping("/register")
     public R register(@RequestBody LandlordEntity landlord){
     	//ValidatorUtils.validateEntity(landlord);
-    	LandlordEntity user = landlordService.selectOne(new EntityWrapper<LandlordEntity>().eq("landlordzhanghao", landlord.getLandlordzhanghao()));
+    	LandlordEntity user = landlordService.selectOne(new EntityWrapper<LandlordEntity>().eq("landlordAccount", landlord.getLandlordzhanghao()));
 		if(user!=null) {
 			return R.error("注册用户已存在");
 		}
@@ -108,7 +108,7 @@ public class LandlordController {
     @IgnoreAuth
 	@RequestMapping(value = "/resetPass")
     public R resetPass(String username, HttpServletRequest request){
-    	LandlordEntity user = landlordService.selectOne(new EntityWrapper<LandlordEntity>().eq("landlordzhanghao", username));
+    	LandlordEntity user = landlordService.selectOne(new EntityWrapper<LandlordEntity>().eq("landlordAccount", username));
     	if(user==null) {
     		return R.error("账号不存在");
     	}
@@ -188,7 +188,7 @@ public class LandlordController {
     public R save(@RequestBody LandlordEntity landlord, HttpServletRequest request){
     	landlord.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
     	//ValidatorUtils.validateEntity(landlord);
-    	LandlordEntity user = landlordService.selectOne(new EntityWrapper<LandlordEntity>().eq("landlordzhanghao", landlord.getLandlordzhanghao()));
+    	LandlordEntity user = landlordService.selectOne(new EntityWrapper<LandlordEntity>().eq("landlordAccount", landlord.getLandlordzhanghao()));
 		if(user!=null) {
 			return R.error("用户已存在");
 		}
@@ -204,7 +204,7 @@ public class LandlordController {
     public R add(@RequestBody LandlordEntity landlord, HttpServletRequest request){
     	landlord.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
     	//ValidatorUtils.validateEntity(landlord);
-    	LandlordEntity user = landlordService.selectOne(new EntityWrapper<LandlordEntity>().eq("landlordzhanghao", landlord.getLandlordzhanghao()));
+    	LandlordEntity user = landlordService.selectOne(new EntityWrapper<LandlordEntity>().eq("landlordAccount", landlord.getLandlordzhanghao()));
 		if(user!=null) {
 			return R.error("用户已存在");
 		}

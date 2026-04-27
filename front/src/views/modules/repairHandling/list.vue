@@ -5,24 +5,24 @@
       <el-form :inline="true" :model="searchForm" class="form-content">
         <el-row :gutter="20" class="slt" :style="{justifyContent:contents.searchBoxPosition=='1'?'flex-start':contents.searchBoxPosition=='2'?'center':'flex-end'}">
                                                                                                 <el-form-item :label="contents.inputTitle == 1 ? '报修名称' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.baoxiumingcheng" placeholder="报修名称" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.baoxiumingcheng" placeholder="报修名称" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.baoxiumingcheng" placeholder="报修名称" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.repairTitle" placeholder="报修名称" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.repairTitle" placeholder="报修名称" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.repairTitle" placeholder="报修名称" clearable></el-input>
                 </el-form-item>
                                                                                                                                                 <el-form-item :label="contents.inputTitle == 1 ? '维修进度' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.weixiujindu" placeholder="维修进度" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.weixiujindu" placeholder="维修进度" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.weixiujindu" placeholder="维修进度" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.handlingProgress" placeholder="维修进度" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.handlingProgress" placeholder="维修进度" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.handlingProgress" placeholder="维修进度" clearable></el-input>
                 </el-form-item>
                                                                                                                           <el-form-item :label="contents.inputTitle == 1 ? '房主姓名' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.landlordxingming" placeholder="房主姓名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.landlordxingming" placeholder="房主姓名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.landlordxingming" placeholder="房主姓名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.landlordName" placeholder="房主姓名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.landlordName" placeholder="房主姓名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.landlordName" placeholder="房主姓名" clearable></el-input>
                 </el-form-item>
                                                                               <el-form-item :label="contents.inputTitle == 1 ? '用户名' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.tenantming" placeholder="用户名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.tenantming" placeholder="用户名" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.tenantming" placeholder="用户名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.tenantUsername" placeholder="用户名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.tenantUsername" placeholder="用户名" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.tenantUsername" placeholder="用户名" clearable></el-input>
                 </el-form-item>
                                                                     <el-form-item>
             <el-button v-if="contents.searchBtnIcon == 1 && contents.searchBtnIconPosition == 1" icon="el-icon-search" type="success" @click="search()">{{ contents.searchBtnFont == 1?'查询':'' }}</el-button>
@@ -93,11 +93,11 @@
             </el-table-column>
             <el-table-column label="索引" v-if="contents.tableIndex" type="index" width="50" />
             	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="fangwumingcheng"
+                    prop="houseName"
                     header-align="center"
 		    label="房屋名称">
 		     <template slot-scope="scope">
-                       {{scope.row.fangwumingcheng}}
+                       {{scope.row.houseName}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
@@ -109,83 +109,83 @@
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="baoxiumingcheng"
+                    prop="repairTitle"
                     header-align="center"
 		    label="报修名称">
 		     <template slot-scope="scope">
-                       {{scope.row.baoxiumingcheng}}
+                       {{scope.row.repairTitle}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="leixing"
+                    prop="repairType"
                     header-align="center"
 		    label="类型">
 		     <template slot-scope="scope">
-                       {{scope.row.leixing}}
+                       {{scope.row.repairType}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="baoxiuriqi"
+                    prop="repairDate"
                     header-align="center"
 		    label="报修日期">
 		     <template slot-scope="scope">
-                       {{scope.row.baoxiuriqi}}
+                       {{scope.row.repairDate}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="weixiufankui"
+                    prop="handlingFeedback"
                     header-align="center"
 		    label="维修反馈">
 		     <template slot-scope="scope">
-                       {{scope.row.weixiufankui}}
+                       {{scope.row.handlingFeedback}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="weixiujindu"
+                    prop="handlingProgress"
                     header-align="center"
 		    label="维修进度">
 		     <template slot-scope="scope">
-                       {{scope.row.weixiujindu}}
+                       {{scope.row.handlingProgress}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="gengxinriqi"
+                    prop="updatedDate"
                     header-align="center"
 		    label="更新日期">
 		     <template slot-scope="scope">
-                       {{scope.row.gengxinriqi}}
+                       {{scope.row.updatedDate}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="landlordzhanghao"
+                    prop="landlordAccount"
                     header-align="center"
 		    label="房主账号">
 		     <template slot-scope="scope">
-                       {{scope.row.landlordzhanghao}}
+                       {{scope.row.landlordAccount}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="landlordxingming"
+                    prop="landlordName"
                     header-align="center"
 		    label="房主姓名">
 		     <template slot-scope="scope">
-                       {{scope.row.landlordxingming}}
+                       {{scope.row.landlordName}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="tenantming"
+                    prop="tenantUsername"
                     header-align="center"
 		    label="用户名">
 		     <template slot-scope="scope">
-                       {{scope.row.tenantming}}
+                       {{scope.row.tenantUsername}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="lianxidianhua"
+                    prop="contactPhone"
                     header-align="center"
 		    label="联系电话">
 		     <template slot-scope="scope">
-                       {{scope.row.lianxidianhua}}
+                       {{scope.row.contactPhone}}
                      </template>
                 </el-table-column>
                 	                                        <el-table-column width="300" :align="contents.tableAlign"
@@ -246,7 +246,7 @@ export default {
       dataListLoading: false,
       dataListSelections: [],
       showFlag: true,
-      sfshVisiable: false,
+      reviewStatusVisiable: false,
       shForm: {},
       chartVisiable: false,
       addOrUpdateFlag:false,
@@ -450,7 +450,7 @@ export default {
     },
 
                 init () {
-                                                                                                                    this.weixiujinduOptions = "维修中,已完成".split(',')
+                                                                                                                    this.handlingProgressOptions = "维修中,已完成".split(',')
                                                                                                                                                                                                                                                                                               },
     search() {
       this.pageIndex = 1;
@@ -464,17 +464,17 @@ export default {
         limit: this.pageSize,
         sort: 'id',
       }
-                                                                                      if(this.searchForm.baoxiumingcheng!='' && this.searchForm.baoxiumingcheng!=undefined){
-            params['baoxiumingcheng'] = '%' + this.searchForm.baoxiumingcheng + '%'
+                                                                                      if(this.searchForm.repairTitle!='' && this.searchForm.repairTitle!=undefined){
+            params['repairTitle'] = '%' + this.searchForm.repairTitle + '%'
           }
-                                                                                                                              if(this.searchForm.weixiujindu!='' && this.searchForm.weixiujindu!=undefined){
-            params['weixiujindu'] = '%' + this.searchForm.weixiujindu + '%'
+                                                                                                                              if(this.searchForm.handlingProgress!='' && this.searchForm.handlingProgress!=undefined){
+            params['handlingProgress'] = '%' + this.searchForm.handlingProgress + '%'
           }
-                                                                                                        if(this.searchForm.landlordxingming!='' && this.searchForm.landlordxingming!=undefined){
-            params['landlordxingming'] = '%' + this.searchForm.landlordxingming + '%'
+                                                                                                        if(this.searchForm.landlordName!='' && this.searchForm.landlordName!=undefined){
+            params['landlordName'] = '%' + this.searchForm.landlordName + '%'
           }
-                                                            if(this.searchForm.tenantming!='' && this.searchForm.tenantming!=undefined){
-            params['tenantming'] = '%' + this.searchForm.tenantming + '%'
+                                                            if(this.searchForm.tenantUsername!='' && this.searchForm.tenantUsername!=undefined){
+            params['tenantUsername'] = '%' + this.searchForm.tenantUsername + '%'
           }
                                                     this.$http({
         url: "repairHandling/page",

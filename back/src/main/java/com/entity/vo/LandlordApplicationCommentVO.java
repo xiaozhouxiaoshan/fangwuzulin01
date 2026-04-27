@@ -26,7 +26,7 @@ public class LandlordApplicationCommentVO  implements Serializable {
 	 * 用户id
 	 */
 	
-	private Long userid;
+	private Long userId;
 		
 	/**
 	 * 评论内容
@@ -45,15 +45,15 @@ public class LandlordApplicationCommentVO  implements Serializable {
 	 * 设置：用户id
 	 */
 	 
-	public void setUserid(Long userid) {
-		this.userid = userid;
+	public void setUserid(Long userId) {
+		this.userId = userId;
 	}
 	
 	/**
 	 * 获取：用户id
 	 */
 	public Long getUserid() {
-		return userid;
+		return userId;
 	}
 				
 	

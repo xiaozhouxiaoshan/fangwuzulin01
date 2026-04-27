@@ -5,19 +5,19 @@
       <el-form :inline="true" :model="searchForm" class="form-content">
         <el-row :gutter="20" class="slt" :style="{justifyContent:contents.searchBoxPosition=='1'?'flex-start':contents.searchBoxPosition=='2'?'center':'flex-end'}">
                                                     <el-form-item :label="contents.inputTitle == 1 ? '房屋名称' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.fangwumingcheng" placeholder="房屋名称" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.fangwumingcheng" placeholder="房屋名称" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.fangwumingcheng" placeholder="房屋名称" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.houseName" placeholder="房屋名称" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.houseName" placeholder="房屋名称" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.houseName" placeholder="房屋名称" clearable></el-input>
                 </el-form-item>
                                                                                                                                                                                             <el-form-item :label="contents.inputTitle == 1 ? '房屋状态' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.fangwuzhuangtai" placeholder="房屋状态" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.fangwuzhuangtai" placeholder="房屋状态" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.fangwuzhuangtai" placeholder="房屋状态" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.houseStatus" placeholder="房屋状态" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.houseStatus" placeholder="房屋状态" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.houseStatus" placeholder="房屋状态" clearable></el-input>
                 </el-form-item>
                                                                               <el-form-item :label="contents.inputTitle == 1 ? '小区' : ''">
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.xiaoqu" placeholder="小区" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.xiaoqu" placeholder="小区" clearable></el-input>
-                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.xiaoqu" placeholder="小区" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search" v-model="searchForm.community" placeholder="小区" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search" v-model="searchForm.community" placeholder="小区" clearable></el-input>
+                  <el-input v-if="contents.inputIcon == 0" v-model="searchForm.community" placeholder="小区" clearable></el-input>
                 </el-form-item>
                                                                                                                                                                                                                               <el-form-item>
             <el-button v-if="contents.searchBtnIcon == 1 && contents.searchBtnIconPosition == 1" icon="el-icon-search" type="success" @click="search()">{{ contents.searchBtnFont == 1?'查询':'' }}</el-button>
@@ -88,11 +88,11 @@
             </el-table-column>
             <el-table-column label="索引" v-if="contents.tableIndex" type="index" width="50" />
             	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="fangwumingcheng"
+                    prop="houseName"
                     header-align="center"
 		    label="房屋名称">
 		     <template slot-scope="scope">
-                       {{scope.row.fangwumingcheng}}
+                       {{scope.row.houseName}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
@@ -115,99 +115,99 @@
                     </template>
                   </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="zulinfangshi"
+                    prop="rentalMode"
                     header-align="center"
 		    label="租赁方式">
 		     <template slot-scope="scope">
-                       {{scope.row.zulinfangshi}}
+                       {{scope.row.rentalMode}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="chaoxianglouceng"
+                    prop="orientationFloor"
                     header-align="center"
 		    label="朝向楼层">
 		     <template slot-scope="scope">
-                       {{scope.row.chaoxianglouceng}}
+                       {{scope.row.orientationFloor}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="mianji"
+                    prop="area"
                     header-align="center"
 		    label="面积">
 		     <template slot-scope="scope">
-                       {{scope.row.mianji}}
+                       {{scope.row.area}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="fangwuzhuangtai"
+                    prop="houseStatus"
                     header-align="center"
 		    label="房屋状态">
 		     <template slot-scope="scope">
-                       {{scope.row.fangwuzhuangtai}}
+                       {{scope.row.houseStatus}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="xiaoqu"
+                    prop="community"
                     header-align="center"
 		    label="小区">
 		     <template slot-scope="scope">
-                       {{scope.row.xiaoqu}}
+                       {{scope.row.community}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="xiangxidizhi"
+                    prop="addressDetail"
                     header-align="center"
 		    label="详细地址">
 		     <template slot-scope="scope">
-                       {{scope.row.xiangxidizhi}}
+                       {{scope.row.addressDetail}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="yuezujiage"
+                    prop="monthlyRent"
                     header-align="center"
 		    label="月租价格">
 		     <template slot-scope="scope">
-                       {{scope.row.yuezujiage}}
+                       {{scope.row.monthlyRent}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="yajin"
+                    prop="deposit"
                     header-align="center"
 		    label="押金">
 		     <template slot-scope="scope">
-                       {{scope.row.yajin}}
+                       {{scope.row.deposit}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="fangwusheshi"
+                    prop="facilities"
                     header-align="center"
 		    label="房屋设施">
 		     <template slot-scope="scope">
-                       {{scope.row.fangwusheshi}}
+                       {{scope.row.facilities}}
                      </template>
                 </el-table-column>
                 	                	                                    	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="faburiqi"
+                    prop="publishDate"
                     header-align="center"
 		    label="发布日期">
 		     <template slot-scope="scope">
-                       {{scope.row.faburiqi}}
+                       {{scope.row.publishDate}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="landlordzhanghao"
+                    prop="landlordAccount"
                     header-align="center"
 		    label="房主账号">
 		     <template slot-scope="scope">
-                       {{scope.row.landlordzhanghao}}
+                       {{scope.row.landlordAccount}}
                      </template>
                 </el-table-column>
                 	                	                                    <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
-                    prop="landlordxingming"
+                    prop="landlordName"
                     header-align="center"
 		    label="房主姓名">
 		     <template slot-scope="scope">
-                       {{scope.row.landlordxingming}}
+                       {{scope.row.landlordName}}
                      </template>
                 </el-table-column>
                 	                                        <el-table-column width="300" :align="contents.tableAlign"
@@ -276,7 +276,7 @@ export default {
       dataListLoading: false,
       dataListSelections: [],
       showFlag: true,
-      sfshVisiable: false,
+      reviewStatusVisiable: false,
       shForm: {},
       chartVisiable: false,
       addOrUpdateFlag:false,
@@ -492,7 +492,7 @@ export default {
       });
     },
                     init () {
-                                                                                                                    this.fangwuzhuangtaiOptions = "可租,已租".split(',')
+                                                                                                                    this.houseStatusOptions = "可租,已租".split(',')
                                                                                                                                                                                                                                                                                                                                                                                         },
     search() {
       this.pageIndex = 1;
@@ -506,14 +506,14 @@ export default {
         limit: this.pageSize,
         sort: 'id',
       }
-                                          if(this.searchForm.fangwumingcheng!='' && this.searchForm.fangwumingcheng!=undefined){
-            params['fangwumingcheng'] = '%' + this.searchForm.fangwumingcheng + '%'
+                                          if(this.searchForm.houseName!='' && this.searchForm.houseName!=undefined){
+            params['houseName'] = '%' + this.searchForm.houseName + '%'
           }
-                                                                                                                                                                          if(this.searchForm.fangwuzhuangtai!='' && this.searchForm.fangwuzhuangtai!=undefined){
-            params['fangwuzhuangtai'] = '%' + this.searchForm.fangwuzhuangtai + '%'
+                                                                                                                                                                          if(this.searchForm.houseStatus!='' && this.searchForm.houseStatus!=undefined){
+            params['houseStatus'] = '%' + this.searchForm.houseStatus + '%'
           }
-                                                            if(this.searchForm.xiaoqu!='' && this.searchForm.xiaoqu!=undefined){
-            params['xiaoqu'] = '%' + this.searchForm.xiaoqu + '%'
+                                                            if(this.searchForm.community!='' && this.searchForm.community!=undefined){
+            params['community'] = '%' + this.searchForm.community + '%'
           }
                                                                                                                                                                                                               this.$http({
         url: "houseListing/page",
@@ -559,7 +559,7 @@ export default {
     },
     // 查看评论
     disscussListHandler(id,type) {
-	this.$router.push({path:'/houseListingComment',query:{refid:id}});
+	this.$router.push({path:'/houseListingComment',query:{referenceId:id}});
     },
         // 下载
     download(file){

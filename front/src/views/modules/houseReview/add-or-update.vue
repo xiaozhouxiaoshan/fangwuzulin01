@@ -10,25 +10,25 @@
     >
       <el-row>
                         <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="合同编号" prop="hetongbianhao">
-          <el-input v-model="ruleForm.hetongbianhao" 
-              placeholder="合同编号" clearable  :readonly="ro.hetongbianhao"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="合同编号" prop="contractNumber">
+          <el-input v-model="ruleForm.contractNumber" 
+              placeholder="合同编号" clearable  :readonly="ro.contractNumber"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="合同编号" prop="hetongbianhao">
-              <el-input v-model="ruleForm.hetongbianhao" 
+          <el-form-item class="input" label="合同编号" prop="contractNumber">
+              <el-input v-model="ruleForm.contractNumber" 
                 placeholder="合同编号" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="房屋名称" prop="fangwumingcheng">
-          <el-input v-model="ruleForm.fangwumingcheng" 
-              placeholder="房屋名称" clearable  :readonly="ro.fangwumingcheng"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="房屋名称" prop="houseName">
+          <el-input v-model="ruleForm.houseName" 
+              placeholder="房屋名称" clearable  :readonly="ro.houseName"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="房屋名称" prop="fangwumingcheng">
-              <el-input v-model="ruleForm.fangwumingcheng" 
+          <el-form-item class="input" label="房屋名称" prop="houseName">
+              <el-input v-model="ruleForm.houseName" 
                 placeholder="房屋名称" readonly></el-input>
           </el-form-item>
         </div>
@@ -46,22 +46,22 @@
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="小区" prop="xiaoqu">
-          <el-input v-model="ruleForm.xiaoqu" 
-              placeholder="小区" clearable  :readonly="ro.xiaoqu"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="小区" prop="community">
+          <el-input v-model="ruleForm.community" 
+              placeholder="小区" clearable  :readonly="ro.community"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="小区" prop="xiaoqu">
-              <el-input v-model="ruleForm.xiaoqu" 
+          <el-form-item class="input" label="小区" prop="community">
+              <el-input v-model="ruleForm.community" 
                 placeholder="小区" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="select" v-if="type!='info'"  label="评分" prop="pingfen">
-          <el-select v-model="ruleForm.pingfen" placeholder="请选择评分">
+        <el-form-item class="select" v-if="type!='info'"  label="评分" prop="rating">
+          <el-select v-model="ruleForm.rating" placeholder="请选择评分">
             <el-option
-                v-for="(item,index) in pingfenOptions"
+                v-for="(item,index) in ratingOptions"
                 v-bind:key="index"
                 :label="item"
                 :value="item">
@@ -69,61 +69,61 @@
           </el-select>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="评分" prop="pingfen">
-	      <el-input v-model="ruleForm.pingfen"
+          <el-form-item class="input" label="评分" prop="rating">
+	      <el-input v-model="ruleForm.rating"
                 placeholder="评分" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                                                   <el-col :span="12">
-        <el-form-item class="date" v-if="type!='info'" label="评价日期" prop="pingjiariqi">
+        <el-form-item class="date" v-if="type!='info'" label="评价日期" prop="reviewDate">
             <el-date-picker
                 format="yyyy 年 MM 月 dd 日"
                 value-format="yyyy-MM-dd"
-                v-model="ruleForm.pingjiariqi" 
+                v-model="ruleForm.reviewDate" 
                 type="date"
                 placeholder="评价日期">
             </el-date-picker> 
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" v-if="ruleForm.pingjiariqi" label="评价日期" prop="pingjiariqi">
-              <el-input v-model="ruleForm.pingjiariqi" 
+          <el-form-item class="input" v-if="ruleForm.reviewDate" label="评价日期" prop="reviewDate">
+              <el-input v-model="ruleForm.reviewDate" 
                 placeholder="评价日期" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="房主账号" prop="landlordzhanghao">
-          <el-input v-model="ruleForm.landlordzhanghao" 
-              placeholder="房主账号" clearable  :readonly="ro.landlordzhanghao"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="房主账号" prop="landlordAccount">
+          <el-input v-model="ruleForm.landlordAccount" 
+              placeholder="房主账号" clearable  :readonly="ro.landlordAccount"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="房主账号" prop="landlordzhanghao">
-              <el-input v-model="ruleForm.landlordzhanghao" 
+          <el-form-item class="input" label="房主账号" prop="landlordAccount">
+              <el-input v-model="ruleForm.landlordAccount" 
                 placeholder="房主账号" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="用户名" prop="tenantming">
-          <el-input v-model="ruleForm.tenantming" 
-              placeholder="用户名" clearable  :readonly="ro.tenantming"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="用户名" prop="tenantUsername">
+          <el-input v-model="ruleForm.tenantUsername" 
+              placeholder="用户名" clearable  :readonly="ro.tenantUsername"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="用户名" prop="tenantming">
-              <el-input v-model="ruleForm.tenantming" 
+          <el-form-item class="input" label="用户名" prop="tenantUsername">
+              <el-input v-model="ruleForm.tenantUsername" 
                 placeholder="用户名" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
                                     <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="联系电话" prop="lianxidianhua">
-          <el-input v-model="ruleForm.lianxidianhua" 
-              placeholder="联系电话" clearable  :readonly="ro.lianxidianhua"></el-input>
+        <el-form-item class="input" v-if="type!='info'"  label="联系电话" prop="contactPhone">
+          <el-input v-model="ruleForm.contactPhone" 
+              placeholder="联系电话" clearable  :readonly="ro.contactPhone"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="联系电话" prop="lianxidianhua">
-              <el-input v-model="ruleForm.lianxidianhua" 
+          <el-form-item class="input" label="联系电话" prop="contactPhone">
+              <el-input v-model="ruleForm.contactPhone" 
                 placeholder="联系电话" readonly></el-input>
           </el-form-item>
         </div>
@@ -131,18 +131,18 @@
                                                                                           </el-row>
                                                                                               <el-row>
             <el-col :span="24">
-              <el-form-item class="textarea" v-if="type!='info'" label="评价内容" prop="pingjianeirong">
+              <el-form-item class="textarea" v-if="type!='info'" label="评价内容" prop="reviewContent">
                 <el-input
                   style="min-width: 200px; max-width: 600px;"
                   type="textarea"
                   :rows="8"
                   placeholder="评价内容"
-                  v-model="ruleForm.pingjianeirong" >
+                  v-model="ruleForm.reviewContent" >
                 </el-input>
               </el-form-item>
               <div v-else>
-                <el-form-item v-if="ruleForm.pingjianeirong" label="评价内容" prop="pingjianeirong">
-                    <span>{{ruleForm.pingjianeirong}}</span>
+                <el-form-item v-if="ruleForm.reviewContent" label="评价内容" prop="reviewContent">
+                    <span>{{ruleForm.reviewContent}}</span>
                 </el-form-item>
               </div>
             </el-col>
@@ -231,57 +231,57 @@ export default {
       id: '',
       type: '',
       ro:{
-	hetongbianhao : false,
-	fangwumingcheng : false,
+	contractNumber : false,
+	houseName : false,
 	houseType : false,
-	xiaoqu : false,
-	pingfen : false,
-	pingjianeirong : false,
-	pingjiariqi : false,
-	landlordzhanghao : false,
-	tenantming : false,
-	lianxidianhua : false,
-	sfsh : false,
-	shhf : false,
+	community : false,
+	rating : false,
+	reviewContent : false,
+	reviewDate : false,
+	landlordAccount : false,
+	tenantUsername : false,
+	contactPhone : false,
+	reviewStatus : false,
+	reviewReply : false,
       },
             ruleForm: {
-                	        hetongbianhao: '',
-	                        	        fangwumingcheng: '',
+                	        contractNumber: '',
+	                        	        houseName: '',
 	                        	        houseType: '',
-	                        	        xiaoqu: '',
-	                        	        pingfen: '',
-	                        	        pingjianeirong: '',
-	                        	        pingjiariqi: '',
-	                        	        landlordzhanghao: '',
-	                        	        tenantming: '',
-	                        	        lianxidianhua: '',
-	                        	                        	        shhf: '',
+	                        	        community: '',
+	                        	        rating: '',
+	                        	        reviewContent: '',
+	                        	        reviewDate: '',
+	                        	        landlordAccount: '',
+	                        	        tenantUsername: '',
+	                        	        contactPhone: '',
+	                        	                        	        reviewReply: '',
 	                      },
-                                                                                pingfenOptions: [],
+                                                                                ratingOptions: [],
                                                                                                                       rules: {
-                  hetongbianhao: [
+                  contractNumber: [
                                     	                                                              ],
-                  fangwumingcheng: [
+                  houseName: [
                                     	                                                              ],
                   houseType: [
                                     	                                                              ],
-                  xiaoqu: [
+                  community: [
                                     	                                                              ],
-                  pingfen: [
+                  rating: [
                                     	                                                              ],
-                  pingjianeirong: [
+                  reviewContent: [
                                     	                                                              ],
-                  pingjiariqi: [
+                  reviewDate: [
                                     	                                                              ],
-                  landlordzhanghao: [
+                  landlordAccount: [
                                     	                                                              ],
-                  tenantming: [
+                  tenantUsername: [
                                     	                                                              ],
-                  lianxidianhua: [
+                  contactPhone: [
                                     	                                                              ],
-                  sfsh: [
+                  reviewStatus: [
                                     	                                                              ],
-                  shhf: [
+                  reviewReply: [
                                     	                                                              ],
               }
     };
@@ -309,14 +309,14 @@ export default {
       }else if(this.type=='cross'){
         var obj = this.$storage.getObj('crossObj');
         for (var o in obj){
-          	            if(o=='hetongbianhao'){
-            this.ruleForm.hetongbianhao = obj[o];
-	    this.ro.hetongbianhao = true;
+          	            if(o=='contractNumber'){
+            this.ruleForm.contractNumber = obj[o];
+	    this.ro.contractNumber = true;
             continue;
           }
-	            	            if(o=='fangwumingcheng'){
-            this.ruleForm.fangwumingcheng = obj[o];
-	    this.ro.fangwumingcheng = true;
+	            	            if(o=='houseName'){
+            this.ruleForm.houseName = obj[o];
+	    this.ro.houseName = true;
             continue;
           }
 	            	            if(o=='houseType'){
@@ -324,39 +324,39 @@ export default {
 	    this.ro.houseType = true;
             continue;
           }
-	            	            if(o=='xiaoqu'){
-            this.ruleForm.xiaoqu = obj[o];
-	    this.ro.xiaoqu = true;
+	            	            if(o=='community'){
+            this.ruleForm.community = obj[o];
+	    this.ro.community = true;
             continue;
           }
-	            	            if(o=='pingfen'){
-            this.ruleForm.pingfen = obj[o];
-	    this.ro.pingfen = true;
+	            	            if(o=='rating'){
+            this.ruleForm.rating = obj[o];
+	    this.ro.rating = true;
             continue;
           }
-	            	            if(o=='pingjianeirong'){
-            this.ruleForm.pingjianeirong = obj[o];
-	    this.ro.pingjianeirong = true;
+	            	            if(o=='reviewContent'){
+            this.ruleForm.reviewContent = obj[o];
+	    this.ro.reviewContent = true;
             continue;
           }
-	            	            if(o=='pingjiariqi'){
-            this.ruleForm.pingjiariqi = obj[o];
-	    this.ro.pingjiariqi = true;
+	            	            if(o=='reviewDate'){
+            this.ruleForm.reviewDate = obj[o];
+	    this.ro.reviewDate = true;
             continue;
           }
-	            	            if(o=='landlordzhanghao'){
-            this.ruleForm.landlordzhanghao = obj[o];
-	    this.ro.landlordzhanghao = true;
+	            	            if(o=='landlordAccount'){
+            this.ruleForm.landlordAccount = obj[o];
+	    this.ro.landlordAccount = true;
             continue;
           }
-	            	            if(o=='tenantming'){
-            this.ruleForm.tenantming = obj[o];
-	    this.ro.tenantming = true;
+	            	            if(o=='tenantUsername'){
+            this.ruleForm.tenantUsername = obj[o];
+	    this.ro.tenantUsername = true;
             continue;
           }
-	            	            if(o=='lianxidianhua'){
-            this.ruleForm.lianxidianhua = obj[o];
-	    this.ro.lianxidianhua = true;
+	            	            if(o=='contactPhone'){
+            this.ruleForm.contactPhone = obj[o];
+	    this.ro.contactPhone = true;
             continue;
           }
 	            	            	                    }
@@ -372,7 +372,7 @@ export default {
           this.$message.error(data.msg);
         }
       });
-                                                                                                                  this.pingfenOptions = "1,2,3,4,5".split(',')
+                                                                                                                  this.ratingOptions = "1,2,3,4,5".split(',')
                                                                                                                                                           },
                                                                                                         // 多级联动参数
                                                                                                                                     info(id) {
